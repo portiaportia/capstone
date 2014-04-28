@@ -15,7 +15,7 @@ a:active, a:focus {outline:none;}
 
 /***** Structure *******/
 body {
-	background:@colorRoute;
+	background:darken(@colorRoute, 40%);
 }
 
 .main-header {
@@ -48,8 +48,8 @@ body {
 
 .content, .one-content {
 	padding:4%;
-	position:absolute;
-	top:0;
+	width:100%;
+	margin-bottom:10%;
 }
 
 .content {
@@ -77,7 +77,8 @@ body {
 
 /***** Bottom Nav *******/
 .bottom-nav {
-	position:absolute;
+	position:fixed;
+	background:#fff;
 	.pageWidth;
 	bottom:0;
 	overflow:hidden;
@@ -100,6 +101,7 @@ body {
 	width:100%;
 	text-align:center;
 	padding:20% 10%;
+	margin:0;
 }
 
 .bottom-nav a.highlight {
@@ -107,6 +109,119 @@ body {
 	color:#fff;
 }
 
+/***** Leaderboard ******/
+.challenge-title {
+	overflow:hidden;
+}
+
+.challenge-title .days-left {
+	font-size:.75em;
+	font-weight:600;
+	padding-top:2.5em;
+	font-color:lighten(@colorRoute, 20%);
+}
+
+.leaderboard {
+	margin-top:5%;
+	border-bottom:1px dashed lighten(@colorRoute, 10%);
+}
+.leader {
+	margin-top:1%;
+	width:100%;
+	overflow:hidden;
+	border-top:1px dashed lighten(@colorRoute, 10%);
+}
+
+.leader a {
+	width:100%;
+	display:block;
+	padding:1%;
+	text-decoration:none;
+	overflow:hidden;
+}
+
+.leader a:hover, .leader a:active {
+	background:lighten(@colorRoute, 10%);
+}
+
+.leader .position {
+	float:left;
+	font-size:2em;
+	margin:0;
+	padding:0;
+	margin-right:5%;
+	margin-top:5%;
+}
+
+.leader img {
+	display:block;
+	float:left;
+	margin-right:5%;
+	width:20%;
+}
+
+.leader h1 {
+	font-size:1.5em;
+	text-align: left;
+	float:left;
+	margin-top:7%;
+}
+
+.leader .miles {
+	float:right;
+	font-size:.75em;	
+	margin-top:5%;
+}
+
+.leader .miles p {
+	margin-bottom:.5em;
+	text-align:right;
+	padding:0;
+}
+
+.leader a {
+	text-decoration:none;
+	color:darken(@colorRoute, 20%);
+}
+
+/***** Team details *****/
+#team-details header {
+	width:100%;
+	margin-bottom:5%;
+}
+
+#team-details header img {
+	width:30px;
+	display:block;
+	float:left;
+	padding-right:2%;
+}
+
+.whole-team {
+	overflow:hidden;
+}
+
+.whole-team img {
+	display:block;
+	float:left;
+	margin-right:10%;
+	width:23%;
+}
+
+.whole-team p {
+	padding-bottom:0em;
+	font-size:.8em;
+	color:darken(@colorRoute, 40%);
+}
+
+/***** Floats ***********/
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
 
 /***** Typography *******/
 h1 {
@@ -121,9 +236,23 @@ h2 {
 	color:darken(@colorRoute, 10%);
 }
 
+h3 {
+	gont-size:1.25em;
+	color:darken(@colorRoute, 30%);
+	margin-bottom:1%;
+	
+}
+
 p {
 	 padding-bottom: 1em;
-	 background:#fff;
+}
+
+a, h1 a, h2 a {
+	text-decoration:none;
+}
+
+strong {
+	font-weight:600;
 }
 
 /***** Media Queries ****/
@@ -131,5 +260,7 @@ p {
 /* larger tablets and desktops */
 @media only screen and (min-width:1025px) { 
 
-		
+	.leader h1 {
+		font-size:1.2em;
+	}
 }
