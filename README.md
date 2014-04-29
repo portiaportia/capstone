@@ -5,10 +5,11 @@ HCDE Capstone Project
 
 To enable full screen mode on mobile devices, add as homescreen bookmark.
 
+#
 
 How to Branch and Merge:
-1. create a new branch: git checkout -b <branch_name>
-2. display which branch we are in: git branch
+*# create a new branch: git checkout -b <branch_name>
+*# display which branch we are in: git branch
 3. make your changes
 4. commit your changes: 
      git add .
