@@ -9,9 +9,9 @@ To enable full screen mode on mobile devices, add as homescreen bookmark.
 How to Branch and Merge:
 
 1. create a new branch
-
-    git checkout -b <branch_name>
-
+```
+git checkout -b <branch_name>
+```
 2. display which branch we are in
 
     git branch
