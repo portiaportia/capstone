@@ -6,14 +6,26 @@
 		<div id="today" class="content currentContent">	
 			<h2>Today</h2>
 			<p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
 		</div>	
 		<div id="week" class="content">	
 			<h2>This Week</h2>
 			<p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
 		</div>
 		<div id="month" class="content">	
 			<h2>This Month</h2>
 			<p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
 		</div>
 	</div>
 </div><!-- end page -->
@@ -125,15 +137,16 @@
 			<div class="team-stats">
 				<h3>Mobile Maniacs</h3>
 				<p>Fourth Place</p>
+				<p><strong>Goal:</strong> Be awesome</p>
 				<p><strong>Miles:</strong> 32</p>
 				<p><strong>Trips:</strong> 11</p>
+				<p>Don't include the rank</p>
 			</div>
 		</section>
 		
 		<div class="leaderboard">
 			<section class="leader">
-            	<p class="position">1</p>
-				<img src="images/person.png">
+            	<img src="images/person.png">
 				<h1>Bryan Taylor</h1>
 				<div class="miles">
 						<p>16 Miles</p>
@@ -141,8 +154,7 @@
 					</div>
 			</section>
 			<section class="leader">
-            	<p class="position">2</p>
-				<img src="images/person.png">
+            	<img src="images/person.png">
 				<h1>Jen Clark</h1>
 				<div class="miles">
 					<p>10 Miles</p>
@@ -150,8 +162,7 @@
 				</div>
 			</section>
 			<section class="leader my-row">
-            	<p class="position">3</p>
-				<img src="images/person.png">
+            	<img src="images/person.png">
 				<h1>Samantha Walker</h1>
 				<div class="miles">
 					<p>4 Miles</p>
@@ -159,8 +170,7 @@
 				</div>
 			</section>
 			<section class="leader">
-            	<p class="position">4</p>
-				<img src="images/person.png">
+            	<img src="images/person.png">
 				<h1>Mark Adams</h1>
 				<div class="miles">
 					<p>2 Miles</p>
