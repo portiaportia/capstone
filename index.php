@@ -229,16 +229,20 @@
 
 	];
 
+	//sort in rank of miles, most to least.
 	data_set.sort(function(a,b) { return b.miles - a.miles});
 
+	//determine the scale to use on the bars
 	var maxMiles = d3.max(data_set, function(d) { return d.miles; });
-
 	var x = d3.scale.linear()
 	.domain([0, maxMiles])
 	.range([20, (winx-20)]);
 
+	//starting position
 	var position = 1;
 
+	//build out the leaderboard
+	//TODO the stylying should go in the CSS instead.
 	var chrt_section = d3.select(".dynamic_leaderboard")
 		.selectAll("section")
 		.data(data_set)
