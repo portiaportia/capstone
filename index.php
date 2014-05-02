@@ -4,15 +4,85 @@
 	<?php include "top-nav.php"; ?>
 	<div class="contentSection">
 		<div id="today" class="content currentContent">	
-			<h2>Today</h2>
-			<p>Home Content</p>
+        	<section class="arrow-title">
+                <a href="#yesterday" data-view="day-view"><img src="images/back-arrow.png"></a>
+                <h2>Today</h2>
+                <img src="images/front-arrow.png">
+            </section>
+			<p><strong>Bonuses:</strong>&nbsp; $4</p>
+			<p><strong>Charges:</strong>&nbsp; $0</p>
+			<p><strong>Carbon Footprint:</strong>&nbsp; NA</p>
+            <div class="transport-types">
+                <section class="transport-type">
+                    <img src="images/bus.png">
+                    <div clas="breakdown">
+                        <p>3 Miles</p>
+                        <p>20 Minutes</p>                
+                    </div>
+                </section>
+                <section class="transport-type">
+                    <img src="images/bike.png">
+                    <div clas="breakdown">
+                        <p>1 Miles</p>
+                        <p>23 Minutes</p>                
+                    </div>
+            	</section>
+            </div>
+		</div>
+        <div id="yesterday" class="content">	
+        	<section class="arrow-title">
+                <a href="#twodaysago" data-view="day-view"><img src="images/back-arrow.png"></a>
+                <h2>Yesterday</h2>
+                <a href="#today" data-view="day-view"><img src="images/front-arrow.png"></a>
+            </section>
+            <p>Home Content</p>
 			<p>Bonuses</p>
 			<p>Charges</p>
 			<p>Carbon Footprint</p>
 			<p>Modes and the time taken</p>
 		</div>	
+        <div id="twodaysago" class="content">	
+        	<section class="arrow-title">
+                <a href="#today" data-view="day-view"><img src="images/back-arrow.png"></a>
+                <h2>Two Days Ago</h2>
+                <a href="#yesterday"data-view="day-view"><img src="images/front-arrow.png"></a>
+            </section>
+            <p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
+		</div>		
 		<div id="week" class="content">	
-			<h2>This Week</h2>
+			<section class="arrow-title">
+                <a href="#last-week" data-view="week-view"><img src="images/back-arrow.png"></a>
+                <h2>This Week</h2>
+                <a href="#week"data-view="week-view"><img src="images/front-arrow.png"></a>
+            </section>
+			<p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
+		</div>
+        <div id="last-week" class="content">	
+			<section class="arrow-title">
+                <a href="#two-weeks-ago" data-view="week-view"><img src="images/back-arrow.png"></a>
+                <h2>Last Week</h2>
+                <a href="#week"data-view="week-view"><img src="images/front-arrow.png"></a>
+            </section>
+			<p>Home Content</p>
+			<p>Bonuses</p>
+			<p>Charges</p>
+			<p>Carbon Footprint</p>
+			<p>Modes and the time taken</p>
+		</div>
+        <div id="two-weeks-ago" class="content">	
+			<section class="arrow-title">
+                <a href="#week" data-view="week-view"><img src="images/back-arrow.png"></a>
+                <h2>Two Weeks Ago</h2>
+                <a href="#last-week"data-view="week-view"><img src="images/front-arrow.png"></a>
+            </section>
 			<p>Home Content</p>
 			<p>Bonuses</p>
 			<p>Charges</p>
@@ -45,88 +115,12 @@
 
 		</section>
 		
-		<div class="leaderboard">
-<div class="dynamic_leaderboard">
+            
+    <div class="team-leaderboard leaderboard">
+    </div>
 </div>
-			<section class="leader">
-				<a href="#team-details">
-					<p class="position">1</p>
-					<img src="images/team1.png">
-					<h1>Biking Barbies</h1>
-					<div class="miles">
-						<p>50 Miles</p>
-						<p>18 Trips</p>
-					</div>
-				</a>
-			</section>
-			
-			<section class="leader">
-				<a href="#team-details">
-					<p class="position">2</p>
-					<img src="images/team2.png">
-					<h1>Ninjas Riders</h1>
-					<div class="miles">
-						<p>46 Miles</p>
-						<p>15 Trips</p>
-					</div>
-				</a>
-			</section>
-			
-			<section class="leader">
-				<a href="#team-details">
-					<p class="position">3</p>
-					<img src="images/team3.png">
-					<h1>Colorful Cyclists</h1>
-					<div class="miles">
-						<p>38 Miles</p>
-						<p>10 Trips</p>
-					</div>
-				</a>
-			</section>
-			
-			<section class="leader my-team">
-				<a href="#team-details">
-					<p class="position">4</p>
-					<img src="images/team4.png">
-					<header>
-                        <h1>Mobile Maniacs</h1>
-                        <h2>4 Miles behind Colorful Cyclists</h2>
-                    </header>
-					<div class="miles">
-						<p>32 Miles</p>
-						<p>11 Trips</p>
-					</div>
-				</a>
-			</section>
-			
-			<section class="leader">
-				<a href="#team-details">
-					<p class="position">5</p>
-					<img src="images/team5.png">
-					<h1>Tricksters</h1>
-					<div class="miles">
-						<p>31 Miles</p>
-						<p>8 Trips</p>
-					</div>
-				</a>
-			</section>
-			
-			<section class="leader">
-				<a href="#team-details">
-					<p class="position">6</p>
-					<img src="images/team6.png">
-					<h1>All Stars</h1>
-					<div class="miles">
-						<p>24 Miles</p>
-						<p>11 Trips</p>
-					</div>
-				</a>
-			</section>
-		</div>
-
-	</div>
 	
-	<div id="team-details" class="content">
+	<div id="biking-barbies" class="content team-details">
 		<header>
 			<a href="#team-home">
 				<img src="images/arrow.png">
@@ -146,52 +140,22 @@
 			</div>
 		</section>
 		
-		<div class="leaderboard">
-			<section class="leader">
-            	<img src="images/person.png">
-				<h1>Bryan Taylor</h1>
-				<div class="miles">
-						<p>16 Miles</p>
-						<p>5 Trips</p>
-					</div>
-			</section>
-			<section class="leader">
-            	<img src="images/person.png">
-				<h1>Jen Clark</h1>
-				<div class="miles">
-					<p>10 Miles</p>
-					<p>3 Trips</p>
-				</div>
-			</section>
-			<section class="leader my-row">
-            	<img src="images/person.png">
-				<h1>Samantha Walker</h1>
-				<div class="miles">
-					<p>4 Miles</p>
-					<p>2 Trips</p>
-				</div>
-			</section>
-			<section class="leader">
-            	<img src="images/person.png">
-				<h1>Mark Adams</h1>
-				<div class="miles">
-					<p>2 Miles</p>
-					<p>1 Trips</p>
-				</div>
-			</section>
+		<div class="in-team-leaderboard leaderboard">
+			
 		</div>
 	</div>
 
 </div><!-- end page -->
 
 
-<div id="route" class="page">
+<div id="leaderboard" class="page">
 
 	<div class="one-content">
 
-		<h2>Route</h2>
+		<h2>Leaderboard</h2>
 
-		<p>The Content</p>
+		<div class="me-others-leaderboard leaderboard">
+    	</div>
 
 	</div>
 
@@ -209,75 +173,7 @@
 	</div>
 
 </div><!-- end page -->
-<script>
-
-
-	var w = window,
-	d = document,
-	e = d.documentElement,
-	g = d.getElementsByTagName('body')[0],
-	winx = w.innerWidth || e.clientWidth || g.clientWidth,
-	winy = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-    //this could be the size of the screen too, but not sure how to get the size of the body right now.
-    winx = 300;
-
-	var data_set = [ 
-		{title: "Biking Barbies", miles: 12, trips: 18, image:"images/team1.png" } ,
-		{title: "Ninja Riders", miles: 10, trips: 15, image:"images/team2.png" },
-		{title: "Colorful Cylclists", miles: 15, trips: 15, image:"images/team3.png" }, 
-
-	];
-
-	//sort in rank of miles, most to least.
-	data_set.sort(function(a,b) { return b.miles - a.miles});
-
-	//determine the scale to use on the bars
-	var maxMiles = d3.max(data_set, function(d) { return d.miles; });
-	var x = d3.scale.linear()
-	.domain([0, maxMiles])
-	.range([20, (winx-20)]);
-
-	//starting position
-	var position = 1;
-
-	//build out the leaderboard
-	//TODO the stylying should go in the CSS instead.
-	var chrt_section = d3.select(".dynamic_leaderboard")
-		.selectAll("section")
-		.data(data_set)
-		.enter().append("section")
-		.attr("class", "leader")
-
-	var chrt_a = chrt_section.append("a")
-		.attr("href", "#team-details")
-
-	chrt_a.append("p")
-		.attr("class", "position")
-		.text(function(d) { return position++})
-
-	chrt_a.append("img")
-		.attr("src", function(d) { return d.image; })
-
-	chrt_a.append("h1")
-	    .text(function(d) { return d.title; })
-
-	var chrt_div = chrt_a.append("div")
-	    .attr("class", "miles")
-
-	chrt_div.append("p")
-	    .text(function(d) { return d.trips + " Trips"})
-
-	chrt_div.append("p")
-	    .text(function(d) { return d.miles + " Miles"})
-
-	chrt_a.append("div")
-	    .attr("class", "bar")
-		.style("background-color", "#d8eff8") //not needed, but good for learning.
-		.style("width", function(d) { return x(d.miles) + "px"; })
-		.text(function(d) { return d.miles + " miles"});
-
-</script>
+<script src="js/leaderboards.js"></script>
 <?php include "bottom-nav.php"; ?>
 
 <?php include "footer.php"; ?>

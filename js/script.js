@@ -31,7 +31,7 @@ window.onload = function() {
 	$(".bottom-nav a").click(changePage); //control bottom navitation
 	
 
-	$(".top-nav a").click(changeContentHome); //control top navigation
+	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
 	
 	highlightNav("#home");//highlight home on bottom nav
@@ -145,23 +145,13 @@ function changeContentTeam() {
 }
 
 function changeContentHome() {
-
-
 	$("#home .content").removeClass("currentContent");
-
-
 	$($(this).attr("href")).addClass("currentContent");
-
-
 	$(".top-nav").find("img").attr("src", "images/circle.png");
-
-
-	$(this).find("img").attr("src", "images/circle-selected.png");
-
-
+	var imageId = $(this).data("view");
+	$("#" + imageId).find("img").attr("src", "images/circle-selected.png");
+	
 	return false;
-
-
 }
 
 function highlightNav(pageId) {

@@ -75,6 +75,18 @@ body {
 	width:33%;
 }
 
+/****** Arrow Nav *******/
+.arrow-title {
+	margin-bottom:20px;	
+}
+
+.arrow-title {
+	h2 {
+		display:inline;
+		padding:0 10px;	
+	}
+}
+
 /***** Bottom Nav *******/
 .bottom-nav {
 	position:fixed;
@@ -121,10 +133,11 @@ body {
 	font-color:lighten(@colorRoute, 20%);
 }
 
-.leaderboard {
+.leaderboard, .leaderboard {
 	margin-top:5%;
 	border-bottom:1px dashed lighten(@colorRoute, 10%);
 }
+
 .leader {
 	margin-top:1%;
 	width:100%;
@@ -208,13 +221,37 @@ body {
 	color:darken(@colorRoute, 20%);
 }
 
+/****** Transport Styles ****/
+.transport-types {
+	width:100%;
+	overflow:hidden;
+	border-top:1px dashed lighten(@colorRoute, 10%);
+}
+
+.transport-type  {
+	margin:2% 0;
+	border-bottom:1px dashed lighten(@colorRoute, 10%);
+}
+
+.transport-type img {
+	display:block;
+	float:left;
+	margin-right:5%;
+	width:10%;
+}
+
+.transport-type p {
+	margin:0;
+	padding:0;
+}
+
 /***** Team details *****/
-#team-details header {
+.team-details header {
 	width:100%;
 	margin-bottom:5%;
 }
 
-#team-details header img {
+.team-details header img {
 	width:30px;
 	display:block;
 	float:left;
