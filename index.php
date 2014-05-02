@@ -46,6 +46,8 @@
 		</section>
 		
 		<div class="leaderboard">
+<div class="dynamic_leaderboard">
+</div>
 			<section class="leader">
 				<a href="#team-details">
 					<p class="position">1</p>
@@ -207,7 +209,71 @@
 	</div>
 
 </div><!-- end page -->
+<script>
 
+
+	var w = window,
+	d = document,
+	e = d.documentElement,
+	g = d.getElementsByTagName('body')[0],
+	winx = w.innerWidth || e.clientWidth || g.clientWidth,
+	winy = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    //this could be the size of the screen too, but not sure how to get the size of the body right now.
+    winx = 300;
+
+	var data_set = [ 
+		{title: "Biking Barbies", miles: 12, trips: 18, image:"images/team1.png" } ,
+		{title: "Ninja Riders", miles: 10, trips: 15, image:"images/team2.png" },
+		{title: "Colorful Cylclists", miles: 15, trips: 15, image:"images/team3.png" }, 
+
+	];
+
+	data_set.sort(function(a,b) { return b.miles - a.miles});
+
+	var maxMiles = d3.max(data_set, function(d) { return d.miles; });
+
+	var x = d3.scale.linear()
+	.domain([0, maxMiles])
+	.range([20, (winx-20)]);
+
+	var position = 1;
+
+	var chrt_section = d3.select(".dynamic_leaderboard")
+		.selectAll("section")
+		.data(data_set)
+		.enter().append("section")
+		.attr("class", "leader")
+
+	var chrt_a = chrt_section.append("a")
+		.attr("href", "#team-details")
+
+	chrt_a.append("p")
+		.attr("class", "position")
+		.text(function(d) { return position++})
+
+	chrt_a.append("img")
+		.attr("src", function(d) { return d.image; })
+
+	chrt_a.append("h1")
+	    .text(function(d) { return d.title; })
+
+	var chrt_div = chrt_a.append("div")
+	    .attr("class", "miles")
+
+	chrt_div.append("p")
+	    .text(function(d) { return d.trips + " Trips"})
+
+	chrt_div.append("p")
+	    .text(function(d) { return d.miles + " Miles"})
+
+	chrt_a.append("div")
+	    .attr("class", "bar")
+		.style("background-color", "#d8eff8") //not needed, but good for learning.
+		.style("width", function(d) { return x(d.miles) + "px"; })
+		.text(function(d) { return d.miles + " miles"});
+
+</script>
 <?php include "bottom-nav.php"; ?>
 
 <?php include "footer.php"; ?>
