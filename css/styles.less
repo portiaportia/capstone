@@ -320,6 +320,73 @@ strong {
 	font-weight:600;
 }
 
+/***** Goals ****/
+
+.progress {
+	float:left;
+	margin-top: 10px;
+	color:darken(@colorRoute, 40%);
+}
+/*
+.progress .goal-text{
+	font-size: 0.75em;
+    text-align: center;
+    width: 40px;
+    float: right;
+    margin-right: -24px;
+}
+
+.progress .progress-text{
+	font-size: 0.75em;
+    text-align: center;
+    width: 40px;
+    float: left;
+    margin-left: -30px;
+}
+*/
+.progress-bar {
+	background: @colorRoute;
+	width: 40px;
+	height: 3px;
+	margin-top: 6px;
+	float: left;
+	margin-bottom: 20px;
+}
+.goal-bar {
+	/*border: 1px solid @colorRoute;*/
+	background: @colorRoute;
+	width: 140px;
+	position: relative;
+	left: -2px;
+	height: 1px;
+	margin-top: 7px;
+	/*float: left;*/
+}
+
+.progress-indicator {
+	background: @colorRoute;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px; 
+	float: left;
+	position: relative;
+	left: -1px;
+
+	/* width and height can be anything, as long as they're equal */
+}
+
+.goal-indicator {
+	//background-color: @colorRoute;
+	margin-top: -7px;
+	border-radius: 50%;
+	border: 1px solid @colorRoute;
+	width: 13px;
+	height: 13px; 
+	/*float: left;*/
+	position: relative;
+	/* width and height can be anything, as long as they're equal */
+}
+
 /***** Media Queries ****/
 
 /* larger tablets and desktops */
