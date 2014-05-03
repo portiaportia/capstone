@@ -38,18 +38,52 @@ var barbie_data_set = [
 	{title: "Mark Adams", miles: 2, trips: 1, image:"images/person.png" },
 ];
 
-buildLeaderBoard(team_data_set, ".team-leaderboard");
-buildLeaderBoard(me_others_data_set, ".me-others-leaderboard");
-
-buildIndividualTeamPage(barbie_data_set, "#biking-barbies");
 
 
-function buildIndividualTeamPage(data_set, idPlace)
+buildLeaderBoard(team_data_set, ".team-leaderboard", true);
+buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
+
+buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
+
+buildProgressBar([{goal: 50, progress: 32}], "#biking-barbies");
+
+function buildProgressBar(data_set, idPlace)
+{
+	//determine the scale to use on the bars
+	var goal = d3.max(data_set, function(d) { return d.goal; });
+	var x = d3.scale.linear()
+	.domain([0, goal])
+	.range([0, (winx-20)]);
+
+
+	var team_stats = d3.select(idPlace).select(".whole-team").select(".progress")
+		.selectAll("div")
+		.data(data_set)
+		.enter()
+		team_stats.append("p").text(function(d) { return "Goal Progress: " + d.progress + " of " + d.goal + " miles"; })
+		team_stats.append("div").attr("class", "progress-bar")
+			.style("width", function(d) { return x(d.progress) + "px"; })
+		team_stats.append("div").attr("class", "progress-indicator")
+		team_stats.append("div").attr("class", "goal-bar")
+			.style("width", function(d) { return x(d.goal) + "px"; })
+		team_stats.append("div").attr("class", "goal-indicator")
+			.style("left", function(d) { return (x(d.goal) - 2) + "px"; });
+
+/*		team_stats.append("div").attr("class", "progress-text")
+			.text(function(d) { return d.progress + " Miles"; })
+		team_stats.append("div").attr("class", "goal-text")
+			.style("left", function(d) { return (x(d.goal) - 2) + "px"; })
+			.text(function(d) { return d.goal + " Miles"; });
+*/
+
+}
+
+function buildIndividualTeamPage(data_set, idPlace, withLinks)
 {	
 	buildLeaderBoard(data_set, idPlace + " .in-team-leaderboard");
 }
 
-function buildLeaderBoard(data_set, classPlace)
+function buildLeaderBoard(data_set, classPlace, withLinks)
 {
 	//sort in rank of miles, most to least.
 	data_set.sort(function(a,b) { return b.miles - a.miles});
@@ -71,9 +105,14 @@ function buildLeaderBoard(data_set, classPlace)
 		.enter().append("section")
 		.attr("class", "leader")
 
-	var chrt_a = chrt_section.append("a")
+	//only add an "a" if it makes sense to do so.
+	if(withLinks){
+		var chrt_a = chrt_section.append("a")
 		.attr("href", function(d) { return d.loc; })
-		
+	}else{
+		var chrt_a = chrt_section.append("div")
+	}
+
 	chrt_a.append("p")
 		.attr("class", "position")
 		.text(function(d) { return position++})
@@ -88,12 +127,12 @@ function buildLeaderBoard(data_set, classPlace)
 		.attr("class", "miles")
 
 	chrt_div.append("p")
-		.text(function(d) { return d.trips + " Trips"})
+		.text(function(d) { return d.trips + " Trips"; })
 
 	chrt_div.append("p")
-		.text(function(d) { return d.miles + " Miles"})
+		.text(function(d) { return d.miles + " Miles"; });
 
-	chrt_a.append("div");
+	//chrt_a.append("div");
 	   // .attr("class", "bar")
 		//.style("background-color", "#d8eff8") //not needed, but good for learning.
 		//.style("width", function(d) { return x(d.miles) + "px"; })

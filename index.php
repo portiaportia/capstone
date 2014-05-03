@@ -136,7 +136,9 @@
 				<p><strong>Goal:</strong> Be awesome</p>
 				<p><strong>Miles:</strong> 32</p>
 				<p><strong>Trips:</strong> 11</p>
-				<p>Don't include the rank</p>
+			</div>
+			<div class="progress">
+				
 			</div>
 		</section>
 		
