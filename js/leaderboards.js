@@ -40,10 +40,10 @@ var barbie_data_set = [
 
 
 
-buildLeaderBoard(team_data_set, ".team-leaderboard");
-buildLeaderBoard(me_others_data_set, ".me-others-leaderboard");
+buildLeaderBoard(team_data_set, ".team-leaderboard", true);
+buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
-buildIndividualTeamPage(barbie_data_set, "#biking-barbies");
+buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
 buildProgressBar([{goal: 50, progress: 32}], "#biking-barbies");
 
@@ -75,15 +75,15 @@ function buildProgressBar(data_set, idPlace)
 			.style("left", function(d) { return (x(d.goal) - 2) + "px"; })
 			.text(function(d) { return d.goal + " Miles"; });
 */
-		
+
 }
 
-function buildIndividualTeamPage(data_set, idPlace)
+function buildIndividualTeamPage(data_set, idPlace, withLinks)
 {	
 	buildLeaderBoard(data_set, idPlace + " .in-team-leaderboard");
 }
 
-function buildLeaderBoard(data_set, classPlace)
+function buildLeaderBoard(data_set, classPlace, withLinks)
 {
 	//sort in rank of miles, most to least.
 	data_set.sort(function(a,b) { return b.miles - a.miles});
@@ -105,9 +105,14 @@ function buildLeaderBoard(data_set, classPlace)
 		.enter().append("section")
 		.attr("class", "leader")
 
-	var chrt_a = chrt_section.append("a")
+	//only add an "a" if it makes sense to do so.
+	if(withLinks){
+		var chrt_a = chrt_section.append("a")
 		.attr("href", function(d) { return d.loc; })
-		
+	}else{
+		var chrt_a = chrt_section.append("div")
+	}
+
 	chrt_a.append("p")
 		.attr("class", "position")
 		.text(function(d) { return position++})
@@ -125,9 +130,9 @@ function buildLeaderBoard(data_set, classPlace)
 		.text(function(d) { return d.trips + " Trips"; })
 
 	chrt_div.append("p")
-		.text(function(d) { return d.miles + " Miles"; })
+		.text(function(d) { return d.miles + " Miles"; });
 
-	chrt_a.append("div");
+	//chrt_a.append("div");
 	   // .attr("class", "bar")
 		//.style("background-color", "#d8eff8") //not needed, but good for learning.
 		//.style("width", function(d) { return x(d.miles) + "px"; })
