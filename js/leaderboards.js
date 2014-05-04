@@ -61,7 +61,6 @@ function buildProgressBar(data_set, idPlace)
 			.style("width", "95%")
 		team_stats.append("div").attr("class", "goal-indicator")
 			.style("left", "95%");
-
 }
 
 function buildIndividualTeamPage(data_set, idPlace, withLinks)
