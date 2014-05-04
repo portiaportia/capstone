@@ -127,24 +127,8 @@
 				<h2>All Teams</h2>
 			</a>
 		</header>
-		
-		<section class="whole-team">
-			<img src="images/team4.png">
-			<div class="team-stats">
-				<h3>Mobile Maniacs</h3>
-				<p>Fourth Place</p>
-				<p><strong>Goal:</strong> Be awesome</p>
-				<p><strong>Miles:</strong> 32</p>
-				<p><strong>Trips:</strong> 11</p>
-			</div>
-			<div class="progress">
-				
-			</div>
 		</section>
-		
-		<div class="in-team-leaderboard leaderboard">
-			
-		</div>
+		<?php include "build-leaderboard.php"; ?>
 	</div>
 
 </div><!-- end page -->
