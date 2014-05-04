@@ -32,18 +32,19 @@ var in_team_data_set = [
 	{title: "Samantha Walker", miles: 4, trips: 2, image:"images/person.png" }, 
 	{title: "Mark Adams", miles: 2, trips: 1, image:"images/person.png" },
 ];
-
+/*
 var barbie_data_set = [ 
 	{title: "Bryan Taylor", miles: 16, trips: 5, image:"images/person.png" } ,
 	{title: "Jen Clark", miles: 10, trips: 3, image:"images/person.png" },
 	{title: "Samantha Walker", miles: 4, trips: 2, image:"images/person.png" }, 
 	{title: "Mark Adams", miles: 2, trips: 1, image:"images/person.png" },
 ];
+*/
 
 buildLeaderBoard(team_data_set, ".team-leaderboard", true);
 buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
-buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
+//buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
 buildProgressBar([{goal: 50, progress: 25}], "#biking-barbies");
 
@@ -63,11 +64,12 @@ function buildProgressBar(data_set, idPlace)
 			.style("left", "95%");
 }
 
+/*
 function buildIndividualTeamPage(data_set, idPlace, withLinks)
 {	
 	buildLeaderBoard(data_set, idPlace + " .in-team-leaderboard");
 }
-
+*/
 function buildLeaderBoard(data_set, classPlace, withLinks)
 {
 	//sort in rank of miles, most to least.
