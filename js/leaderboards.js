@@ -14,6 +14,8 @@ var team_data_set = [
 	{title: "Colorful Cylclists", miles: 38, trips: 10, image:"images/team3.png" , loc:"#biking-barbies"}, 
 	{title: "Mobile Maniacs", miles: 32, trips: 11, image:"images/team4.png" , loc:"#biking-barbies"},
 	{title: "Tricksters", miles: 31, trips: 8, image:"images/team5.png" , loc:"#biking-barbies"}, 
+	{title: "All Stars", miles: 15, trips: 8, image:"images/team6.png" , loc:"#biking-barbies"},
+	{title: "Bob's Bikers", miles: 25, trips: 3, image:"images/team4.png" , loc:"#biking-barbies"} 
 ];
 
 var me_others_data_set = [ 
@@ -38,8 +40,6 @@ var barbie_data_set = [
 	{title: "Mark Adams", miles: 2, trips: 1, image:"images/person.png" },
 ];
 
-
-
 buildLeaderBoard(team_data_set, ".team-leaderboard", true);
 buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
@@ -55,7 +55,6 @@ function buildProgressBar(data_set, idPlace)
 	.domain([0, goal])
 	.range([0, (winx-20)]);
 
-
 	var team_stats = d3.select(idPlace).select(".whole-team").select(".progress")
 		.selectAll("div")
 		.data(data_set)
@@ -67,14 +66,7 @@ function buildProgressBar(data_set, idPlace)
 		team_stats.append("div").attr("class", "goal-bar")
 			.style("width", function(d) { return x(d.goal) + "px"; })
 		team_stats.append("div").attr("class", "goal-indicator")
-			.style("left", function(d) { return (x(d.goal) - 2) + "px"; });
-
-/*		team_stats.append("div").attr("class", "progress-text")
-			.text(function(d) { return d.progress + " Miles"; })
-		team_stats.append("div").attr("class", "goal-text")
-			.style("left", function(d) { return (x(d.goal) - 2) + "px"; })
-			.text(function(d) { return d.goal + " Miles"; });
-*/
+			.style("left", function(d) { return (x(d.goal) - 1) + "px"; });
 
 }
 
