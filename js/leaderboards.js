@@ -45,28 +45,22 @@ buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
 buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
-buildProgressBar([{goal: 50, progress: 32}], "#biking-barbies");
+buildProgressBar([{goal: 50, progress: 25}], "#biking-barbies");
 
 function buildProgressBar(data_set, idPlace)
 {
-	//determine the scale to use on the bars
-	var goal = d3.max(data_set, function(d) { return d.goal; });
-	var x = d3.scale.linear()
-	.domain([0, goal])
-	.range([0, (winx-20)]);
-
 	var team_stats = d3.select(idPlace).select(".whole-team").select(".progress")
 		.selectAll("div")
 		.data(data_set)
 		.enter()
 		team_stats.append("p").text(function(d) { return "Goal Progress: " + d.progress + " of " + d.goal + " miles"; })
 		team_stats.append("div").attr("class", "progress-bar")
-			.style("width", function(d) { return x(d.progress) + "px"; })
+			.style("width", function(d) { return ((d.progress/d.goal)*.95)*100 + "%"; })
 		team_stats.append("div").attr("class", "progress-indicator")
 		team_stats.append("div").attr("class", "goal-bar")
-			.style("width", function(d) { return x(d.goal) + "px"; })
+			.style("width", "95%")
 		team_stats.append("div").attr("class", "goal-indicator")
-			.style("left", function(d) { return (x(d.goal) - 1) + "px"; });
+			.style("left", "95%");
 
 }
 
