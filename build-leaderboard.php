@@ -1,6 +1,6 @@
 
 <?php
-	//we could put this into a json object and then pull out using an array with json_decode
+	//set up the data to be used.
 	$people_data = array(
 		array("name"=>"John Smith", "miles"=>4, "goal"=>"10", "trips"=>5, "image"=>"images/person.png", "team"=>"Mobile Maniacs"),
 		array("name"=>"Amy", "miles"=>16, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs"),
@@ -30,12 +30,18 @@
 		array("name"=>"Tricksters", "image"=>"images/team5.png", "id"=>"tricksters")
 	);
 
+	//sort the people array by miles, most to least
 	usort($people_data, function($a, $b) {
     	return $b['miles'] - $a['miles'];
 	});
+
+	//sort the team array by miles, most to least
+	//TODO
 ?>
 
 <?php
+
+//This will build out the team page in order of the data set, with summary information
 function build_team_leaderboard($people_data, $team_data){
 	$position = 1;
 	foreach($team_data as $team){
@@ -61,6 +67,7 @@ function build_team_leaderboard($people_data, $team_data){
 	}
 }
 
+//builds out the team details page for each team
 function build_team_pages($people_data, $team_data){
 	foreach($team_data as $team){
 	?>
@@ -84,6 +91,7 @@ function build_team_pages($people_data, $team_data){
 	}
 }
 
+//builds the team summary information
 function team_summary($people_data, $team_data){
 	?>
 	<section class="whole-team">
@@ -105,6 +113,8 @@ function team_summary($people_data, $team_data){
 	</section><!-- whole-team end-->
 <?php
 }
+
+//builds a progress bar
 function build_progress_bar($progress, $goal){
 	?>
 	<div class="progress">
@@ -137,6 +147,7 @@ function get_team_totals($people_data, $team_data){
 	return array("miles"=>$ret_miles, "trips"=>$ret_trips);
 }
 
+//create list of people that belong to the passed team.
 function create_people_list($people_data, $team_data) {
 	$position = 1;
 	foreach ($people_data as $person){
