@@ -2,6 +2,10 @@
 <?php include "title.php"; ?>
 <div id="home" class="page current">
 	<?php include "top-nav.php"; ?>
+
+	<?php //make sure the functions are available 
+		include "build-leaderboard.php"; 
+	?>	
 	<div class="contentSection">
 		<div id="today" class="content currentContent">	
         	<section class="arrow-title">
@@ -105,23 +109,19 @@
 	<div id="team-home" class="content currentContent">
 		<section class="challenge-title">
 			<div class="left">
-				<h2>Team Challenge</h2>
-				<h3>Ride in the Rain</h3>
-				<h4>Who can bike the most miles</h4>
+			<h2>Team Challenge</h2>
+			<h3>Ride in the Rain</h3>
+			<h4>Who can bike the most miles</h4>
 			</div>
 			<div class="right">
-				<p class="days-left">5 days left</p>
+			<p class="days-left">5 days left</p>
 			</div>
-
 		</section>
-		
-            
-    <div class="team-leaderboard leaderboard">
-    </div>
-</div>
-	<?php include "build-leaderboard.php"; ?>
-	
-
+		<div class="team-leaderboard leaderboard">
+			<?php build_team_leaderboard($people_data, $team_data);?>
+		</div> <!--team-leaderboard end-->
+	</div> <!-- team-home end-->
+	<?php build_team_pages($people_data, $team_data); ?>
 </div><!-- end page -->
 
 
