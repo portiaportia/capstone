@@ -46,7 +46,7 @@ buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
 //buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
-buildProgressBar([{goal: 50, progress: 25}], "#biking-barbies");
+//buildProgressBar([{goal: 50, progress: 25}], "#biking-barbies");
 
 function buildProgressBar(data_set, idPlace)
 {

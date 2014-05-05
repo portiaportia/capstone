@@ -119,17 +119,8 @@
     <div class="team-leaderboard leaderboard">
     </div>
 </div>
+	<?php include "build-leaderboard.php"; ?>
 	
-	<div id="biking-barbies" class="content team-details">
-		<header>
-			<a href="#team-home">
-				<img src="images/arrow.png">
-				<h2>All Teams</h2>
-			</a>
-		</header>
-		</section>
-		<?php include "build-leaderboard.php"; ?>
-	</div>
 
 </div><!-- end page -->
 
