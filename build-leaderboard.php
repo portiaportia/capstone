@@ -10,13 +10,16 @@
 		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies"),
 		array("name"=>"Erin", "miles"=>23, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies"),
 		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies"),
-		array("name"=>"Meredith", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies"),
+		array("name"=>"Meredith", "miles"=>18, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies"),
 		array("name"=>"James", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists"),
 		array("name"=>"Andy", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists"),
-		array("name"=>"Mark", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters"),
+		array("name"=>"Mark", "miles"=>35, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters"),
 		array("name"=>"Clarissa", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters"),
-		array("name"=>"Omar", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Ninja Riders"),
-		array("name"=>"Pedro", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Ninja Riders")
+		array("name"=>"Omar", "miles"=>28, "goal"=>"10", "trips"=>10, "image"=>"images/person.png", "team"=>"Ninja Riders"),
+		array("name"=>"Pedro", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Ninja Riders"),
+		array("name"=>"Mike", "miles"=>25, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters"),
+		array("name"=>"Dave", "miles"=>7, "goal"=>"10", "trips"=>7, "image"=>"images/person.png", "team"=>"Tricksters"),
+		array("name"=>"Bob", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Ninja Riders"),
 	);
 
 	$team_data = array(

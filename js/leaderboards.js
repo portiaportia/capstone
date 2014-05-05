@@ -42,7 +42,7 @@ var barbie_data_set = [
 */
 
 //buildLeaderBoard(team_data_set, ".team-leaderboard", true);
-//buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
+buildLeaderBoard(me_others_data_set, ".me-others-leaderboard", true);
 
 //buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
