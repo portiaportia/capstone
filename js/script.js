@@ -2,30 +2,21 @@ var currentPage = 0;
 
 
 window.onload = function() {
-
-
 	//make the page fill the height
-
 	var pageExtra = $(".pages").outerHeight(true) - $(".pages").innerHeight() + $(".pages").pixels('paddingTop') + $(".pages").pixels('paddingBottom');
-
 
 	$(".pages").height($(window).height() - pageExtra);
 
-
 	//on larger devices make the width 655 of the height
-
 	if (window.matchMedia("(min-width:37.5em)").matches) {
-
 		$(".pages, .page, .bottom-nav, .top-nav").width($(".pages").height() * .65);
-
 	}
 
+	//adjust the page with for bug in ff
+	$(".page").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
 
-	//swipe to other pages
-
-	$(".pages").swipe({
-		swipe : swiped
-	});
+	//swipe to other views
+	$(".pages").swipe({swipe : swiped});
 
 
 	$(".bottom-nav a").click(changePage); //control bottom navitation
@@ -51,90 +42,47 @@ $.fn.pixels = function(property) {
 
 
 function swiped(event, direction, distance, duration, fingerCount) {
-
-
 	switch(direction) {
 
 		case "left":
-
-			nextPage();
-
+			if($(this).find(".home-view")) nextView(".home-view");
 			break;
-
-
 		case "right":
-
-			prevPage();
-
+			if($(this).find(".home-view")) prevView(".home-view");
 			break;
-
 	}
 
 }
 
-function nextPage() {
-
-
+function nextView(classSet) {
 	//if we get to the last page, get out of this function
-
-	if (currentPage >= $(".page").length - 1)currentPage = -1;
-
+	if (currentPage >= $(classSet).length - 1)currentPage = -1;
 
 	currentPage++;
 
+	$(classSet).removeClass("current"); //make no pages show
 
-	$(".page").removeClass("current");
-	//make no pages show
-
-
-	$(".page").eq(currentPage).addClass("current");
-
-
-	highlightNav("#" + $(".page").eq(currentPage).attr("id"));
-
-
+	$(classSet).eq(currentPage).addClass("current");
+	highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
 
-function prevPage() {
-
-
+function prevView(classSet) {
 	//if we get to the last page, get out of this function
-
-
-	if (currentPage <= 0)currentPage = $(".page").length;
-
+	if (currentPage <= 0) currentPage = $(classSet).length;
 
 	currentPage--;
 
-
-	$(".page").removeClass("current");
-	//make no slides show
-
-
-	$(".page").eq(currentPage).addClass("current");
-
-
-	highlightNav("#" + $(".page").eq(currentPage).attr("id"));
-
-
+	$(classSet).removeClass("current"); //make no slides show
+	$(classSet).eq(currentPage).addClass("current");
+	highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
 
 function changePage() {
-
-
-	$(".page").removeClass("current");
-	//make no page show
-
-
+	$(".page").removeClass("current");//make no page show
+	
 	$($(this).attr("href")).addClass("current");
-
-
 	highlightNav($(this).attr("href"));
-
-
 	return false;
-
-
 }
 
 function changeContentTeam() {

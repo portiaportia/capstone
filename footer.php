@@ -1,3 +1,3 @@
-	</div><!--pages -->
-</body>
+	</div><!--pages -->
+</body>
 </html>

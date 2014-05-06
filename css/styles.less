@@ -35,44 +35,33 @@ body {
 	position:absolute;
 	-webkit-overflow-scrolling: touch;
 	display:none;
-	
+	padding:5px;
 }
 
 .page.current {
 	display:block;
 }
 
-.contentSection {
-	position:relative;
-}
-
-.content, .one-content {
-	padding:4%;
-	width:100%;
-	margin-bottom:10%;
-}
-
-.content {
-	display:none;
-}
-
-.content.currentContent {
-	display:block;
-}
-
 /***** Navigation *******/
 
-/***** Top Nav **********/
-.top-nav ul {
-	list-style-type:none;
+/***** Cirecle Navigation **********/
+.circle-nav {
 	overflow:hidden;
-	width:40%;
+	width:54px;
 	margin:auto;
 }
 
-.top-nav ul li {
+.circle {
+	border-radius: 50%;
+	border: 1px solid @colorRoute;
+	width: 9px;
+	height: 9px; 
 	float:left;
-	width:33%;
+	margin:0 3px;
+}
+
+.circle.selected {
+	background: @colorRoute;
 }
 
 /****** Arrow Nav *******/
@@ -93,6 +82,7 @@ body {
 	background:#fff;
 	.pageWidth;
 	bottom:0;
+	margin:auto;
 	overflow:hidden;
 }
 
@@ -139,16 +129,16 @@ body {
 }
 
 .leader {
-	margin-top:1%;
+	margin-top:	2px;
 	width:100%;
 	overflow:hidden;
 	border-top:1px dashed lighten(@colorRoute, 10%);
+	padding:4px 0;
 }
 
 .leader a {
 	width:100%;
 	display:block;
-	padding:1%;
 	text-decoration:none;
 	overflow:hidden;
 }
@@ -170,7 +160,6 @@ body {
 	margin:0;
 	padding:0;
 	margin-right:5%;
-	margin-top:5%;
 	color:darken(@colorRoute, 10%);
 }
 
@@ -178,7 +167,6 @@ body {
 	display:block;
 	float:left;
 	margin-right:5%;
-	padding-top: 5%;
 	width:10%;
 }
 
@@ -191,7 +179,6 @@ body {
 	font-size:1.5em;
 	text-align: left;
 	float:left;
-	margin-top:6%;
 }
 
 .leader header h1 {
@@ -207,7 +194,6 @@ body {
 .leader .miles {
 	float:right;
 	font-size:.75em;	
-	margin-top:5%;
 }
 
 .leader .miles p {
@@ -219,6 +205,27 @@ body {
 .leader a {
 	text-decoration:none;
 	color:darken(@colorRoute, 20%);
+}
+
+.leader .progress {
+	margin:0;
+	font-size:0.75em;
+	margin-left:5%;
+	padding:0;	
+}
+
+.content, .one-content {
+	padding:4%;
+	width:100%;
+	margin-bottom:10%;
+}
+
+.content {
+	display:none;	
+}
+
+.currentContent {
+	display:block;	
 }
 
 /****** Transport Styles ****/
