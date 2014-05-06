@@ -188,7 +188,9 @@ function create_people_list($people_data, $team_data) {
 					<?php
 					echo $position++ . "</p>";
 					echo "<img src=\"" . $person["image"] . "\">";
-					echo "<h1>" . $person["name"] . "</h1>";
+					echo "<h1>" . $person["name"];
+					if($person["you"]){ echo " *";}
+					echo "</h1>";
 					echo "<div class=\"miles\">";
 					echo "<p>" . $person["miles"] . " Miles</p>";
 					//echo "<p>" . $person["goal"] . " Goal</p>";

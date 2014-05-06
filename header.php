@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- allow the app to run in full screen on iOS and Android, a shortcut needs to be added to home screen. -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>-->
 	<meta name="mobile-web-app-capable" content="yes" />
 
 	<link rel="stylesheet/less" href="css/styles.less">
