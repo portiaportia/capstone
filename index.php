@@ -118,10 +118,10 @@
 			</div>
 		</section>
 		<div class="team-leaderboard leaderboard">
-			<?php build_team_leaderboard($people_data, $team_data);?>
+			<?php build_team_leaderboard($people_data, $new_team_data);?>
 		</div> <!--team-leaderboard end-->
 	</div> <!-- team-home end-->
-	<?php build_team_pages($people_data, $team_data); ?>
+	<?php build_team_pages($people_data, $new_team_data); ?>
 </div><!-- end page -->
 
 

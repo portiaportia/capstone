@@ -1,6 +1,5 @@
 <footer class="main-footer">
 
-
 	<nav class="bottom-nav">
 
 

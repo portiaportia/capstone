@@ -1,6 +1,6 @@
 
 <?php
-	//set up the data to be used.
+	//set up the data to be used. Later it will be sorted
 	$people_data = array(
 		array("name"=>"John Smith", "miles"=>4, "goal"=>"10", "trips"=>5, "image"=>"images/person.png", "team"=>"Mobile Maniacs"),
 		array("name"=>"Amy", "miles"=>16, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs"),
@@ -22,6 +22,7 @@
 		array("name"=>"Bob", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Ninja Riders"),
 	);
 
+	//this is the starting data, but we will add more fields based on the members below
 	$team_data = array(
 		array("name"=>"Biking Barbies", "image"=>"images/team1.png", "id"=>"biking-barbies"),
 		array("name"=>"Ninja Riders", "image"=>"images/team2.png", "id"=>"ninja-riders"),
@@ -35,11 +36,46 @@
     	return $b['miles'] - $a['miles'];
 	});
 
-	//sort the team array by miles, most to least
-	//TODO
+	//get all of the summary details and create a new array. now the array has:
+	// trips
+	// miles
+	// members
+	$new_team_data = add_team_summary_info($people_data, $team_data);
+	
+	//sort the team array by miles, most to least. 
+	//If we need to sort by more than the miles, we should have an associated 
+	//array that is sorted with the index of the team array as the value
+	usort($new_team_data, function($a, $b) {
+    	return $b['miles'] - $a['miles'];
+	});
 ?>
 
 <?php
+
+//Returns a new team array that includes summary info, #people, trips and miles
+function add_team_summary_info($people_data, $team_data){
+	$ret_array = [];
+	foreach($team_data as $team){
+		//first get an array of just the members of this team
+		$ret_miles = 0;
+		$ret_trips = 0;
+		$ret_members = 0;
+		foreach($people_data as $person){
+			if($person["team"] == $team["name"]){
+				$ret_miles += $person["miles"];
+				$ret_trips += $person["trips"];
+				$ret_members++;
+			}
+		}
+		$team["miles"] = $ret_miles;
+		$team["trips"] = $ret_trips;
+		$team["members"] = $ret_members;
+		//add the new team to the return array
+		array_push($ret_array, $team);
+	}
+	return $ret_array;
+}
+
 
 //This will build out the team page in order of the data set, with summary information
 function build_team_leaderboard($people_data, $team_data){
@@ -50,17 +86,17 @@ function build_team_leaderboard($people_data, $team_data){
 			<a href="#<?php echo $team["id"] ?>">
 				<p class="position">
 				<?php
-				echo $position . "</p>";
+				echo $position++ . "</p>";
 				echo "<img src=\"" . $team["image"] . "\">";
 				echo "<h1>" . $team["name"] . "</h1>";
-				$totals = get_team_totals($people_data, $team);
 				?>
 				<div class="miles">
 					<?php
-					echo "<p>" . $totals["trips"] . " trips</p>";
-					echo "<p>" . $totals["miles"] . " miles</p>";
+					echo "<p>" . $team["trips"] . " trips</p>";
+					echo "<p>" . $team["miles"] . " miles</p>";
 					?>
 				</div>
+				<?php build_progress_bar($team["miles"], 150); ?>
 			</a>
 		</section>
 	<?php
@@ -79,7 +115,7 @@ function build_team_pages($people_data, $team_data){
 			</a>
 		</header>
 		<?php
-		team_summary($people_data, $team);
+		team_summary($team);
 		?>
 		<div class="in-team-leaderboard leaderboard">
 			<?php
@@ -92,24 +128,22 @@ function build_team_pages($people_data, $team_data){
 }
 
 //builds the team summary information
-function team_summary($people_data, $team_data){
+function team_summary($team){
 	?>
 	<section class="whole-team">
 		<?php
-			echo "<img src=\"" . $team_data["image"] . "\"/>";
+			echo "<img src=\"" . $team["image"] . "\"/>";
 		?>
 		<div class="team-stats">
 			<?php
-			echo "<h3>" . $team_data["name"] . "</h3>";
-
-			$totals = get_team_totals($people_data, $team_data);
+			echo "<h3>" . $team["name"] . "</h3>";
 			?>
 			<p>Fourth Place</p>
 			<p><strong>Goal:</strong>Be awesome</p>
-			<p><strong>Miles:</strong><?php echo $totals["miles"] ?></p>
-			<p><strong>Trips:</strong><?php echo $totals["trips"] ?></p>
+			<p><strong>Miles:</strong><?php echo $team["miles"] ?></p>
+			<p><strong>Trips:</strong><?php echo $team["trips"] ?></p>
 		</div> <!--team-stats end-->
-		<?php build_progress_bar($totals["miles"], 150); ?>
+		<?php build_progress_bar($team["miles"], 150); ?>
 	</section><!-- whole-team end-->
 <?php
 }
@@ -118,33 +152,19 @@ function team_summary($people_data, $team_data){
 function build_progress_bar($progress, $goal){
 	?>
 	<div class="progress">
-			<?php
-			$perc_comp = (($progress / $goal)*.95)*100;
-
-			echo "<p>Goal Progress: " . $progress . " of " . $goal . " miles</p>";
-			echo "<div class=\"progress-bar\" style=\"width:" .  $perc_comp . "%; \"></div>";
-			?>
-			<div class="progress-indicator"></div>
-			<div class="goal-bar" style="width: 95%;"></div>
-			<div class="goal-indicator" style="left: 95%;"></div>
-		</div>
 		<?php
-}
-
-
-//Returns an array of trips and miles
-function get_team_totals($people_data, $team_data){
-	//first get an array of just the members of this team
-	$ret_miles = 0;
-	$ret_trips = 0;
-	foreach($people_data as $person){
-		if($person["team"] == $team_data["name"]){
-			$ret_miles += $person["miles"];
-			$ret_trips += $person["trips"];
-		}
-	}
-
-	return array("miles"=>$ret_miles, "trips"=>$ret_trips);
+		$perc_comp = (($progress / $goal)*.95)*100;
+		
+		echo "<p class=\"title\">Goal Progress: " . $progress . " of " . $goal . " miles</p>";
+		echo "<div class=\"progress-bar\" style=\"width:" .  $perc_comp . "%; \"></div>";
+		?>
+		
+		<div class="progress-indicator"></div>
+		<div class="goal-bar" style="width: 95%;"></div>
+		<div class="goal-indicator" style="left: 95%;"></div>
+			
+	</div>
+	<?php
 }
 
 //create list of people that belong to the passed team.
