@@ -45,10 +45,10 @@ function swiped(event, direction, distance, duration, fingerCount) {
 	switch(direction) {
 
 		case "left":
-			if($(this).find(".home-view")) nextView(".home-view");
+			if($(".home-view").is(":visible")) nextView(".home-view");
 			break;
 		case "right":
-			if($(this).find(".home-view")) prevView(".home-view");
+			if($(".home-view").is(":visible")) prevView(".home-view");
 			break;
 	}
 
