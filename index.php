@@ -132,6 +132,7 @@
 		<h2>Leaderboard</h2>
 
 		<div class="me-others-leaderboard leaderboard">
+			<?php build_team_leaderboard($people_data, $new_team_data);?>
     	</div>
 
 	</div>
