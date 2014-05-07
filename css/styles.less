@@ -36,6 +36,7 @@ body {
 	-webkit-overflow-scrolling: touch;
 	display:none;
 	padding:5px;
+	padding-bottom:50px;
 }
 
 .page.current {
@@ -282,6 +283,45 @@ body {
 	color:darken(@colorRoute, 40%);
 }
 
+/******  Settings *******/
+#auto-track-toggle {
+	overflow:hidden;
+	margin-bottom:5px;
+	
+	h3 {
+		margin-top:5px;
+		float:left;	
+		margin-right:10px;
+	}
+	
+	.onoffswitch {
+		display:block;
+		float:right;
+	}
+}
+
+#privacy {
+	padding-bottom:10px;
+	margin-bottom:15px;
+	border-bottom:1px dashed @colorRoute;
+}
+
+.settings-day {
+	overflow:hidden;
+	margin-bottom:20px;
+	
+	h4 {
+		float:left;
+		width:30%;	
+		font-size:1em;
+	}
+	
+	input {
+		margin-top:2px;
+		float:left;
+	}
+}
+
 /***** Floats ***********/
 .left {
 	float:left;
@@ -305,10 +345,15 @@ h2 {
 }
 
 h3 {
-	gont-size:1.25em;
+	font-size:1.25em;
 	color:darken(@colorRoute, 30%);
 	margin-bottom:1%;
 	
+}
+
+h4 {
+	font-size:1.2em;
+	color:darken(@colorRoute, 30%);
 }
 
 p {
@@ -393,6 +438,7 @@ strong {
 	}
 }
 
+/* phone */
 @media only screen and (max-width:370px) {
 	.leader .position {
 		font-size:1.5em;

@@ -15,9 +15,7 @@ window.onload = function() {
 	//adjust the page with for bug in ff
 	$(".page").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
 
-	//swipe to other views
-	$(".pages").swipe({swipe : swiped});
-
+	$(".pages").swipe({swipeLeft:swiped, swipeRight:swiped});
 
 	$(".bottom-nav a").click(changePage); //control bottom navitation
 	

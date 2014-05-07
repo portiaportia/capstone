@@ -65,33 +65,7 @@
 
 
 <div id="settings" class="page">
-	<h2>Settings</h2>
-    <h3>Automatic Tracking</h3>
-    <link rel="stylesheet" href="css/jquery.onoff.css" media="screen" />
-	  <script src="js/jquery.onoff.min.js"></script>
-    <script>
-    jQuery(function($) {
-      $('#track-check').onoff();
-	  
-	  $("#track-check").change(trackChanged);
-    });
-	
-	function trackChanged()
-	{
-		if($(this).is(":checked")) {
-			$("#auto-desc").html("WHAt!!!!");	
-		}
-		else
-		{
-			$("#auto-desc").html("blah blah blah");
-		}
-		
-	}
-    </script>
-    
-  	<input id="track-check" type="checkbox" />
-    
-    <p id="auto-desc">Blah Blah Blah</p>
+	<?php include "settings.php"; ?>
 </div><!-- end page -->
 
 <script src="js/leaderboards.js"></script>
