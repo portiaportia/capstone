@@ -112,6 +112,66 @@ body {
 	color:#fff;
 }
 
+/**** Home:  Commute Impact *****/
+.impact header, .week header {
+	overflow:hidden;
+
+	.arrow {
+		float:left;
+		margin-right:2%;
+		color:darken(@colorRoute, 30%);	
+	}
+	
+	 h1 {
+		float:left;
+		color:darken(@colorRoute, 30%);
+		font-size:1em;
+	}	
+	
+	p {
+		float:right;
+		font-size:0.75em;		
+	}
+}
+
+.impact:first-of-type, .week:first-of-type {
+	border-top:1px dashed @colorRoute;	
+}
+
+.impact, .week {
+	padding:3% 3%;
+	background:lighten(spin(@colorRoute, 180), 20%);
+	border-bottom:1px dashed @colorRoute;	
+
+	.impact-section {
+		margin-top:2%;	
+	}
+	
+	p {
+		color:darken(@colorRoute, 20%);
+		font-size:0.8em;	
+	}
+}
+
+.week-section {
+
+	img { width:30%;}
+	
+	.day { 
+		overflow:hidden;
+	}
+	
+	h3 {
+		float:left;
+		margin-right:10%;
+	}
+	
+	p {
+		float:left;
+		margin-right:2%;	
+	}
+}
+
 /***** Leaderboard ******/
 .challenge-title {
 	overflow:hidden;
@@ -335,12 +395,13 @@ body {
 h1 {
 	text-align:center;
 	font-size:2em;
-	margin-bottom:1%;
+	margin-bottom:2%;
 	color:darken(@colorRoute, 20%);
 }
 
 h2 {
 	font-size:1.5em;
+	margin-bottom:4%;
 	color:darken(@colorRoute, 10%);
 }
 

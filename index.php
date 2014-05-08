@@ -4,32 +4,11 @@
 ?>	
 <?php include "circle-nav.php"; ?>
 <div id="home" class="page current home-view">
-	<?php displayCircleNav(0); ?>
-   	<h2>Today</h2>
-    <p><strong>Bonuses:</strong>&nbsp; $4</p>
-    <p><strong>Charges:</strong>&nbsp; $0</p>
-    <p><strong>Carbon Footprint:</strong>&nbsp; NA</p>
-    <div class="transport-types">
-        <section class="transport-type">
-            <img src="images/bus.png">
-            <div clas="breakdown">
-                <p>3 Miles</p>
-                <p>20 Minutes</p>                
-            </div>
-        </section>
-        <section class="transport-type">
-            <img src="images/bike.png">
-            <div clas="breakdown">
-                <p>1 Miles</p>
-                <p>23 Minutes</p>                
-            </div>
-        </section>
-	</div>
+	<?php include "home-impact.php"; ?>
 </div>
 
 <div class="page home-view">
-	<?php displayCircleNav(1); ?>
-	<h2>Page 2</h2>
+	<?php include "home-week.php"; ?>
 </div>
 
 <div class="page home-view">
