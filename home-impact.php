@@ -3,8 +3,8 @@
 	function createImpactHeader($title, $subTitle, $link) { 
 		echo "<a class='impact-hide-show' href='$link'>";
     	echo "<header>";
-        echo "<span class='impact-down arrow'>&#9660;</span>";
-        echo "<span class='impact-up arrow'>&#9650;</span>";
+        echo "<span class='impact-down arrow'>&#9654;</span>";
+        echo "<span class='impact-up arrow'>&#9660;</span>";
         echo "<h1>$title</h1>";
         echo "<p>$subTitle</p>";
      	echo "</header></a>";

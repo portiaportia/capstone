@@ -44,14 +44,14 @@
 }
 
 .onoffswitch-inner:before {
-  content: "YES";
+  content: "On";
   padding-left: 10px;
   color: #FFFFFF;
   background-color: #2FCCFF;
 }
 
 .onoffswitch-inner:after {
-  content: "NO";
+  content: "Off";
   padding-right: 10px;
   color: #999999;
   background-color: #EEEEEE;

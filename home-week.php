@@ -1,10 +1,10 @@
-<?php displayCircleNav(0); ?>
+<?php displayCircleNav(1); ?>
 <?php 
 	function createWeekHeader($title, $link) { 
 		echo "<a class='week-hide-show' href='$link'>";
     	echo "<header>";
-        echo "<span class='week-down arrow'>&#9660;</span>";
-        echo "<span class='week-up arrow'>&#9650;</span>";
+        echo "<span class='week-down arrow'>&#9654;</span>";
+        echo "<span class='week-up arrow'>&#9660;</span>";
         echo "<h1>$title</h1>";
      	echo "</header></a>";
 	}

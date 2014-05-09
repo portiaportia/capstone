@@ -1,5 +1,6 @@
 jQuery(function($) {
-  $('#track-check').onoff();
+ // $('#track-check').onoff();
+  
   $("#track-check").change(trackChanged);
   $("#auto-off-desc").hide();
   
@@ -8,7 +9,7 @@ jQuery(function($) {
 });
 
 function trackChanged()
-{
+{	
     $("#auto-on-desc").toggle();	
     $("#auto-off-desc").toggle();	
 }

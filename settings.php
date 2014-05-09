@@ -9,12 +9,17 @@
 ?>
 
 <link rel="stylesheet" href="css/jquery.onoff.css" media="screen" />
-<script src="js/jquery.onoff.min.js"></script>
-<script src="js/settings.js"></script>
 <h2>Settings</h2>
 <div id="auto-track-toggle">
 	<h3>Automatic Tracking</h3>
-	<input id="track-check" type="checkbox" />
+	<input id="track-check" type="checkbox" checked="checked" />
+    <script src="js/jquery.onoff.min.js"></script>
+	<script>
+    jQuery(function($) {
+      $('#track-check').onoff();
+    });
+    </script>
+	<script src="js/settings.js"></script>
 </div>
 
 <p id="auto-on-desc">Your commte details are being automatically tracked</p>

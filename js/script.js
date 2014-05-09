@@ -61,7 +61,7 @@ function nextView(classSet) {
 	$(classSet).removeClass("current"); //make no pages show
 
 	$(classSet).eq(currentPage).addClass("current");
-	highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
+	//highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
 
 function prevView(classSet) {
@@ -72,7 +72,7 @@ function prevView(classSet) {
 
 	$(classSet).removeClass("current"); //make no slides show
 	$(classSet).eq(currentPage).addClass("current");
-	highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
+	//highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
 
 function changePage() {
