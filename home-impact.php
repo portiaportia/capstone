@@ -17,8 +17,16 @@
     <?php createImpactHeader("Carbon Footprint", "8 lbs", "#carbon-expand"); ?>
     
     <div id="carbon-expand" class="impact-section">
-        <h3>May</h3>
-        <p>8lbs</p>
+        <section class="pounds">
+            <div class="left">    
+                <h3>May</h3>
+                <p>8lbs</p>
+            </div>
+           	<div class="right">
+            	<p><strong>High:</strong> 20lbs</p>
+                <p><strong>Low:</strong> 0lbs</p>
+            </div>
+        </section>
     </div>
 </section>
 

@@ -9,13 +9,14 @@
      	echo "</header></a>";
 	}
 	
-	function buildDay($day, $numBike, $numBus)
+	function buildDay($day, $numBike, $numBus, $numCar)
 	{
 		echo "<section class='day'>";
         echo "<h3>$day</h3>";
         
-		if($numBike > 0) echo "<p><img src='images/bike.png'> x $numBike</p>";
-        if($numBus > 0) echo "<p><img src='images/bus.png'> x $numBus</p>";
+		if($numBike > 0) echo "<p>$numBike <img src='images/bike.png'></p>";
+        if($numBus > 0) echo "<p>$numBus <img src='images/bus.png'></p>";
+		if($numCar > 0) echo "<p>$numCar <img src='images/drive.png'></p>";
 		
         echo "</section>";
 	}
@@ -27,11 +28,11 @@
     <?php createWeekHeader("April 7th", "#april7"); ?>
     
     <div id="april7" class="week-section">
-        <?php buildDay("M", 2, 3); ?>
-        <?php buildDay("T", 1, 4); ?>
-        <?php buildDay("W", 0, 5); ?>
-        <?php buildDay("Th", 4, 1); ?>
-        <?php buildDay("F", 3, 2); ?>
+        <?php buildDay("M", 2, 2, 1); ?>
+        <?php buildDay("T", 1, 2, 2); ?>
+        <?php buildDay("W", 0, 4, 1); ?>
+        <?php buildDay("Th", 4, 1, 0); ?>
+        <?php buildDay("F", 3, 2, 0); ?>
     </div>
 </section>
 
@@ -39,11 +40,11 @@
     <?php createWeekHeader("April 14th", "#april14"); ?>
     
     <div id="april14" class="week-section">
-        <?php buildDay("M", 2, 3); ?>
-        <?php buildDay("T", 1, 4); ?>
-        <?php buildDay("W", 0, 5); ?>
-        <?php buildDay("Th", 4, 1); ?>
-        <?php buildDay("F", 3, 2); ?>
+        <?php buildDay("M", 2, 2, 1); ?>
+        <?php buildDay("T", 1, 2, 2); ?>
+        <?php buildDay("W", 0, 5, 0); ?>
+        <?php buildDay("Th", 4, 1, 0); ?>
+        <?php buildDay("F", 3, 2, 0); ?>
     </div>
 </section>
 
@@ -51,11 +52,11 @@
     <?php createWeekHeader("April 21st", "#april21"); ?>
     
     <div id="april21" class="week-section">
-        <?php buildDay("M", 2, 3); ?>
-        <?php buildDay("T", 1, 4); ?>
-        <?php buildDay("W", 0, 5); ?>
-        <?php buildDay("Th", 4, 1); ?>
-        <?php buildDay("F", 3, 2); ?>
+        <?php buildDay("M", 2, 3, 0); ?>
+        <?php buildDay("T", 1, 2, 2); ?>
+        <?php buildDay("W", 0, 5, 0); ?>
+        <?php buildDay("Th", 4, 0, 1); ?>
+        <?php buildDay("F", 3, 2, 0); ?>
     </div>
 </section>
 
@@ -63,10 +64,10 @@
     <?php createWeekHeader("April 28th", "#april28"); ?>
     
     <div id="april28" class="week-section">
-        <?php buildDay("M", 2, 3); ?>
-        <?php buildDay("T", 1, 4); ?>
-        <?php buildDay("W", 0, 5); ?>
-        <?php buildDay("Th", 4, 1); ?>
-        <?php buildDay("F", 3, 2); ?>
+        <?php buildDay("M", 2, 2, 1); ?>
+        <?php buildDay("T", 1, 3, 1); ?>
+        <?php buildDay("W", 0, 5, 0); ?>
+        <?php buildDay("Th", 2, 1, 2); ?>
+        <?php buildDay("F", 3, 2, 0); ?>
     </div>
 </section>

@@ -6,9 +6,11 @@ $(function(){
 
 function hideShowImpact()
 {
-	var id= $(this).attr("href");
-	$(id).toggle(1000);
+	$(".impact").removeClass("expanded");
 	
+	var id= $(this).attr("href");
+	$(id).slideToggle(500);
+	$(this).parent(".impact").addClass("expanded");
 	$(this).find(".arrow").toggle();
 	return false;
 }

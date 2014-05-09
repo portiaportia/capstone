@@ -12,17 +12,16 @@
 </div>
 
 <div class="page home-view">
-	<?php displayCircleNav(2); ?>
-	<h2>Page 3</h2>
+	<?php include "home-trends.php"; ?>
 </div>
 
 <div id="team" class="page">
     <div id="team-home" class="content currentContent">
         <section class="challenge-title">
+        	<h2>Team Challenge</h2>
             <div class="left">
-            <h2>Team Challenge</h2>
-            <h3>Ride in the Rain</h3>
-            <h4>Who can bike the most miles</h4>
+                <h3>Ride in the Rain</h3>
+                <h4>Who can bike the most miles</h4>
             </div>
             <div class="right">
             <p class="days-left">5 days left</p>

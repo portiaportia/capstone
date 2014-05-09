@@ -119,8 +119,7 @@ function build_team_pages($people_data, $team_data){
 	<div id="<?php echo $team["id"] ?>" class="content team-details">
 		<header>
 			<a href="#team-home">
-				<img src="images/arrow.png">
-				<h2>All Teams</h2>
+				<h2 class="team-home-header">&#9664; All Teams</h2>
 			</a>
 		</header>
 		<?php
@@ -182,7 +181,7 @@ function create_people_list($people_data, $team_data) {
 	foreach ($people_data as $person){
 		if($person["team"] == $team_data["name"]){
 			?>
-			<section class="leader">
+			<section class="leader person">
 				<div>
 					<p class="position">
 					<?php

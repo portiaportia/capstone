@@ -5,20 +5,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 a:active, a:focus {outline:none;}
 
+img {max-width:100%}
+
 /***** Variables *******/
-@colorRoute : #abc;
+@lightGray : #dedede;
+@darkGray : #666;
+@darkBlue : #59818B;
+@accentGreen : #27C86C;
+@accentBlue : #00AEDB;
 
 .pageWidth {
 	width:100%;
 	max-width:500px;
 }
 
+.borders(@radius: 5px)
+{
+	-moz-border-radius:@radius;
+	-webkit-border-radius:@radius;
+	-o-border-radius:@radius;	
+	border-radius:@radius;
+}
+
 /***** Structure *******/
 body {
-	background:darken(@colorRoute, 40%);
+	background:darken(@lightGray, 40%);
 }
 
 .main-header {
+	background:lighten(@lightGray, 5%);
+	padding-bottom:1px;
+	margin-bottom:3%;
 }
 
 .main-footer {
@@ -50,11 +67,12 @@ body {
 	overflow:hidden;
 	width:54px;
 	margin:auto;
+	margin-bottom:4%;
 }
 
 .circle {
 	border-radius: 50%;
-	border: 1px solid @colorRoute;
+	border: 1px solid @lightGray;
 	width: 9px;
 	height: 9px; 
 	float:left;
@@ -62,7 +80,7 @@ body {
 }
 
 .circle.selected {
-	background: @colorRoute;
+	background: @lightGray;
 }
 
 /****** Arrow Nav *******/
@@ -85,6 +103,7 @@ body {
 	bottom:0;
 	margin:auto;
 	overflow:hidden;
+	z-index:10;
 }
 
 .bottom-nav ul {
@@ -93,13 +112,18 @@ body {
 
 .bottom-nav ul li {
 	float: left;
-	width:25%;
-	border:1px dashed darken(@colorRoute, 20%);
+	width:33.33%;
+	border:1px solid darken(@lightGray, 20%);
+	border-left:none;
+}
+
+.bottom-nav ul li:first-child {
+	border-left:1px solid darken(@lightGray, 20%);
 }
 
 .bottom-nav ul li a {
 	text-decoration:none;
-	color:darken(@colorRoute, 30%);
+	color:@darkGray;
 	display:block;
 	width:100%;
 	text-align:center;
@@ -108,7 +132,7 @@ body {
 }
 
 .bottom-nav a.highlight {
-	background:@colorRoute;
+	background:lighten(@darkGray, 20%);
 	color:#fff;
 }
 
@@ -119,12 +143,12 @@ body {
 	.arrow {
 		float:left;
 		margin-right:2%;
-		color:darken(@colorRoute, 30%);	
+		color:darken(@lightGray, 30%);	
 	}
 	
 	 h1 {
 		float:left;
-		color:darken(@colorRoute, 30%);
+		color:darken(@lightGray, 30%);
 		font-size:1em;
 	}	
 	
@@ -135,22 +159,24 @@ body {
 }
 
 .impact:first-of-type, .week:first-of-type {
-	border-top:1px dashed @colorRoute;	
+	border-top:1px dashed @lightGray;	
 }
 
 .impact, .week {
 	padding:3% 3%;
-	background:lighten(spin(@colorRoute, 180), 20%);
-	border-bottom:1px dashed @colorRoute;	
-
+	border-bottom:1px dashed @lightGray;	
 	.impact-section {
 		margin-top:2%;	
 	}
 	
 	p {
-		color:darken(@colorRoute, 20%);
+		color:darken(@lightGray, 20%);
 		font-size:0.8em;	
 	}
+}
+
+.impact.expanded, .week.expanded {
+	background:lighten(@lightGray, 10%);	
 }
 
 .week-section {
@@ -172,6 +198,27 @@ body {
 	}
 }
 
+.pounds {
+	overflow:hidden;
+		
+}
+
+/***** Home Trends ******/
+.trend {
+	overflow:hidden;
+	margin-bottom:5%;
+	
+	h3 {
+		float:left;
+		width:30%;
+	}
+	
+	img {
+		float:left;
+		width:60%;
+	}
+}
+
 /***** Leaderboard ******/
 .challenge-title {
 	overflow:hidden;
@@ -181,20 +228,32 @@ body {
 	font-size:.75em;
 	font-weight:600;
 	padding-top:2.5em;
-	font-color:lighten(@colorRoute, 20%);
+	font-color:lighten(@lightGray, 20%);
+}
+
+.challenge-title h3 {
+	color:@accentBlue;	
 }
 
 .leaderboard, .leaderboard {
 	margin-top:5%;
-	border-bottom:1px dashed lighten(@colorRoute, 10%);
+	border-bottom:none;
 }
 
 .leader {
 	margin-top:	2px;
 	width:100%;
 	overflow:hidden;
-	border-top:1px dashed lighten(@colorRoute, 10%);
-	padding:4px 0;
+	border-top:none;
+}
+
+.leader.person:first-child {
+	border-top:1px dashed @lightGray;	
+}
+
+.leader.person {
+	padding:4px 0px 1px;
+	border-bottom:1px dashed @lightGray;	
 }
 
 .leader a {
@@ -202,17 +261,12 @@ body {
 	display:block;
 	text-decoration:none;
 	overflow:hidden;
+	padding:3%;
+	.borders(2px);
 }
 
 .leader a:hover {
-	background:lighten(@colorRoute, 10%);
-}
-
-.leader.my-team a, .leader.my-row a {
-	background:lighten(#00ADEF, 30%);
-}
-.leader.my-team a:hover, .leader.my-row a:hover {
-	background:lighten(#00ADEF, 10%) + #000;
+	background:lighten(@accentGreen, 45%);
 }
 
 .leader .position {
@@ -221,7 +275,7 @@ body {
 	margin:0;
 	padding:0;
 	margin-right:5%;
-	color:darken(@colorRoute, 10%);
+	color:lighten(@darkGray, 10%);
 }
 
 .leader img {
@@ -240,6 +294,7 @@ body {
 	font-size:1.5em;
 	text-align: left;
 	float:left;
+	color:lighten(@darkGray, 10%);
 }
 
 .leader header h1 {
@@ -265,7 +320,7 @@ body {
 
 .leader a {
 	text-decoration:none;
-	color:darken(@colorRoute, 20%);
+	color:darken(@darkGray, 20%);
 }
 
 .leader .progress {
@@ -276,7 +331,6 @@ body {
 }
 
 .content, .one-content {
-	padding:4%;
 	width:100%;
 	margin-bottom:10%;
 }
@@ -293,12 +347,12 @@ body {
 .transport-types {
 	width:100%;
 	overflow:hidden;
-	border-top:1px dashed lighten(@colorRoute, 10%);
+	border-top:1px dashed lighten(@lightGray, 10%);
 }
 
 .transport-type  {
 	margin:2% 0;
-	border-bottom:1px dashed lighten(@colorRoute, 10%);
+	border-bottom:1px dashed lighten(@lightGray, 10%);
 }
 
 .transport-type img {
@@ -340,7 +394,7 @@ body {
 .whole-team p {
 	padding-bottom:0em;
 	font-size:.8em;
-	color:darken(@colorRoute, 40%);
+	color:darken(@lightGray, 40%);
 }
 
 /******  Settings *******/
@@ -363,7 +417,7 @@ body {
 #privacy {
 	padding-bottom:10px;
 	margin-bottom:15px;
-	border-bottom:1px dashed @colorRoute;
+	border-bottom:1px dashed @lightGray;
 }
 
 .settings-day {
@@ -396,25 +450,34 @@ h1 {
 	text-align:center;
 	font-size:2em;
 	margin-bottom:2%;
-	color:darken(@colorRoute, 20%);
+	color:darken(@lightGray, 20%);
+}
+
+.main-header h1 {
+	padding-top:2%;
 }
 
 h2 {
 	font-size:1.5em;
 	margin-bottom:4%;
-	color:darken(@colorRoute, 10%);
+	color:@darkGray;
+	text-align:center;
+}
+
+h2.team-home-header {
+	text-align:left;	
 }
 
 h3 {
 	font-size:1.25em;
-	color:darken(@colorRoute, 30%);
+	color:darken(@lightGray, 30%);
 	margin-bottom:1%;
 	
 }
 
 h4 {
 	font-size:1.2em;
-	color:darken(@colorRoute, 30%);
+	color:darken(@lightGray, 30%);
 }
 
 p {
@@ -449,27 +512,29 @@ strong {
 .progress {
 	float:left;
 	margin-top: 10px;
-	color:darken(@colorRoute, 40%);
+	color:darken(@accentBlue, 40%);
 	width: 100%;
 }
 
 .progress-bar {
-	background: @colorRoute;
+	background: desaturate(lighten(@accentBlue, 20%), 30%);
 	/*width: 40px;*/
 	height: 3px;
 	margin-top: 6px;
 	float: left;
+	z-index:1;
+	position:relative;
 	/*margin-bottom: 20px;*/
 }
 .goal-bar {
-	background: @colorRoute;
+	background: desaturate(@lightGray, 40%);
 	position: relative;
 	height: 1px;
 	margin-top: 7px;
 }
 
 .progress-indicator {
-	background: @colorRoute;
+	background: @accentBlue;
 	border-radius: 50%;
 	/* width and height can be anything, as long as they're equal */
 	width: 11px;
@@ -483,10 +548,18 @@ strong {
 .goal-indicator {
 	margin-top: -5px;
 	border-radius: 50%;
-	border: 1px solid @colorRoute;
+	border: 1px solid @lightGray;
 	width: 9px;
 	height: 9px; 
 	position: relative;
+}
+
+.left {
+	float:left;	
+}
+
+.right {
+	float:right;
 }
 
 /***** Media Queries ****/
