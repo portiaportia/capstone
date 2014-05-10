@@ -1,6 +1,5 @@
 var currentPage = 0;
 
-
 window.onload = function() {
 	//make the page fill the height
 	var pageExtra = $(".pages").outerHeight(true) - $(".pages").innerHeight() + $(".pages").pixels('paddingTop') + $(".pages").pixels('paddingBottom');
@@ -75,6 +74,7 @@ function prevView(classSet) {
 	$(classSet).eq(currentPage).addClass("current");
 	//highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
+
 
 function changePage() {
 	$(".page").removeClass("current");//make no page show
