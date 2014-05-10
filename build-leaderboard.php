@@ -127,7 +127,7 @@ function build_team_pages($people_data, $team_data){
 		?>
 		<div class="in-team-leaderboard leaderboard">
 			<?php
-			create_people_list($people_data, $team);
+			create_people_list_for_team($people_data, $team);
 			?>
 		</div> <!--in-team-leaderboard end-->		
 	</div> <!-- team-details end -->
@@ -176,29 +176,40 @@ function build_progress_bar($progress, $goal){
 }
 
 //create list of people that belong to the passed team.
-function create_people_list($people_data, $team_data) {
+function create_people_list($people_data) {
+	$position = 1;
+	foreach ($people_data as $person){
+		create_person_section($person, $position++);
+	}
+}
+
+function create_person_section($person, $position){
+	?>
+	<section class="leader person">
+		<div>
+			<p class="position">
+			<?php
+			echo $position . "</p>";
+			echo "<img src=\"" . $person["image"] . "\">";
+			echo "<h1>" . $person["name"];
+			if($person["you"]){ echo " *";}
+			echo "</h1>";
+			echo "<div class=\"miles\">";
+			echo "<p>" . $person["miles"] . " Miles</p>";
+			echo "<p>" . $person["trips"] . " Trips</p>";
+			echo "</div>";
+			?>
+		</div> <!--end person info (not a class or id)-->
+	</section> <!-- leader end -->
+	<?php 
+}
+
+//create list of people that belong to the passed team.
+function create_people_list_for_team($people_data, $team_data) {
 	$position = 1;
 	foreach ($people_data as $person){
 		if($person["team"] == $team_data["name"]){
-			?>
-			<section class="leader person">
-				<div>
-					<p class="position">
-					<?php
-					echo $position++ . "</p>";
-					echo "<img src=\"" . $person["image"] . "\">";
-					echo "<h1>" . $person["name"];
-					if($person["you"]){ echo " *";}
-					echo "</h1>";
-					echo "<div class=\"miles\">";
-					echo "<p>" . $person["miles"] . " Miles</p>";
-					//echo "<p>" . $person["goal"] . " Goal</p>";
-					echo "<p>" . $person["trips"] . " Trips</p>";
-					echo "</div>";
-					?>
-				</div> <!--end person info (not a class or id)-->
-			</section> <!-- leader end -->
-			<?php 
+			create_person_section($person, $position++);
 		}
 	}
 }

@@ -9,7 +9,7 @@ function hideShowWeek()
 	$(".week").removeClass("expanded");
 	
 	var id= $(this).attr("href");
-	$(id).slideToggle(500);
+	$(id).slideToggle(400);
 	$(this).parent(".week").addClass("expanded");
 	
 	$(this).find(".arrow").toggle();
