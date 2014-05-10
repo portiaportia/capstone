@@ -9,6 +9,23 @@
         echo "<p>$subTitle</p>";
      	echo "</header></a>";
 	}
+
+    function createVertGraph($goal, $progress) {
+        ?>
+        <div class="vert-graph left">
+          <?php
+            $perc_comp = (($progress / $goal)*.95)*100;
+        
+        
+        echo "<div class='progress-bar' style='height:$perc_comp%; '></div>";
+        ?>
+        
+        <!--<div class="progress-indicator"></div>-->
+        <div class="goal-bar" style="height: 95%;"></div>
+        <div class="goal-indicator" style="bottom: 95%;"></div>
+        </div>
+        <?php
+    }
 ?>
 <script src="js/home-impact.js"></script>
 <h2>Commute Impact</h2>
@@ -21,11 +38,13 @@
             <div class="left">    
                 <h3>May</h3>
                 <p>8lbs</p>
+                <?php createVertGraph(8, 20); ?>
             </div>
            	<div class="right">
             	<p><strong>High:</strong> 20lbs</p>
                 <p><strong>Low:</strong> 0lbs</p>
             </div>
+            
         </section>
     </div>
 </section>
