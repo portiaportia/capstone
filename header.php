@@ -22,5 +22,9 @@
 <body>
 	<div class="pages">
         <header class="main-header">
-        	<h1><img src="images/logo-title.png"></h1>
+        	<h1>
+        	<img src="images/jjs_image_only.png">
+        	<span id="page-name"></span>
+        	</h1>
+
 		</header>

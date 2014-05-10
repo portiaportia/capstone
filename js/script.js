@@ -1,6 +1,5 @@
 var currentPage = 0;
 
-
 window.onload = function() {
 	//make the page fill the height
 	var pageExtra = $(".pages").outerHeight(true) - $(".pages").innerHeight() + $(".pages").pixels('paddingTop') + $(".pages").pixels('paddingBottom');
@@ -19,14 +18,15 @@ window.onload = function() {
 
 	$(".bottom-nav a").click(changePage); //control bottom navitation
 	
-
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
-	
 	highlightNav("#home");//highlight home on bottom nav
 
-	//team
-	$("#team a").click(changeContentTeam);
+	//challenges
+	$("#challenges a").click(changeContentChallenges);
+
+	//change team/indiv toggle
+	$("#challenge-mode a").click(changeChallengeType);
 
 }
 //get the size of a px property without the px
@@ -75,6 +75,7 @@ function prevView(classSet) {
 	//highlightNav("#" + $(classSet).eq(currentPage).attr("id"));
 }
 
+
 function changePage() {
 	$(".page").removeClass("current");//make no page show
 	
@@ -83,10 +84,24 @@ function changePage() {
 	return false;
 }
 
-function changeContentTeam() {
-	$("#team .content").removeClass("currentContent");
+function changeChallengeType(){
+	var pageRef = $(this).attr("href");
+	$("#challenge-mode a").removeClass("highlight");
+
+	$.each($("#challenge-mode a"), function() {
+		var aHref = $(this).attr("href");
+		if (aHref == pageRef) {
+			$(this).addClass("highlight");
+		}
+	});
+
+}
+
+function changeContentChallenges() {
+	$("#challenges .content").removeClass("currentContent");
 
 	$($(this).attr("href")).addClass("currentContent");
+
 	return false;
 }
 
@@ -102,27 +117,19 @@ function changeContentHome() {
 
 function highlightNav(pageId) {
 
-
 	$(".bottom-nav a").removeClass("highlight");
-
 
 	$.each($(".bottom-nav a"), function() {
 
-
 		var aHref = $(this).attr("href");
-
 
 		if (aHref == pageId) {
 
-
 			$(this).addClass("highlight");
-
 
 		}
 
-
 	});
-
 
 }
 

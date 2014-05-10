@@ -22,15 +22,15 @@
 	<script src="js/settings.js"></script>
 </div>
 
-<p id="auto-on-desc">Your commte details are being automatically tracked</p>
+<p id="auto-on-desc">Your commute details are being automatically tracked</p>
 <p id="auto-off-desc">Your commute details are not being automatically tracked</p>
 <p>
 Luum uses automatic tracking to report your commute details.  You will need to manually enter your commute if you choose to turn this feature off. Time spent commuting will only be available when automatic tracking is enabled.
 </p>
 <div id="privacy">
     <a id="privacy-toggle" href="#privacy-desc"><h3>Privacy Clause 
-        <span class="down-arrow">&#9660;</span>
-        <span class="up-arrow">&#9650;</span>
+        <span class="down-arrow">&#9654;</span>
+        <span class="up-arrow">&#9660;</span>
     </h3></a>
     <p id="privacy-desc">
     Information gathered through this application will not be used for anything other than commuting purposes.  The data collected through this application will be summarized in terms of miles, and transportation modes at a week level.  Time of arrival and departure will not be tracked.  Actual route details pertaining to your commute will not be kept or viewable by your company.

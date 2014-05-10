@@ -15,30 +15,22 @@
 	<?php include "home-trends.php"; ?>
 </div>
 
-<div id="team" class="page">
+<div id="challenges" class="page">
+	<div id="challenge-mode">
+		<ul>
+			<li><a href="#team-home" class="highlight">Team</a></li>
+			<li><a href="#individual-home">Individual</a></li>
+		</ul>
+	</div>
     <div id="team-home" class="content currentContent">
-        <section class="challenge-title">
-        	<h2>Team Challenge</h2>
-            <div class="left">
-                <h3>Ride in the Rain</h3>
-                <h4>Who can bike the most miles</h4>
-            </div>
-            <div class="right">
-            <p class="days-left">5 days left</p>
-            </div>
-        </section>
-        <div class="team-leaderboard leaderboard">
-            <?php build_team_leaderboard($people_data, $new_team_data);?>
-        </div> <!--team-leaderboard end-->
+        <?php include "challenge-team.php"; ?>
     </div>
 	<?php build_team_pages($people_data, $new_team_data); ?>
-</div><!-- end page -->
+	
+	<div id="individual-home" class="content">
+		<?php include "challenge-individual.php"; ?>
+	</div>
 
-<div id="leaderboard" class="page">
-	<h2>Leaderboard</h2>
-    <div class="me-others-leaderboard leaderboard">
-        <?php build_team_leaderboard($people_data, $new_team_data);?>
-    </div>
 </div><!-- end page -->
 
 
