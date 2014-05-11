@@ -38,7 +38,6 @@
 	<?php include "settings.php"; ?>
 </div><!-- end page -->
 
-<script src="js/leaderboards.js"></script>
 <?php include "bottom-nav.php"; ?>
 
 <?php include "footer.php"; ?>

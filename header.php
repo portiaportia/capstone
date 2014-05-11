@@ -8,13 +8,16 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>-->
 	<meta name="mobile-web-app-capable" content="yes" />
+		
 	<link rel="stylesheet/less" href="css/styles.less">
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="js/less-1.7.0.min.js"></script>
 	<script src="js/jquery-2.1.0.min.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
 	<script src="js/script.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<script src="js/leaderboards.js"></script>
+	
+	<script src="js/buildChart.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

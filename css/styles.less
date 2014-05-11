@@ -600,15 +600,55 @@ strong {
 .vert-graph {
 	height: 50px;
 	overflow:hidden;
-	
 }
 
+.linebreak {
+	overflow: hidden;
+}
 .left {
 	float:left;	
 }
 
 .right {
 	float:right;
+}
+
+/******** Graphing Override *****/
+#canvas {
+	/*width: 90% !important;	*/
+}
+
+.d3Chart {
+	/*this is supposed to smooth the transition*/
+	-webkit-transform: translateZ(0); 
+	overflow:hidden;
+	width: 100%;
+}
+
+.d3Chart svg {
+	
+}
+.d3Chart path {
+    stroke: @accentBlue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.d3Chart .axis path{
+	stroke: @lightGray;
+	stroke-width: 1;
+}
+
+.d3Chart .axis .tick line{
+	stroke: @lightGray;
+	stroke-width: 1;
+}
+
+/* http://tutorials.jenkov.com/svg/text-element.html*/
+.d3Chart text {
+	fill: @darkGray;
+    /*font-family: Arial;*/
+    font-size: 9pt;
 }
 
 /***** Media Queries ****/
