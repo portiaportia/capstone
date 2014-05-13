@@ -1,4 +1,3 @@
-<?php displayCircleNav(0); ?>
 <?php 
 	function createImpactHeader($title, $subTitle, $link) { 
 		echo "<a class='impact-hide-show' href='$link'>";

@@ -1,4 +1,3 @@
-<?php displayCircleNav(1); ?>
 <?php 
 	function createWeekHeader($title, $link) { 
 		echo "<a class='week-hide-show' href='$link'>";
