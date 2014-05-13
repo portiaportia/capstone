@@ -2,7 +2,7 @@
 	<nav class="bottom-nav">
 		<ul>
     		<li>
-            	<a href="#summary">
+            	<a href="#summary" class="highlight">
                 	<img src="images/summary-icon.png">
                 	Home
                 </a>
