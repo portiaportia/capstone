@@ -618,7 +618,7 @@ strong {
 	/*width: 90% !important;	*/
 }
 
-.d3Chart {
+.d3Chart, .d3BarChart{
 	/*this is supposed to smooth the transition*/
 	-webkit-transform: translateZ(0); 
 	overflow:hidden;
@@ -647,9 +647,38 @@ strong {
 /* http://tutorials.jenkov.com/svg/text-element.html*/
 .d3Chart text {
 	fill: @darkGray;
-    /*font-family: Arial;*/
     font-size: 9pt;
 }
+
+.d3BarChart {
+	text {
+		fill: @darkGray;
+	    font-size: 9pt;
+	}
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: @lightGray;
+	  shape-rendering: crispEdges;
+	}
+
+	.barChart .walk {
+	  fill: @darkGray;
+	}
+
+	.barChart .car {
+	  fill: @accentGreen;
+	}
+
+	.barChart .bus {
+	  fill: @accentBlue;
+	}
+
+	.barChart .bike {
+	  fill: @darkBlue ;
+	}
+}
+
 
 /***** Media Queries ****/
 

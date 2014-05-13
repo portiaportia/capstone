@@ -18,6 +18,7 @@
 	<script src="js/script.js"></script>
 	
 	<script src="js/buildChart.js"></script>
+	<script src="js/barChart.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

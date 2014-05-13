@@ -23,7 +23,6 @@
         </div>
 
 <?php
-
         
     }
 ?>
@@ -78,9 +77,9 @@
     
     <div id="time-expand" class="impact-section">
         <p>Time Expanded</p>
-        <div id="d3Chart-time" class="d3Chart"></div>
+        <div id="d3Chart-time" class="d3BarChart"></div>
         <script>
-            buildChart("#d3Chart-time");
+            buildBarChart("#d3Chart-time");
         </script>
     </div>
 </section>

@@ -1,4 +1,4 @@
-var data = [ 
+var lineData = [ 
 	{ xval: "1-Dec-13", yval: 2 },
 	{ xval: "1-Jan-14", yval: 3 },
 	{ xval: "1-Feb-14", yval: 6 },
@@ -40,12 +40,12 @@ function buildChart(idName){
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	x.domain(d3.extent(data, function(d) { return parseDate(d.xval); }));
-	y.domain([0, d3.max(data, function(d) { return d.yval; })]);
+	x.domain(d3.extent(lineData, function(d) { return parseDate(d.xval); }));
+	y.domain([0, d3.max(lineData, function(d) { return d.yval; })]);
 
 	svg.append("path") // Add the valueline path.
 		.attr("class", "line")
-		.attr("d", valueline(data));
+		.attr("d", valueline(lineData));
 
 	svg.append("g") // Add the X Axis
 		.attr("class", "x axis")
@@ -72,8 +72,8 @@ function animateChart(idName){
 	var x = d3.time.scale().range([0, width]);
 	var y = d3.scale.linear().range([height, 0]);
 
-	x.domain(d3.extent(data, function(d) { return parseDate(d.xval); }));
-	y.domain([0, d3.max(data, function(d) { return d.yval; })]);
+	x.domain(d3.extent(lineData, function(d) { return parseDate(d.xval); }));
+	y.domain([0, d3.max(lineData, function(d) { return d.yval; })]);
 	
 	var blankLine = d3.svg.line()
 		.interpolate("basis") //this curves the line.
@@ -87,29 +87,10 @@ function animateChart(idName){
 
 	var svg = d3.select(idName).select("svg").select("g");
 	svg.select("path") // Add the valueline path.
-		.attr("d", blankLine(data));
+		.attr("d", blankLine(lineData));
 
 	svg.select("path") // Add the valueline path.
 		.transition().duration(850)
-		.attr("d", valueline(data));
-
-		/*
-		.transition()
-			.delay(750)
-			.duration(100)
-			.styleTween("stroke", function() { return d3.interpolate("white", "red"); });
-*/
-	//reset the line to the bottom
-	/*
-	t1 = d3.select("#d3Chart").select("path").transition().duration(1000);
-		t1.delay(750);
-		t1.attr("d", valueline(data));
-*/
-/*
-	t0 = d3.select("#d3Chart").select("path").transition().duration(1000);
-		t0.delay(750);
-		//t0.selectAll(".line").attr("d", line);
-		t0.styleTween("stroke", function() { return d3.interpolate("white", "red"); });
-		*/
+		.attr("d", valueline(lineData));
 
 }
