@@ -1,71 +1,119 @@
-<?php 
-	function createWeekHeader($title, $link) { 
-		echo "<a class='week-hide-show' href='$link'>";
-    	echo "<header>";
-        echo "<span class='week-down arrow'>&#9654;</span>";
-        echo "<span class='week-up arrow'>&#9660;</span>";
-        echo "<h1>$title</h1>";
-     	echo "</header></a>";
-	}
-	
-	function buildDay($day, $numBike, $numBus, $numCar)
-	{
-		echo "<section class='day'>";
-        echo "<h3>$day</h3>";
+<?php function buildCommuteTypeHeader($numCommuteType, $minCommuteType, $icon){ 
+	if($numCommuteType > 0): ?>
+            <section class="header-ctype">
+                <section class="week-stats">
+                    <p><?php echo $numCommuteType; ?> Trips</p>
+                    <p><?php echo $minCommuteType; ?> Mins</p>
+                 </section>
+                <img src="images/<?php echo $icon; ?>">
+            </section>
+        <?php endif; 
+ } ?>
+
+<?php function createWeekHeader($title, $link, $numWalk, $minWalk, $numBike, $minBike, $numBus, $minBus, $numDrive, $minDrive) { ?>
+		<a class="week-hide-show" href="#<?php echo $link; ?>">
+    		<header>
+        		<h1><?php echo $title; ?></h1>
+                <?php buildCommutetypeHeader($numWalk, $minWalk, "walk.png"); ?>
+                <?php buildCommutetypeHeader($numBike, $minBike, "bike.png"); ?>
+                <?php buildCommutetypeHeader($numBus, $minBus, "bus.png"); ?>
+                <?php buildCommutetypeHeader($numDrive, $minDrive, "drive.png"); ?>
+                
+     		</header>
+             <img class="section-arrow down-arrow" src="images/section-arrow-down.png">
+        </a>
         
-		if($numBike > 0) echo "<p>$numBike <img src='images/bike.png'></p>";
-        if($numBus > 0) echo "<p>$numBus <img src='images/bus.png'></p>";
-		if($numCar > 0) echo "<p>$numCar <img src='images/drive.png'></p>";
-		
-        echo "</section>";
-	}
-?>
+        <div id="<?php echo $link; ?>" class="week-section">
+        <section class="day-header">
+        	<h2>To Work</h2>
+            <h2>From Work</h2>
+        </section>
+        <div class="clear"></div>
+<?php } ?>
+<?php function buildDay($day, $timeToWork, $imgToWork, $timeFromWork, $imgFromWork){ ?>
+		<section class="day">
+       		<h3><?php echo $day; ?></h3>
+        	<section>
+            	<p><?php echo $timeToWork; ?> mins</p>
+                <img src="images/<?php echo $imgToWork; ?>">
+            </section>
+            <section>
+                <p><?php echo $timeFromWork; ?> mins</p>
+                <img src="images/<?php echo $imgFromWork; ?>">
+            </section>
+        </section>
+<?php } ?>
 <script src="js/home-week.js"></script>
 
 <section class="week">
-    <?php createWeekHeader("April 7th", "#april7"); ?>
+    <?php createWeekHeader("3/24/14 - 4/4/14", "mar24", 4, 240, 0,0, 12, 480, 4, 80); ?>
     
-    <div id="april7" class="week-section">
-        <?php buildDay("M", 2, 2, 1); ?>
-        <?php buildDay("T", 1, 2, 2); ?>
-        <?php buildDay("W", 0, 4, 1); ?>
-        <?php buildDay("Th", 4, 1, 0); ?>
-        <?php buildDay("F", 3, 2, 0); ?>
+        <?php buildDay("M", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("Th", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("M", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("Th", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 60, "walk.png", 40, "bus.png"); ?>
+        
+        <a class="week-hide-show" href="#mar24"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("April 14th", "#april14"); ?>
+    <?php createWeekHeader("4/7/14 - 4/14/14", "april7", 0, 0, 6, 180, 6, 240, 8,  160); ?>
     
-    <div id="april14" class="week-section">
-        <?php buildDay("M", 2, 2, 1); ?>
-        <?php buildDay("T", 1, 2, 2); ?>
-        <?php buildDay("W", 0, 5, 0); ?>
-        <?php buildDay("Th", 4, 1, 0); ?>
-        <?php buildDay("F", 3, 2, 0); ?>
+        <?php buildDay("M", 30, "bike.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 30, "bike.png", 30, "bike.png"); ?>
+        <?php buildDay("Th", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("M", 30, "bike.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 30, "bike.png", 30, "bike.png"); ?>
+        <?php buildDay("Th", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 20, "drive.png", 20, "drive.png"); ?>
+        
+        <a class="week-hide-show" href="#april7"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("April 21st", "#april21"); ?>
+    <?php createWeekHeader("4/21/14 - 5/2/14", "april21", 4, 240, 0,0, 12, 480, 4, 80); ?>
     
-    <div id="april21" class="week-section">
-        <?php buildDay("M", 2, 3, 0); ?>
-        <?php buildDay("T", 1, 2, 2); ?>
-        <?php buildDay("W", 0, 5, 0); ?>
-        <?php buildDay("Th", 4, 0, 1); ?>
-        <?php buildDay("F", 3, 2, 0); ?>
+    	<?php buildDay("M", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("Th", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("M", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("Th", 60, "walk.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 60, "walk.png", 40, "bus.png"); ?>
+        
+        
+        <a class="week-hide-show" href="#april21"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("April 28th", "#april28"); ?>
+    <?php createWeekHeader("5/5/14 - 5/16/14", "may5",0, 0, 6, 180, 6, 240, 8,  160); ?>
     
-    <div id="april28" class="week-section">
-        <?php buildDay("M", 2, 2, 1); ?>
-        <?php buildDay("T", 1, 3, 1); ?>
-        <?php buildDay("W", 0, 5, 0); ?>
-        <?php buildDay("Th", 2, 1, 2); ?>
-        <?php buildDay("F", 3, 2, 0); ?>
+    	<?php buildDay("M", 30, "bike.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 30, "bike.png", 30, "bike.png"); ?>
+        <?php buildDay("Th", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("M", 30, "bike.png", 40, "bus.png"); ?>
+        <?php buildDay("T", 20, "drive.png", 20, "drive.png"); ?>
+        <?php buildDay("W", 30, "bike.png", 30, "bike.png"); ?>
+        <?php buildDay("Th", 40, "bus.png", 40, "bus.png"); ?>
+        <?php buildDay("F", 20, "drive.png", 20, "drive.png"); ?>
+        
+        <a class="week-hide-show" href="#may5"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>

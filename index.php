@@ -10,11 +10,18 @@
 	<?php include "commute.php"; ?>
 </div>
 
+<script src="js/team-toggle.js"></script>
 <div id="challenges" class="page">
 	<div id="challenge-mode">
 		<ul>
-			<li><a href="#team-home" class="highlight">Team</a></li>
-			<li><a href="#individual-home">Individual</a></li>
+			<li><a href="#team-home" class="team-toggle">
+            	<img src="images/team-selected.png">
+                <img class="unselected" src="images/team-unselected.png">
+            </a></li>
+			<li><a href="#individual-home" class="team-toggle">
+            	<img class="unselected" src="images/individual-selected.png">
+                <img src="images/individual-unselected.png">
+            </a></li>
 		</ul>
 	</div>
     <div id="team-home" class="content currentContent">

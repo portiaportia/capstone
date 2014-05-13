@@ -1,4 +1,5 @@
 var currentPage = 0;
+var firstClickCommute = true;
 
 window.onload = function() {
 	//make the page fill the height
@@ -79,6 +80,13 @@ function changePage() {
 	
 	$($(this).attr("href")).addClass("current");
 	highlightNav($(this).attr("href"));
+	
+	//slide today in when we go to commute tab
+	if($(this).attr("href") == "#commute" && firstClickCommute)
+	{	
+		hideShowWeek("#may5");
+		firstClickCommute =false;
+	}
 	return false;
 }
 
@@ -89,7 +97,7 @@ function changeChallengeType(){
 	$.each($("#challenge-mode a"), function() {
 		var aHref = $(this).attr("href");
 		if (aHref == pageRef) {
-			$(this).addClass("highlight");
+			//$(this).addClass("highlight");
 		}
 	});
 

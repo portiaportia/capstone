@@ -1,17 +1,29 @@
 $(function(){
 	$(".week-section").hide();
 	$(".week-up").hide();
-	$(".week-hide-show").click(hideShowWeek);
+	$(".week-hide-show").click(hideShowWeekLink);
+	
+	
 });
 
-function hideShowWeek()
+function hideShowWeekLink()
 {
 	$(".week").removeClass("expanded");
 	
 	var id= $(this).attr("href");
-	$(id).slideToggle(400);
-	$(this).parent(".week").addClass("expanded");
-	
-	$(this).find(".arrow").toggle();
+	hideShowWeek(id);
 	return false;
+}
+
+function hideShowWeek(id)
+{	
+	$(id).slideToggle(400);
+	
+	var myParent = $(id).closest(".week");
+	myParent.addClass("expanded");
+	myParent.find(".section-arrow.down-arrow").toggle();
+	
+	$('html,body').animate({
+        scrollTop: myParent.offset().top},
+        1000);
 }

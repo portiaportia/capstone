@@ -166,7 +166,7 @@ function buildBarChart(idName){
 
     /* END LEGEND */
 
-  d3.selectAll("input").on("change", change);
+ // d3.selectAll("input").on("change", change);
 
 }
 
