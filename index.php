@@ -2,17 +2,12 @@
 <?php //make sure the functions are available 
 	include "build-leaderboard.php"; 
 ?>	
-<?php include "circle-nav.php"; ?>
-<div id="home" class="page current home-view">
-	<?php include "home-impact.php"; ?>
+<div id="summary" class="page current">
+	<?php include "summary.php"; ?>
 </div>
 
-<div class="page home-view">
-	<?php include "home-week.php"; ?>
-</div>
-
-<div class="page home-view">
-	<?php include "home-trends.php"; ?>
+<div id="commute" class="page home-view">
+	<?php include "commute.php"; ?>
 </div>
 
 <div id="challenges" class="page">

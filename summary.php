@@ -1,4 +1,3 @@
-<?php displayCircleNav(0); ?>
 <?php 
 	function createImpactHeader($title, $subTitle, $link) { 
 		echo "<a class='impact-hide-show' href='$link'>";
@@ -28,8 +27,6 @@
 ?>
 <script src="js/home-impact.js"></script>
 <script src="js/buildChart.js"></script>
-
-<h2>Commute Impact</h2>
 
 <section class="impact">
     <?php createImpactHeader("Carbon Footprint", "8 lbs", "#carbon-expand"); ?>

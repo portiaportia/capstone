@@ -1,4 +1,3 @@
-<?php displayCircleNav(1); ?>
 <?php 
 	function createWeekHeader($title, $link) { 
 		echo "<a class='week-hide-show' href='$link'>";
@@ -22,7 +21,6 @@
 	}
 ?>
 <script src="js/home-week.js"></script>
-<h2>Your Commute</h2>
 
 <section class="week">
     <?php createWeekHeader("April 7th", "#april7"); ?>

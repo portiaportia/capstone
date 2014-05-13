@@ -20,8 +20,6 @@ window.onload = function() {
 	
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
-	highlightNav("#home");//highlight home on bottom nav
-
 	//challenges
 	$("#challenges a").click(changeContentChallenges);
 
