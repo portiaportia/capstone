@@ -161,6 +161,7 @@ function buildBarChart(idName){
       .attr("x", function(d, i) { return (i * 50) + 12; })
       .attr("y", 9)
       .attr("height", 10)
+      .attr("class", "pix-graphLabel")
       .text(function(d, i) { return classNames[i]; });
 
     /* END LEGEND */
