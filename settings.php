@@ -9,7 +9,6 @@
 ?>
 
 <link rel="stylesheet" href="css/jquery.onoff.css" media="screen" />
-<h2>Settings</h2>
 <div id="auto-track-toggle">
 	<h3>Automatic Tracking</h3>
 	<input id="track-check" type="checkbox" checked="checked" />

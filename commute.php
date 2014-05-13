@@ -21,7 +21,6 @@
 	}
 ?>
 <script src="js/home-week.js"></script>
-<h2>Your Commute</h2>
 
 <section class="week">
     <?php createWeekHeader("April 7th", "#april7"); ?>
