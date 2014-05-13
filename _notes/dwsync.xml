@@ -17,4 +17,8 @@
 <file name="summary.php" server="portiaplante.com/luum/" local="130444727053450892" remote="130444726800000000" Dst="2" />
 <file name="commute.php" server="portiaplante.com/luum/" local="130444839647841579" remote="130444839600000000" Dst="2" />
 <file name="commute-icon.png" server="portiaplante.com/luum/" local="130444321761176256" remote="130444327800000000" Dst="2" />
+<file name="individual-selected.png" server="portiaplante.com/luum/" local="130444736615282259" remote="130444852200000000" Dst="2" />
+<file name="individual-unselected.png" server="portiaplante.com/luum/" local="130444736837259918" remote="130444852200000000" Dst="2" />
+<file name="team-unselected.png" server="portiaplante.com/luum/" local="130444737145497047" remote="130444852200000000" Dst="2" />
+<file name="team-selected.png" server="portiaplante.com/luum/" local="130444737000548323" remote="130444852200000000" Dst="2" />
 </dwsync>
