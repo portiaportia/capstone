@@ -56,6 +56,10 @@ img {max-width:100%}
 	fill: @darkGray;
 }
 
+.pix-small {
+	.pix-graphLabel;
+}
+
 h1{
 	.pix-header;
 }
@@ -262,12 +266,6 @@ body {
 	.impact-section {
 		margin-top:2%;	
 	}
-	/*
-	p {
-		color:darken(@lightGray, 20%);
-		font-size:0.8em;	
-	}
-	*/
 }
 
 .impact header {
@@ -400,10 +398,12 @@ body {
 #challenges {
 	
 	#challenge-mode {
-		width: 30%;
+		width: 40%;
 		margin: auto auto;
 		overflow: hidden;
+
 	}
+
 	#challenge-mode ul {
 		list-style-type:none;
 	}
@@ -420,6 +420,7 @@ body {
 		text-align:center;
 		padding:5% 5%;
 		margin:0;
+		.pix-small;
 	}
 	
 	#challenge-mode img {
@@ -428,25 +429,27 @@ body {
 	}
 }
 
-.leaderboard, .leaderboard {
+.leaderboard {
 	margin-top:5%;
 	border-bottom:none;
 }
 
 .leader {
-	margin-top:	2px;
+	/*margin-top:	2px;*/
 	width:100%;
 	overflow:hidden;
 	border-top:none;
+	padding:3%;
+	border-bottom:1px dashed @lightGray;	
 }
 
-.leader.person:first-child {
+.leader:first-child {
 	border-top:1px dashed @lightGray;	
 }
 
-.leader.person {
-	padding:4px 0px 1px;
-	border-bottom:1px dashed @lightGray;	
+.leader {
+	/*padding:4px 0px 1px;*/
+	
 }
 
 .leader a {
@@ -454,7 +457,6 @@ body {
 	display:block;
 	text-decoration:none;
 	overflow:hidden;
-	padding:3%;
 	.borders(2px);
 }
 
@@ -487,9 +489,6 @@ body {
 .leader h1 {
 	text-align: left;
 	float:left;
-	/*font-size:1.5em;
-	color:lighten(@darkGray, 10%);
-	*/
 }
 
 .leader header h1 {
@@ -499,19 +498,22 @@ body {
 
 .leader h2 {
 	.pix-body;
-	/*font-size:.75em;*/
 	text-align: left;
 }
 
 .leader .miles {
 	float:right;
-	font-size:.75em;	
 }
 
 .leader .miles p {
-	margin-bottom:.5em;
+/*	margin-bottom:.5em;*/
 	text-align:right;
 	padding:0;
+}
+
+
+.leader .miles_detail, .leader .members_detail {
+	.pix-small;
 }
 
 .leader a {
@@ -586,11 +588,28 @@ body {
 	margin-right:10%;
 	width:23%;
 }
-
+/*
 .whole-team p {
 	padding-bottom:0em;
 	font-size:.8em;
 	color:darken(@lightGray, 40%);
+}*/
+
+.team-stats {
+	padding-right: 5%;
+}
+
+.team-stats .trips_detail {
+	.left;
+}
+
+.team-stats .miles_detail {
+	.right;
+}
+
+.team-stats .members_detail {
+	.left;
+	.pix-small;
 }
 
 /******  Settings *******/
@@ -678,20 +697,17 @@ h3 {
 }
 
 h4 {
-	font-size:1.2em;
+	font-size:.75em;	
 	color:darken(@lightGray, 30%);
 }
-
+/*
 p {
 	padding-bottom: 1em;
 }
+*/
 
 a, h1 a, h2 a {
 	text-decoration:none;
-}
-
-h4 {
-	font-size:.75em;	
 }
 
 strong {
@@ -699,9 +715,12 @@ strong {
 }
 
 /***** Progress Bars ****/
+.progress .title {
+	.pix-small;
+}
 #team-home .progress, #leaderboard .progress {
 	.title {
-		display: none;
+		/*display: none;*/
 	}
 	.progress-indicator {
 		display: none;
@@ -711,8 +730,10 @@ strong {
 	}
 }
 
+
+
 .progress {
-	float:left;
+	.left;
 	margin-top: 10px;
 	color:darken(@accentBlue, 40%);
 	width: 100%;
@@ -736,6 +757,7 @@ strong {
 }
 
 .progress-indicator {
+	display: none;
 	background: @accentBlue;
 	border-radius: 50%;
 	/* width and height can be anything, as long as they're equal */
@@ -749,12 +771,19 @@ strong {
 }
 
 .goal-indicator {
+	display: none;
 	margin-top: -5px;
 	border-radius: 50%;
 	border: 1px solid @lightGray;
 	width: 9px;
 	height: 9px; 
 	position: relative;
+}
+
+.progress .goal {
+	.right;
+	.pix-small;
+	padding-right: 5%;
 }
 
 .vert-graph {
@@ -765,14 +794,6 @@ strong {
 .linebreak {
 	overflow: hidden;
 }
-/*
-.left {
-	float:left;	
-}
-
-.right {
-	float:right;
-}*/
 
 .clear {
 	clear:both;	

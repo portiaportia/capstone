@@ -50,7 +50,7 @@
 </section>
 
 <section class="impact">
-    <?php createImpactHeader("CO<sub>2</sub>", "Savings", "35lbs lbs", "Savings", "305lbs", "#carbon-expand"); ?>
+    <?php createImpactHeader("CO<sub>2</sub>", "Savings", "35 lbs", "Savings", "305 lbs", "#carbon-expand"); ?>
     
     <div id="carbon-expand" class="impact-section">
         <section class="pounds">

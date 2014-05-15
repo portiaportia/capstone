@@ -32,9 +32,9 @@
 		array("name"=>"Tricksters", "image"=>"images/team5.png", "id"=>"tricksters")
 	);
 
-	//sort the people array by miles, most to least
+	//sort the people array by trips, most to least
 	usort($people_data, function($a, $b) {
-    	return $b['miles'] - $a['miles'];
+    	return $b['trips'] - $a['trips'];
 	});
 
 	//get all of the summary details and create a new array. now the array has:
@@ -44,15 +44,18 @@
 	// yourteam
 	$new_team_data = add_team_summary_info($people_data, $team_data);
 	
-	//sort the team array by miles, most to least. 
-	//If we need to sort by more than the miles, we should have an associated 
+	//sort the team array by trips, most to least. 
+	//If we need to sort by more than the trips, we should have an associated 
 	//array that is sorted with the index of the team array as the value
 	usort($new_team_data, function($a, $b) {
-    	return $b['miles'] - $a['miles'];
+    	return $b['trips'] - $a['trips'];
 	});
+
+		
 ?>
 
 <?php
+
 
 //Returns a new team array that includes summary info, #people, trips and miles
 function add_team_summary_info($people_data, $team_data){
@@ -95,17 +98,18 @@ function build_team_leaderboard($people_data, $team_data){
 				<?php
 				echo $position++ . "</p>";
 				echo "<img src=\"" . $team["image"] . "\">";
-				echo "<h1>" . $team["name"];
+				echo "<div class='left'><h1>" . $team["name"];
 				if($team["yourteam"]){ echo " *";}
 				echo "</h1>";
+				echo "<p class='members_detail'>" . $team["members"] . " members</p>";
+				echo "</div>";
 				?>
 				<div class="miles">
 					<?php
-					echo "<p>" . $team["trips"] . " trips</p>";
-					echo "<p>" . $team["miles"] . " miles</p>";
+					echo "<p class='trips_detail'>" . $team["trips"] . " trips</p>";
+					echo "<p class='miles_detail'>" . $team["miles"] . " miles</p>";
 					?>
 				</div>
-				<?php build_progress_bar($team["miles"], 150); ?>
 			</a>
 		</section>
 	<?php
@@ -146,12 +150,14 @@ function team_summary($team){
 			<?php
 			echo "<h3>" . $team["name"] . "</h3>";
 			?>
-			<p>Fourth Place</p>
-			<p><strong>Goal:</strong>Be awesome</p>
-			<p><strong>Miles:</strong><?php echo $team["miles"] ?></p>
-			<p><strong>Trips:</strong><?php echo $team["trips"] ?></p>
+			<div class="linebreak">
+				<p class="trips_detail"><?php echo $team["trips"] ?> trips</p>
+				<p class="miles_detail"><?php echo $team["miles"] ?> miles</p>
+			</div>
+			<p class="members_detail"><?php echo $team["members"] ?> members</p>
+
 		</div> <!--team-stats end-->
-		<?php build_progress_bar($team["miles"], 150); ?>
+		<?php build_progress_bar(10000, 25000); ?>
 	</section><!-- whole-team end-->
 <?php
 }
@@ -163,14 +169,14 @@ function build_progress_bar($progress, $goal){
 		<?php
 		$perc_comp = (($progress / $goal)*.95)*100;
 		
-		echo "<p class=\"title\">Goal Progress: " . $progress . " of " . $goal . " miles</p>";
-		echo "<div class=\"progress-bar\" style=\"width:" .  $perc_comp . "%; \"></div>";
+		echo "<p class='title'>" . round($perc_comp) . "% of Goal</p>";
+		echo "<div class='progress-bar' style='width:" .  $perc_comp . "%; ''></div>";
 		?>
 		
 		<div class="progress-indicator"></div>
 		<div class="goal-bar" style="width: 95%;"></div>
 		<div class="goal-indicator" style="left: 95%;"></div>
-			
+		<div class="goal">Goal: 25,000 trips</div>	
 	</div>
 	<?php
 }
@@ -194,9 +200,9 @@ function create_person_section($person, $position){
 			echo "<h1>" . $person["name"];
 			if($person["you"]){ echo " *";}
 			echo "</h1>";
-			echo "<div class=\"miles\">";
-			echo "<p>" . $person["miles"] . " Miles</p>";
-			echo "<p>" . $person["trips"] . " Trips</p>";
+			echo "<div class='miles'>";
+			echo "<p class='trips_detail'>" . $person["trips"] . " Trips</p>";
+			echo "<p class='miles_detail'>" . $person["miles"] . " Miles</p>";
 			echo "</div>";
 			?>
 		</div> <!--end person info (not a class or id)-->

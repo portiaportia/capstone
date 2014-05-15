@@ -17,10 +17,12 @@
 			<li><a href="#team-home" class="team-toggle">
             	<img src="images/team-selected.png">
                 <img class="unselected" src="images/team-unselected.png">
+                Team
             </a></li>
 			<li><a href="#individual-home" class="team-toggle">
             	<img class="unselected" src="images/individual-selected.png">
                 <img src="images/individual-unselected.png">
+                Individual
             </a></li>
 		</ul>
 	</div>

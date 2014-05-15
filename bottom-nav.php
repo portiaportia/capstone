@@ -16,7 +16,7 @@
 			<li>
             	<a href="#challenges">
                 	<img src="images/team-icon.png">
-                	team
+                	Challenges
                 </a>
            	</li>
 			<li>
