@@ -201,8 +201,8 @@ function create_person_section($person, $position){
 			if($person["you"]){ echo " *";}
 			echo "</h1>";
 			echo "<div class='miles'>";
-			echo "<p class='trips_detail'>" . $person["trips"] . " Trips</p>";
-			echo "<p class='miles_detail'>" . $person["miles"] . " Miles</p>";
+			echo "<p class='trips_detail'>" . $person["trips"] . " trips</p>";
+			echo "<p class='miles_detail'>" . $person["miles"] . " miles</p>";
 			echo "</div>";
 			?>
 		</div> <!--end person info (not a class or id)-->
