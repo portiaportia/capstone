@@ -9,6 +9,8 @@ jQuery(function($) {
 
   $("#privacy-desc, .up-arrow").hide();
   $("#privacy-toggle").click(togglePrivacy);
+
+  $(".day-toggle").click(toggleDay);
 });
 
 function trackChanged()
@@ -34,3 +36,14 @@ function toggleTrackingDetail()
   $(".less, .more").toggle();
   return false;
 }
+
+function toggleDay()
+{
+  var href = $(this).attr("href");
+
+  $(href.concat(" .selected")).toggle();
+  $(href.concat(" .unselected")).toggle();
+  
+  return false;
+}
+

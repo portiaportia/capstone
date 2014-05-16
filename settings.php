@@ -1,10 +1,22 @@
 <?php 
+
 	function makeSettingsDay($day, $checked)
 	{
 		echo "<section class='settings-section'>";
 		echo "<div class='settings-day'>";
 		echo "<h4>$day</h4>";
-    	echo "<input type='checkbox' $checked style='min-height:20px;min-width:20px;'>";
+		echo "<a class='day-toggle' id='" . $day . "_check' href='#" . $day . "_check'>";
+    	echo "<span class='unselected'";
+    	if($checked){
+    		echo " style='display: none;'";
+    	}	
+    	echo "><img src='images/circle.png'/></span>";
+		echo "<span class='selected'";
+		if(!$checked){
+    		echo " style='display: none;'";
+    	}
+		echo "><img src='images/checkbox-checked.png'/></span>";
+		echo "</a>";
 		echo "</div>";
 		echo "</section>";
 	}
@@ -54,9 +66,7 @@
 	</div>
 </section>
 
-<section class="settings-section blank">
-
-</section>
+<section class="settings-section blank"></section>
 
 <section class="settings-section">
 	<img src="images/commute.png"/>
@@ -66,13 +76,13 @@
 	Unselected days do not show up on the "Commute" screen.</p>
 	<span>
 	<?php 
-		makeSettingsDay("Sunday", ""); 
-		makeSettingsDay("Monday", "checked"); 
-		makeSettingsDay("Tuesday", "checked"); 
-		makeSettingsDay("Wednesday", "checked"); 
-		makeSettingsDay("Thursday", "checked"); 
-		makeSettingsDay("Friday", "checked"); 
-		makeSettingsDay("Saturday", ""); 
+		makeSettingsDay("Sunday", false); 
+		makeSettingsDay("Monday", true); 
+		makeSettingsDay("Tuesday", true); 
+		makeSettingsDay("Wednesday", true); 
+		makeSettingsDay("Thursday", true); 
+		makeSettingsDay("Friday", true); 
+		makeSettingsDay("Saturday", false); 
 	?>
 	</span>
 </section>
