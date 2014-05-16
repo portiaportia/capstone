@@ -7,6 +7,9 @@
 
 @font-sans : 'Open Sans', sans-serif;
 
+/* assuming 16 columns per page, one column is 6.25%*/
+@onecolumn: 6.25%; 
+
 /**** Resets ***********/
 * {margin:0; padding:0; border:0; font-size:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;	font-family: @font-sans; font-size:100%; font-weight:normal;}
 
@@ -48,17 +51,17 @@ img {max-width:100%}
 	font-weight: 600;
 	color: @accentBlue;
 }
-
-.pix-graphLabel{
+.pix-small {
 	font-size: .75em;
 	font-weight: 400;
 	color: @darkGray;
+}
+
+.pix-graphLabel{
+	.pix-small; 
 	fill: @darkGray;
 }
 
-.pix-small {
-	.pix-graphLabel;
-}
 
 h1{
 	.pix-header;
@@ -613,15 +616,41 @@ body {
 }
 
 /******  Settings *******/
-#auto-track-toggle {
+
+
+.settings-section{
 	overflow:hidden;
-	margin-bottom:5px;
-	
+	border-bottom:1px solid @lightGray;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	img {
+		.left;
+		width: 30px;
+		margin-right: 5px;
+	}
+
 	h3 {
-		margin-top:5px;
 		float:left;	
 		margin-right:10px;
 	}
+}
+
+.settings-section.first, .settings-section:first-child {
+	border-top:1px solid @lightGray;
+}
+
+.settings-section.blank{
+	height: 40px;
+	background-color: @lightGray;
+}
+
+#tracking-toggle {
+	.pix-link;
+}
+
+#auto-track-toggle {
+	overflow:hidden;
 	
 	.onoffswitch {
 		display:block;
@@ -632,22 +661,25 @@ body {
 #privacy {
 	padding-bottom:10px;
 	margin-bottom:15px;
-	border-bottom:1px dashed @lightGray;
 }
 
 .settings-day {
 	overflow:hidden;
-	margin-bottom:20px;
+	/*margin-bottom:20px;*/
 	
 	h4 {
 		float:left;
 		width:30%;	
 		font-size:1em;
+		/*margin-left: 18.75%;*/
+		margin-left: @onecolumn *3;
 	}
 	
 	input {
 		margin-top:2px;
-		float:left;
+		float:right;
+		/*margin-right: 6.25%;*/
+		margin-right: @onecolumn;
 	}
 }
 
@@ -691,7 +723,8 @@ h2.team-home-header {
 
 h3 {
 	font-size:1.25em;
-	color:darken(@lightGray, 30%);
+	/*color:darken(@lightGray, 30%);*/
+	color:@darkGray;
 	margin-bottom:1%;
 	
 }
