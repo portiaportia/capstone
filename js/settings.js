@@ -17,6 +17,17 @@ function trackChanged()
 {	
     $("#auto-on-desc").toggle();	
     $("#auto-off-desc").toggle();	
+    
+    var isEnabled = $("#commute-week").attr("class");
+    //if id display is none, we are off.
+    if(isEnabled == "enabled" ){
+      $("#settings").find("#commute-week").removeClass("enabled");
+      $("#settings").find("#commute-week").addClass("disabled");  
+    }else{
+      $("#settings").find("#commute-week").removeClass("disabled");
+      $("#settings").find("#commute-week").addClass("enabled");  
+
+    }
 }
 
 function togglePrivacy()
