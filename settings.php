@@ -23,9 +23,10 @@
 ?>
 
 <link rel="stylesheet" href="css/jquery.onoff.css" media="screen" />
+<link rel="stylesheet" href="css/jquery.onoff.override.css" media="screen" />
 <section class="settings-section first">
 	<div id="auto-track-toggle">
-		<img src="images/tracking.png"/>
+		<img class="icon" src="images/tracking.png"/>
 		<h3>Automatic Tracking</h3>
 		<input id="track-check" type="checkbox" checked="checked" />
 	    <script src="js/jquery.onoff.min.js"></script>
@@ -55,26 +56,32 @@
 <section class="settings-section">
 	<div id="privacy">
 	    <a id="privacy-toggle" href="#privacy-desc">
-	    <img src="images/privacy.png"/>
-	    <h3>Privacy  
-	        <span class="down-arrow">&#9654;</span>
-	        <span class="up-arrow">&#9660;</span>
-	    </h3></a>
-	    <p id="privacy-desc">
-	    Information gathered through this application will not be used for anything other than commuting purposes.  The data collected through this application will be summarized in terms of miles, and transportation modes at a week level.  Time of arrival and departure will not be tracked.  Actual route details pertaining to your commute will not be kept or viewable by your company.
-	    </p>
+	    	<div class="linebreak">
+		    <img class="icon" src="images/privacy.png"/>
+		    <h3>Privacy</h3>
+		    </div>
+	    	<p id="privacy-desc">
+	   			Information gathered through this application will not be used for anything other than commuting purposes.  The data collected through this application will be summarized in terms of miles, and transportation modes at a week level.  Time of arrival and departure will not be tracked.  Actual route details pertaining to your commute will not be kept or viewable by your company.
+	    	</p>
+
+				<img class="section-arrow down-arrow" src="images/section-arrow-down.png">
+		        <img class="section-arrow up-arrow" src="images/section-arrow-up.png">
+	    </a>
+	    
 	</div>
 </section>
 
 <section class="settings-section blank"></section>
 
 <section class="settings-section">
-	<img src="images/commute.png"/>
+	<img class="icon" src="images/commute.png"/>
 	<h3>Commute Week</h3>
 </section>
+<section class="settings-section">
 	<p>Indicate the days you commute to work. 
 	Unselected days do not show up on the "Commute" screen.</p>
-	<span>
+	</section>
+	
 	<?php 
 		makeSettingsDay("Sunday", false); 
 		makeSettingsDay("Monday", true); 
@@ -84,5 +91,5 @@
 		makeSettingsDay("Friday", true); 
 		makeSettingsDay("Saturday", false); 
 	?>
-	</span>
+	
 </section>

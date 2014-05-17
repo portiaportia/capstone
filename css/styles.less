@@ -71,6 +71,11 @@ h2 {
 	.pix-subheader;
 }
 
+h3 {
+	color: @darkGray;
+	font-weight: 400;
+	font-size: 1.05em;
+}
 p {
 	.pix-body;
 }
@@ -617,14 +622,14 @@ body {
 
 /******  Settings *******/
 
-
 .settings-section{
 	overflow:hidden;
 	border-bottom:1px solid @lightGray;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	/*padding-bottom: 5px;
+	padding-top: 5px;*/
+	padding: 5px @onecolumn;
 
-	img {
+	.icon {
 		.left;
 		width: 30px;
 		margin-right: 5px;
@@ -633,7 +638,19 @@ body {
 	h3 {
 		float:left;	
 		margin-right:10px;
+
 	}
+
+	.section-arrow {
+		margin: auto;
+		margin-top: 10px;
+	}
+/*
+	p {
+		margin: auto;
+		width: (100 - @onecolumn*2);
+	}
+	*/
 }
 
 .settings-section.first, .settings-section:first-child {
@@ -657,11 +674,11 @@ body {
 		float:right;
 	}
 }
-
+/*
 #privacy {
 	padding-bottom:10px;
 	margin-bottom:15px;
-}
+}*/
 
 .settings-day {
 	overflow:hidden;
@@ -672,12 +689,17 @@ body {
 		width:30%;	
 		font-size:1em;
 		/*margin-left: 18.75%;*/
-		margin-left: @onecolumn *3;
+		margin-left: @onecolumn *2;
 	}
 	
+	img {
+		.left;
+		width: 30px;
+		margin-right: 5px;
+	}
 	.day-toggle{
 		float:right;
-		margin-right: @onecolumn;
+		/*margin-right: @onecolumn;*/
 	}
 
 }
@@ -719,15 +741,14 @@ h2 {
 h2.team-home-header {
 	text-align:left;	
 }
-
+/*
 h3 {
 	font-size:1.25em;
-	/*color:darken(@lightGray, 30%);*/
 	color:@darkGray;
 	margin-bottom:1%;
 	
 }
-
+*/
 h4 {
 	font-size:.75em;	
 	color:darken(@lightGray, 30%);

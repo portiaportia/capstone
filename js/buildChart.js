@@ -17,12 +17,12 @@ var bonusesData = [
 ];
 
 var carbonData = [ 
-	{ xval: "1-Dec-13", yval: 9 },
-	{ xval: "1-Jan-14", yval: 14 },
-	{ xval: "1-Feb-14", yval: 11 },
-	{ xval: "1-Mar-14", yval: 12 },
-	{ xval: "1-Apr-14", yval: 10 },
-	{ xval: "1-May-14", yval: 8 }
+	{ xval: "1-Dec-13", yval: 39 },
+	{ xval: "1-Jan-14", yval: 40 },
+	{ xval: "1-Feb-14", yval: 42 },
+	{ xval: "1-Mar-14", yval: 40 },
+	{ xval: "1-Apr-14", yval: 30 },
+	{ xval: "1-May-14", yval: 35 }
 ];
 
 
