@@ -65,14 +65,15 @@
                     <p><strong>Low:</strong> 0lbs</p>
                 </div>
             </div>
-            
-            <div id="d3Chart-carbon" class="d3Chart"></div>
-            <script>
-                buildChart("#d3Chart-carbon", carbonData);
-            </script>
-
+            <a class="impact-hide-show" href="#carbon-expand">
+                <div id="d3Chart-carbon" class="d3Chart"></div>
+                <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
+                <script>
+                    buildChart("#d3Chart-carbon", carbonData);
+                </script>
+            </a>
         </section>
-        <a class="impact-hide-show" href="#carbon-expand"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
+        
     </div>
 </section>
 
@@ -80,7 +81,7 @@
 	<?php createImpactHeader("Time Savings", "Savings", "30 Minutes", "Savings", "205 Minutes", "#time-expand"); ?>
     
     <div id="time-expand" class="impact-section">
-        <p>Time Expanded</p>
+        <!--<p>Time Expanded</p>-->
         <div id="d3Chart-time" class="d3BarChart"></div>
         <script>
             buildBarChart("#d3Chart-time");

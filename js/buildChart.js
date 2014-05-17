@@ -25,11 +25,17 @@ var carbonData = [
 	{ xval: "1-May-14", yval: 35 }
 ];
 
-
+var lineChartWidth = 0;
 //pass the name of the div that contains the graph
 function buildChart(idName, data){
 	var margin = {top: 30, right: 20, bottom: 30, left: 25};
-	var w = parseInt(d3.select(idName).style('width'), 10);
+	//hacky way to make sure the line graphs are the same size.
+	if(lineChartWidth == 0){
+		var w = parseInt(d3.select(idName).style('width'), 10);
+		lineChartWidth = w;
+	}else {
+		var w = lineChartWidth;
+	}
 	var h = w*.50;
 	var width = w - margin.left - margin.right;
 	var height = h - margin.top - margin.bottom;
@@ -80,7 +86,8 @@ function buildChart(idName, data){
 function animateChart(idName, data, isExpanded){
 	if(!isExpanded){
 		var margin = {top: 30, right: 20, bottom: 30, left: 25};
-		var w = parseInt(d3.select(idName).style('width'), 10);
+		//var w = parseInt(d3.select(idName).style('width'), 10);
+		var w = lineChartWidth;
 		var h = w*.50;
 		var width = w - margin.left - margin.right;
 		var height = h - margin.top - margin.bottom;

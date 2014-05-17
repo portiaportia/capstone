@@ -46,6 +46,8 @@
 
     var classNames = ["car", "bus", "walk", "bike"];
 
+    var barChartWidth = 0;
+
 function buildBarChart(idName){
     var n = barData.length; // number of bars per section, number of layers, number of modes/series
     var m = barData[0].length; //number of months (samples per layer)
@@ -65,8 +67,10 @@ function buildBarChart(idName){
     var yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
     yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
-  var margin = {top: 30, right: 5, bottom: 50, left: 5};
+  var margin = {top: 30, right: 5, bottom: 50, left: 25};
+
     var w = parseInt(d3.select(idName).style('width'), 10);
+    barChartWidth = w;
     var h = w*.60;
     var width = w - margin.left - margin.right;
     var height = h - margin.top - margin.bottom;
@@ -92,6 +96,14 @@ function buildBarChart(idName){
       .tickPadding(6) //the space between axis and label
       .orient("bottom")
       .tickFormat(d3.time.format("%b"));
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .tickSize(1)
+      .ticks(6)
+      //.tickPadding(6) //the space between axis and label
+      .orient("left");
+      //.tickFormat(d3.time.format("%b"));
 
   var svg = d3.select(idName).append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -138,10 +150,15 @@ function buildBarChart(idName){
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
+  svg.append("g")
+      .attr("class", "y axis")
+      //.attr("transform", "translate(0," + height + ")")
+      .call(yAxis);
+
+
   /* START LEGEND */
   var legend = svg.append("g")
     .attr("class", "legend")
-    //.attr("y", height);
     .attr("transform", "translate(0," + (height+20) + ")");
 
   legend.selectAll('rect')
@@ -166,8 +183,6 @@ function buildBarChart(idName){
 
     /* END LEGEND */
 
- // d3.selectAll("input").on("change", change);
-
 }
 
 /*If the bars overlap the axis, it might be b/c of the height calc. 
@@ -188,7 +203,8 @@ function animateBarChart(idName, isExpanded){
     yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
     var margin = {top: 30, right: 5, bottom: 50, left: 5};
-    var w = parseInt(d3.select(idName).style('width'), 10);
+    //var w = parseInt(d3.select(idName).style('width'), 10);
+    var w = barChartWidth;
     var h = w*.60;
     var width = w - margin.left - margin.right;
     var height = h - margin.top - margin.bottom;
