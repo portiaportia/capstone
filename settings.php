@@ -60,9 +60,16 @@
 		    <img class="icon" src="images/privacy.png"/>
 		    <h3>Privacy</h3>
 		    </div>
-	    	<p id="privacy-desc">
-	   			Information gathered through this application will not be used for anything other than commuting purposes.  The data collected through this application will be summarized in terms of miles, and transportation modes at a week level.  Time of arrival and departure will not be tracked.  Actual route details pertaining to your commute will not be kept or viewable by your company.
-	    	</p>
+		    <div id="privacy-desc">
+		    	<p>
+		    	Information gathered through this application will not be used 
+		    	for anything other than commuting purposes.  
+		    	The data collected through this application will be summarized 
+		    	in terms of miles, and transportation modes at a week level.  
+		    	Time of arrival and departure will not be tracked.  Actual route 
+		    	details pertaining to your commute will not be kept or viewable by your company.
+		    	</p>
+	    	</div>
 
 				<img class="section-arrow down-arrow" src="images/section-arrow-down.png">
 		        <img class="section-arrow up-arrow" src="images/section-arrow-up.png">

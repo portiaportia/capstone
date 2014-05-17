@@ -22,8 +22,8 @@ function trackChanged()
 function togglePrivacy()
 {
 	var id = $(this).attr("href");
-	$(id).toggle();	
-	
+	$(id).slideToggle(500);	
+  	
 	$(".up-arrow, .down-arrow").toggle();
 	return false;
 }
@@ -31,7 +31,7 @@ function togglePrivacy()
 function toggleTrackingDetail()
 {
   var id = $(this).attr("href");
-  $(id).toggle(); 
+  $(id).slideToggle(500); 
   
   $(".less, .more").toggle();
   return false;

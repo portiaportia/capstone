@@ -224,8 +224,8 @@ function animateBarChart(idName, isExpanded){
       .attr("height", 0);
 
     var rect = d3.select(idName).select(".barChart").select("g").selectAll(".layer").selectAll('rect');
-    rect.transition().duration(850)
-      .delay(function(d, i) { return i * 10; }) //this starts it from left to right
+    rect.transition().duration(950)
+      .delay(function(d, i) { return (500 + (i * 15)); }) //this starts it from left to right
       .attr("y", function(d) { return y(d.y0 + d.y); })
       .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); });
   }

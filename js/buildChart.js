@@ -115,7 +115,7 @@ function animateChart(idName, data, isExpanded){
 			.attr("d", blankLine(data));
 
 		svg.select("path") // Add the valueline path.
-			.transition().delay(500).duration(850)
+			.transition().delay(500).duration(950)
 			.attr("d", valueline(data));
 	}
 }

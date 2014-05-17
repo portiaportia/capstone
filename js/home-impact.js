@@ -10,7 +10,7 @@ function hideShowImpact()
 	
 	var id = $(this).attr("href");
 	
-//if id display is none, we are off.
+	//if id display is none, we are off.
 	var isExpanded = false;
 	if($(id).is(":visible") ){
 		isExpanded = true;
