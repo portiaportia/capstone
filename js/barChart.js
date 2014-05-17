@@ -174,41 +174,43 @@ function buildBarChart(idName){
 It is based on the width and sometimes the initial width includes a scroll bar. 
 Just started noticing this in the new firefox
 */
-function animateBarChart(idName){
+function animateBarChart(idName, isExpanded){
+  if(!isExpanded){
     var n = barData.length; // number of bars per section, number of layers, number of modes/series
     var m = barData[0].length; //number of months (samples per layer)
 
     var stack = d3.layout.stack()
       .offset("zero")
-    
+
     var layers = stack(barData);
 
     var yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
     yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
-  var margin = {top: 30, right: 5, bottom: 50, left: 5};
+    var margin = {top: 30, right: 5, bottom: 50, left: 5};
     var w = parseInt(d3.select(idName).style('width'), 10);
     var h = w*.60;
     var width = w - margin.left - margin.right;
     var height = h - margin.top - margin.bottom;
 
-  var x = d3.scale.ordinal()
+    var x = d3.scale.ordinal()
       .domain(d3.range(m))
       .rangeRoundBands([0, width], .08);
 
-  var y = d3.scale.linear()
+    var y = d3.scale.linear()
     .domain([0, yStackMax])
     .range([height, 0]);
 
-  //drop the bars to zero
-  var rect = d3.select(idName).select(".barChart").select("g").selectAll(".layer");
-  rect.selectAll('rect')
+    //drop the bars to zero
+    var rect = d3.select(idName).select(".barChart").select("g").selectAll(".layer");
+    rect.selectAll('rect')
       .attr("y", height)
       .attr("height", 0);
 
-  var rect = d3.select(idName).select(".barChart").select("g").selectAll(".layer").selectAll('rect');
-  rect.transition().duration(850)
+    var rect = d3.select(idName).select(".barChart").select("g").selectAll(".layer").selectAll('rect');
+    rect.transition().duration(850)
       .delay(function(d, i) { return i * 10; }) //this starts it from left to right
       .attr("y", function(d) { return y(d.y0 + d.y); })
       .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); });
+  }
 }

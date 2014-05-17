@@ -43,7 +43,7 @@
     <div id="bonuses-expand" class="impact-section">
         <div id="d3Chart-bonuses" class="d3Chart"></div>
 			<script>
-                buildChart("#d3Chart-bonuses");
+                buildChart("#d3Chart-bonuses", bonusesData);
             </script>
         <a class="impact-hide-show" href="#bonuses-expand"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
@@ -68,7 +68,7 @@
             
             <div id="d3Chart-carbon" class="d3Chart"></div>
             <script>
-                buildChart("#d3Chart-carbon");
+                buildChart("#d3Chart-carbon", carbonData);
             </script>
 
         </section>

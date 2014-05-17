@@ -9,19 +9,34 @@ function hideShowImpact()
 	$(".impact").removeClass("expanded");
 	
 	var id = $(this).attr("href");
-	$(id).slideToggle(1000);
+	
+//if id display is none, we are off.
+	var isExpanded = false;
+	if($(id).is(":visible") ){
+		isExpanded = true;
+		$(id).slideToggle(500);
+	}else{
+		$(id).slideToggle(850);	
+	}
+	
 	var myParent = $(this).closest(".impact");
 	myParent.addClass("expanded");
 	myParent.find(".section-arrow.down-arrow").toggle();
 
 	//take the id and remove the -expand, and add the d3Chart to the beginning.
-	var idToAnimate = id.replace("-expand", "").replace("#", "#d3Chart-");
-
+	var type = id.replace("-expand", "");
+	var idToAnimate = type;
+	idToAnimate = type.replace("#", "#d3Chart-");
+	
 	//TODO this could be more elegant, probably by using classes rather than an id
 	if(idToAnimate == "#d3Chart-time"){ 
-		animateBarChart(idToAnimate);
+		animateBarChart(idToAnimate, isExpanded);
 	}else{
-		animateChart(idToAnimate);
+		if(idToAnimate == "#d3Chart-carbon"){
+			animateChart(idToAnimate, carbonData, isExpanded);
+		}else if(idToAnimate == "#d3Chart-bonuses"){
+			animateChart(idToAnimate, bonusesData, isExpanded);
+		}
 	}
 	
 	/* We want the whole impact div that was clicked to be in view
