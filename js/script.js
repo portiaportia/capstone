@@ -1,5 +1,6 @@
 var currentPage = 0;
 var firstClickCommute = true;
+var header_height = 30;
 
 window.onload = function() {
 	//make the page fill the height

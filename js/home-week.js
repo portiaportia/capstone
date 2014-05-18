@@ -24,6 +24,6 @@ function hideShowWeek(id)
 	myParent.find(".section-arrow.down-arrow").toggle();
 	
 	$('html,body').animate({
-        scrollTop: myParent.offset().top},
+        scrollTop: myParent.offset().top - header_height},
         1000);
 }

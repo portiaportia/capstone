@@ -42,7 +42,7 @@ function hideShowImpact()
 	/* We want the whole impact div that was clicked to be in view
 		so if it's bottom > than the browser we need to scroll so bottom is in view */
 	$('html,body').animate({
-        scrollTop: myParent.offset().top},
+        scrollTop: myParent.offset().top - header_height},
         1000);
 	
 	return false;

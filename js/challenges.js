@@ -29,7 +29,7 @@ function challengesHideShowImpact()
 
 		var myParent = $(this).closest(".leader");	
 		$('html,body').animate({
-        scrollTop: myParent.offset().top},
+        scrollTop: myParent.offset().top - header_height},
      	850);
 	}
 	return false;

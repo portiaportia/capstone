@@ -2,15 +2,15 @@
 <?php
 	//set up the data to be used. Later it will be sorted
 	$people_data = array(
-		array("name"=>"Me", "miles"=>43, "goal"=>"10", "trips"=>17, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>true),
-		array("name"=>"John Smith", "miles"=>4, "goal"=>"10", "trips"=>5, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Amy", "miles"=>16, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Taylor", "miles"=>6, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Chris", "miles"=>26, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Sharon", "miles"=>46, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Erin", "miles"=>23, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Me", "miles"=>32, "goal"=>"10", "trips"=>16, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>true),
+		array("name"=>"John Smith", "miles"=>50, "goal"=>"10", "trips"=>19, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Amy", "miles"=>78, "goal"=>"10", "trips"=>25, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Taylor", "miles"=>60, "goal"=>"10", "trips"=>23, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Chris", "miles"=>35, "goal"=>"10", "trips"=>6, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Sharon", "miles"=>90, "goal"=>"10", "trips"=>34, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>26, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Erin", "miles"=>110, "goal"=>"10", "trips"=>34, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>15, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"Meredith", "miles"=>105, "goal"=>"10", "trips"=>7, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"James", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),
 		array("name"=>"Andy", "miles"=>21, "goal"=>"10", "trips"=>4, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),
@@ -164,7 +164,7 @@ function team_summary($team){
 function create_people_list($people_data) {
 	$position = 1;
 	foreach ($people_data as $person){
-		create_person_section($person, $position++);
+		create_person_section($person, $position++, true);
 	}
 }
 
@@ -173,18 +173,20 @@ function create_people_list_for_team($people_data, $team_data) {
 	$position = 1;
 	foreach ($people_data as $person){
 		if($person["team"] == $team_data["name"]){
-			create_person_section($person, $position++);
+			create_person_section($person, $position++, false);
 		}
 	}
 }
 
-function create_person_section($person, $position){
+function create_person_section($person, $position, $include_position){
 	?>
 	<section class="leader person <?php if($person["you"]){ echo " you";} ?>">
 		<div>
-			<!--<p class="position">-->
+			<?php if($include_position) {
+				echo "<p class='position'>";
+				echo $position . "</p>";
+			}?>
 			<?php
-			//echo $position . "</p>";
 			echo "<img src=\"" . $person["image"] . "\">";
 			echo "<h1>" . $person["name"];
 			echo "</h1>";
@@ -211,7 +213,7 @@ function build_progress_bar($progress, $goal){
 		<div class="progress-indicator"></div>
 		<div class="goal-bar" style="width: 95%;"></div>
 		<div class="goal-indicator" style="left: 95%;"></div>
-		<div class="goal">Goal: <?php number_format($goal) ?> trips</div>	
+		<div class="goal">Goal: <?php echo number_format($goal) ?> trips</div>	
 	</div>
 	<?php
 }

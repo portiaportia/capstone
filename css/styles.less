@@ -4,11 +4,14 @@
 @darkBlue : #59818B;
 @accentGreen : #27C86C;
 @accentBlue : #00AEDB;
+@pix-white : white;
 
 @font-sans : 'Open Sans', sans-serif;
 
 /* assuming 16 columns per page, one column is 6.25%*/
 @onecolumn: 6.25%; 
+@header-height: 30px; /* also set in the script.js*/
+@footer-height: 59px;
 
 /**** Resets ***********/
 * {margin:0; padding:0; border:0; font-size:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;	font-family: @font-sans; font-size:100%; font-weight:normal;}
@@ -151,6 +154,23 @@ body {
 	margin-bottom:3%;
 }
 
+.page-title {
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	height: @header-height;
+	background: @pix-white;
+	width:100%;
+	text-align: center;
+	border-bottom: 1px solid darken(@lightGray, 20%);
+}
+
+.container {
+	margin-top: @header-height;
+	/*padding-bottom: 10px;*/
+
+}
+
 .main-footer {
 
 }
@@ -165,8 +185,9 @@ body {
 	position:absolute;
 	-webkit-overflow-scrolling: touch;
 	display:none;
-	padding:5px;
-	padding-bottom:100px;
+	/*padding:5px;*/
+	padding-bottom:@footer-height;
+	/*margin-bottom: @footer-height;*/
 }
 
 .page.current {
@@ -227,12 +248,12 @@ body {
 .bottom-nav ul li {
 	float: left;
 	width:25%;
-	border:1px solid darken(@lightGray, 20%);
+	border-top:1px solid darken(@lightGray, 20%);
 	border-left:none;
 }
 
 .bottom-nav ul li:first-child {
-	border-left:1px solid darken(@lightGray, 20%);
+	/*border-left:1px solid darken(@lightGray, 20%);*/
 }
 
 .bottom-nav ul li a {
@@ -243,17 +264,20 @@ body {
 	text-align:center;
 	padding:10% 10%;
 	margin:0;
-	font-size:.5em;
+	font-size:.4em;
 }
 
 .bottom-nav a.highlight {
-	background:lighten(@darkGray, 20%);
-	color:#fff;
+	color:@accentBlue;
+
+	img {
+		background:@accentBlue;
+	}
 }
 
 .bottom-nav img {
 	max-width:100%;
-	width:50%;	
+	width:40%;	
 	margin:auto;
 	display:block;
 }
