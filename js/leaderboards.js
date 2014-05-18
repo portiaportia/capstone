@@ -47,7 +47,7 @@ var barbie_data_set = [
 //buildIndividualTeamPage(barbie_data_set, "#biking-barbies", false);
 
 //buildProgressBar([{goal: 50, progress: 25}], "#biking-barbies");
-
+/*
 function buildProgressBar(data_set, idPlace)
 {
 	var team_stats = d3.select(idPlace).select(".whole-team").select(".progress")
@@ -63,7 +63,7 @@ function buildProgressBar(data_set, idPlace)
 		team_stats.append("div").attr("class", "goal-indicator")
 			.style("left", "95%");
 }
-
+*/
 /*
 function buildIndividualTeamPage(data_set, idPlace, withLinks)
 {	

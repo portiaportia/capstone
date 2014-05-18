@@ -10,7 +10,7 @@
 	<?php include "commute.php"; ?>
 </div>
 
-<script src="js/team-toggle.js"></script>
+<script src="js/challenges.js"></script>
 <div id="challenges" class="page">
 	<div id="challenge-mode">
 		<ul>
@@ -29,7 +29,6 @@
     <div id="team-home" class="content currentContent">
         <?php include "challenge-team.php"; ?>
     </div>
-	<?php build_team_pages($people_data, $new_team_data); ?>
 	
 	<div id="individual-home" class="content">
 		<?php include "challenge-individual.php"; ?>

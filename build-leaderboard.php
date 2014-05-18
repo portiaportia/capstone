@@ -11,9 +11,9 @@
 		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"Erin", "miles"=>23, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Meredith", "miles"=>18, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Meredith", "miles"=>105, "goal"=>"10", "trips"=>7, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"James", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),
-		array("name"=>"Andy", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),
+		array("name"=>"Andy", "miles"=>21, "goal"=>"10", "trips"=>4, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),
 		array("name"=>"Mark", "miles"=>35, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters", "you"=>false),
 		array("name"=>"Clarissa", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Tricksters", "you"=>false),
 		array("name"=>"Omar", "miles"=>28, "goal"=>"10", "trips"=>10, "image"=>"images/person.png", "team"=>"Ninja Riders", "you"=>false),
@@ -42,21 +42,18 @@
 	// miles
 	// members
 	// yourteam
+	// avgtrips
 	$new_team_data = add_team_summary_info($people_data, $team_data);
 	
 	//sort the team array by trips, most to least. 
 	//If we need to sort by more than the trips, we should have an associated 
 	//array that is sorted with the index of the team array as the value
 	usort($new_team_data, function($a, $b) {
-    	return $b['trips'] - $a['trips'];
+    	return $b['avgtrips'] - $a['avgtrips'];
 	});
-
-		
 ?>
 
 <?php
-
-
 //Returns a new team array that includes summary info, #people, trips and miles
 function add_team_summary_info($people_data, $team_data){
 	$ret_array = [];
@@ -80,6 +77,7 @@ function add_team_summary_info($people_data, $team_data){
 		$team["trips"] = $ret_trips;
 		$team["members"] = $ret_members;
 		$team["yourteam"] = $ret_your_team;
+		$team["avgtrips"] = round($ret_trips / $ret_members, 1);
 		//add the new team to the return array
 		array_push($ret_array, $team);
 	}
@@ -92,25 +90,27 @@ function build_team_leaderboard($people_data, $team_data){
 	$position = 1;
 	foreach($team_data as $team){
 		?>
-		<section class="leader">
-			<a href="#<?php echo $team["id"] ?>">
+		<section class="leader <?php if($team["yourteam"]){ echo " your-team";} ?>">
+			<a class="team-hide-show" href="#<?php echo $team["id"] ?>">
 				<p class="position">
 				<?php
 				echo $position++ . "</p>";
 				echo "<img src=\"" . $team["image"] . "\">";
 				echo "<div class='left'><h1>" . $team["name"];
-				if($team["yourteam"]){ echo " *";}
 				echo "</h1>";
 				echo "<p class='members_detail'>" . $team["members"] . " members</p>";
 				echo "</div>";
 				?>
 				<div class="miles">
 					<?php
-					echo "<p class='trips_detail'>" . $team["trips"] . " trips</p>";
+					echo "<p class='trips_detail'>" . $team["avgtrips"] . " avg trips</p>";
 					echo "<p class='miles_detail'>" . $team["miles"] . " miles</p>";
 					?>
 				</div>
 			</a>
+			<div id="<?php echo $team["id"] ?>" class="team-members-section">
+				<?php create_people_list_for_team($people_data, $team); ?>
+			</div>
 		</section>
 	<?php
 	}
@@ -126,9 +126,7 @@ function build_team_pages($people_data, $team_data){
 				<h2 class="team-home-header">&#9664; All Teams</h2>
 			</a>
 		</header>
-		<?php
-		team_summary($team);
-		?>
+		<?php team_summary($team); ?>
 		<div class="in-team-leaderboard leaderboard">
 			<?php
 			create_people_list_for_team($people_data, $team);
@@ -162,6 +160,43 @@ function team_summary($team){
 <?php
 }
 
+//create list of people that belong to the passed team.
+function create_people_list($people_data) {
+	$position = 1;
+	foreach ($people_data as $person){
+		create_person_section($person, $position++);
+	}
+}
+
+//create list of people that belong to the passed team.
+function create_people_list_for_team($people_data, $team_data) {
+	$position = 1;
+	foreach ($people_data as $person){
+		if($person["team"] == $team_data["name"]){
+			create_person_section($person, $position++);
+		}
+	}
+}
+
+function create_person_section($person, $position){
+	?>
+	<section class="leader person <?php if($person["you"]){ echo " you";} ?>">
+		<div>
+			<!--<p class="position">-->
+			<?php
+			//echo $position . "</p>";
+			echo "<img src=\"" . $person["image"] . "\">";
+			echo "<h1>" . $person["name"];
+			echo "</h1>";
+			echo "<div class='miles'>";
+			echo "<p class='trips_detail'>" . $person["trips"] . " trips</p>";
+			echo "<p class='miles_detail'>" . $person["miles"] . " miles</p>";
+			echo "</div>";
+			?>
+		</div> <!--end person info (not a class or id)-->
+	</section> <!-- leader end -->
+	<?php 
+}
 //builds a progress bar
 function build_progress_bar($progress, $goal){
 	?>
@@ -176,47 +211,8 @@ function build_progress_bar($progress, $goal){
 		<div class="progress-indicator"></div>
 		<div class="goal-bar" style="width: 95%;"></div>
 		<div class="goal-indicator" style="left: 95%;"></div>
-		<div class="goal">Goal: 25,000 trips</div>	
+		<div class="goal">Goal: <?php number_format($goal) ?> trips</div>	
 	</div>
 	<?php
-}
-
-//create list of people that belong to the passed team.
-function create_people_list($people_data) {
-	$position = 1;
-	foreach ($people_data as $person){
-		create_person_section($person, $position++);
-	}
-}
-
-function create_person_section($person, $position){
-	?>
-	<section class="leader person">
-		<div>
-			<p class="position">
-			<?php
-			echo $position . "</p>";
-			echo "<img src=\"" . $person["image"] . "\">";
-			echo "<h1>" . $person["name"];
-			if($person["you"]){ echo " *";}
-			echo "</h1>";
-			echo "<div class='miles'>";
-			echo "<p class='trips_detail'>" . $person["trips"] . " trips</p>";
-			echo "<p class='miles_detail'>" . $person["miles"] . " miles</p>";
-			echo "</div>";
-			?>
-		</div> <!--end person info (not a class or id)-->
-	</section> <!-- leader end -->
-	<?php 
-}
-
-//create list of people that belong to the passed team.
-function create_people_list_for_team($people_data, $team_data) {
-	$position = 1;
-	foreach ($people_data as $person){
-		if($person["team"] == $team_data["name"]){
-			create_person_section($person, $position++);
-		}
-	}
 }
 ?>

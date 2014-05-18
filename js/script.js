@@ -22,10 +22,10 @@ window.onload = function() {
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
 	//challenges
-	$("#challenges a").click(changeContentChallenges);
+	//$("#challenges a").click(changeContentChallenges);
 
 	//change team/indiv toggle
-	$("#challenge-mode a").click(changeChallengeType);
+	//$("#challenge-mode a").click(changeChallengeType);
 
 }
 //get the size of a px property without the px
@@ -89,7 +89,7 @@ function changePage() {
 	}
 	return false;
 }
-
+/*
 function changeChallengeType(){
 	var pageRef = $(this).attr("href");
 	$("#challenge-mode a").removeClass("highlight");
@@ -102,7 +102,7 @@ function changeChallengeType(){
 	});
 
 }
-
+/*
 function changeContentChallenges() {
 	$("#challenges .content").removeClass("currentContent");
 
@@ -110,7 +110,7 @@ function changeContentChallenges() {
 
 	return false;
 }
-
+*/
 function changeContentHome() {
 	$("#home .content").removeClass("currentContent");
 	$($(this).attr("href")).addClass("currentContent");

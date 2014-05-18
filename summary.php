@@ -1,21 +1,22 @@
 <?php function createImpactHeader($title, $ppTitle, $ppSavings, $yTitle, $ySavings, $link){ ?>
 		<a class="impact-hide-show" href="<?php echo $link ?>">
-    	<header>
-        	<section class="home-section-title">
-                <!--<span class='impact-down arrow'>&#9654;</span>
-                <span class='impact-up arrow'>&#9660;</span>-->
-                <h1><?php echo $title; ?></h1>
-            </section>
-            <section class="ppsavings">
-                <h2>Pay Period <?php echo $ppTitle; ?></h2>
-                <p><?php echo $ppSavings; ?>
-            </section>
-            <section class="ysavings">
-            	<h2>Yearly <?php echo $yTitle; ?></h2>
-                <p><?php echo $ySavings; ?></p>
-            </section>
-            <img class="section-arrow down-arrow" src="images/section-arrow-down.png">
-     	</header></a>
+        	<header>
+            	<section class="home-section-title">
+                    <!--<span class='impact-down arrow'>&#9654;</span>
+                    <span class='impact-up arrow'>&#9660;</span>-->
+                    <h1><?php echo $title; ?></h1>
+                </section>
+                <section class="ppsavings">
+                    <h2>Pay Period <?php echo $ppTitle; ?></h2>
+                    <p><?php echo $ppSavings; ?>
+                </section>
+                <section class="ysavings">
+                	<h2>Yearly <?php echo $yTitle; ?></h2>
+                    <p><?php echo $ySavings; ?></p>
+                </section>
+                <img class="section-arrow down-arrow" src="images/section-arrow-down.png">
+         	</header>
+        </a>
 <? } ?>
 <?php
     function createVertGraph($goal, $progress) {
