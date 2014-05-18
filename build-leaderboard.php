@@ -169,7 +169,7 @@ function build_progress_bar($progress, $goal){
 		<?php
 		$perc_comp = (($progress / $goal)*.95)*100;
 		
-		echo "<p class='title'>" . round($perc_comp) . "% of Goal</p>";
+		echo "<p class='title'>" . number_format($progress) . " total trips</p>";
 		echo "<div class='progress-bar' style='width:" .  $perc_comp . "%; ''></div>";
 		?>
 		

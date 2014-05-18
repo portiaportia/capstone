@@ -4,7 +4,7 @@
     		<li>
             	<a href="#summary" class="highlight">
                 	<img src="images/summary-icon.png">
-                	Home
+                	Dashboard
                 </a>
              </li>
              <li>
