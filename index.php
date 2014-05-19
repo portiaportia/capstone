@@ -26,28 +26,9 @@
 	<header class="page-title">
 		<h1>Challenges</h1>
 	</header>
+
 	<div class="container">
-		<div id="challenge-mode">
-			<ul>
-				<li><a href="#team-home" class="team-toggle">
-	            	<img src="images/team-selected.png">
-	                <img class="unselected" src="images/team-unselected.png">
-	                Team
-	            </a></li>
-				<li><a href="#individual-home" class="team-toggle">
-	            	<img class="unselected" src="images/individual-selected.png">
-	                <img src="images/individual-unselected.png">
-	                Individual
-	            </a></li>
-			</ul>
-		</div>
-	    <div id="team-home" class="content currentContent">
-	        <?php include "challenge-team.php"; ?>
-	    </div>
-		
-		<div id="individual-home" class="content">
-			<?php include "challenge-individual.php"; ?>
-		</div>
+		<?php include "challenges.php"; ?>
 	</div>
 </div><!-- end page -->
 

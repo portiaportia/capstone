@@ -98,14 +98,18 @@ function build_team_leaderboard($people_data, $team_data){
 				echo "<img src=\"" . $team["image"] . "\">";
 				echo "<div class='left'><h1>" . $team["name"];
 				echo "</h1>";
-				echo "<p class='members_detail'>" . $team["members"] . " members</p>";
+				echo "<p class='members-detail'>" . $team["members"] . " members</p>";
 				echo "</div>";
 				?>
 				<div class="miles">
-					<?php
-					echo "<p class='trips_detail'>" . $team["avgtrips"] . " avg trips</p>";
-					echo "<p class='miles_detail'>" . $team["miles"] . " miles</p>";
-					?>
+					
+					<p>
+						<span class='pix-stat-number trips-detail'><?php echo $team["avgtrips"]; ?></span>
+						<span class='pix-stat-label miles-detail'>avg trips</span>
+					</p>
+					<p>
+						<span class='pix-stat-label miles-detail'><?php echo $team["miles"]; ?> mi</span>
+					</p>
 				</div>
 			</a>
 			<div id="<?php echo $team["id"] ?>" class="team-members-section">
@@ -114,50 +118,6 @@ function build_team_leaderboard($people_data, $team_data){
 		</section>
 	<?php
 	}
-}
-
-//builds out the team details page for each team
-function build_team_pages($people_data, $team_data){
-	foreach($team_data as $team){
-	?>
-	<div id="<?php echo $team["id"] ?>" class="content team-details">
-		<header>
-			<a href="#team-home">
-				<h2 class="team-home-header">&#9664; All Teams</h2>
-			</a>
-		</header>
-		<?php team_summary($team); ?>
-		<div class="in-team-leaderboard leaderboard">
-			<?php
-			create_people_list_for_team($people_data, $team);
-			?>
-		</div> <!--in-team-leaderboard end-->		
-	</div> <!-- team-details end -->
-	<?php
-	}
-}
-
-//builds the team summary information
-function team_summary($team){
-	?>
-	<section class="whole-team">
-		<?php
-			echo "<img src=\"" . $team["image"] . "\"/>";
-		?>
-		<div class="team-stats">
-			<?php
-			echo "<h3>" . $team["name"] . "</h3>";
-			?>
-			<div class="linebreak">
-				<p class="trips_detail"><?php echo $team["trips"] ?> trips</p>
-				<p class="miles_detail"><?php echo $team["miles"] ?> miles</p>
-			</div>
-			<p class="members_detail"><?php echo $team["members"] ?> members</p>
-
-		</div> <!--team-stats end-->
-		<?php build_progress_bar(10000, 25000); ?>
-	</section><!-- whole-team end-->
-<?php
 }
 
 //create list of people that belong to the passed team.
@@ -189,12 +149,18 @@ function create_person_section($person, $position, $include_position){
 			<?php
 			echo "<img src=\"" . $person["image"] . "\">";
 			echo "<h1>" . $person["name"];
-			echo "</h1>";
-			echo "<div class='miles'>";
-			echo "<p class='trips_detail'>" . $person["trips"] . " trips</p>";
-			echo "<p class='miles_detail'>" . $person["miles"] . " miles</p>";
-			echo "</div>";
 			?>
+			</h1>
+				<div class="miles">
+					
+					<p>
+						<span class='pix-stat-number trips-detail'><?php echo $person["trips"]; ?></span>
+						<span class='pix-stat-label miles-detail'> trips</span>
+					</p>
+					<p>
+						<span class='pix-stat-label miles-detail'><?php echo $person["miles"]; ?> mi</span>
+					</p>
+				</div>
 		</div> <!--end person info (not a class or id)-->
 	</section> <!-- leader end -->
 	<?php 
@@ -204,15 +170,15 @@ function build_progress_bar($progress, $goal){
 	?>
 	<div class="progress">
 		<?php
-		$perc_comp = (($progress / $goal)*.95)*100;
+		$perc_comp = ($progress / $goal)*100;
 		
-		echo "<p class='title'>" . number_format($progress) . " total trips</p>";
+		echo "<p class='title'>" . number_format($progress) . " trips completed</p>";
 		echo "<div class='progress-bar' style='width:" .  $perc_comp . "%; ''></div>";
 		?>
 		
 		<div class="progress-indicator"></div>
-		<div class="goal-bar" style="width: 95%;"></div>
-		<div class="goal-indicator" style="left: 95%;"></div>
+		<div class="goal-bar"></div>
+		<div class="goal-indicator"></div>
 		<div class="goal">Goal: <?php echo number_format($goal) ?> trips</div>	
 	</div>
 	<?php

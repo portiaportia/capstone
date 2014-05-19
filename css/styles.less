@@ -56,8 +56,22 @@ img {max-width:100%}
 }
 .pix-small {
 	font-size: .75em;
-	font-weight: 400;
+	font-weight: 300;
 	color: @darkGray;
+}
+
+.pix-stat-number{
+	font-size: 1.4em;
+	color: @darkGray;
+	text-align: center;
+	font-weight: 300;
+}
+
+.pix-stat-label{
+	font-size: .75em;
+	color: @darkGray;
+	text-align: center;
+	font-weight: 300;
 }
 
 .pix-graphLabel{
@@ -100,7 +114,6 @@ h1 {
 	text-align: left;
 	padding-left:5px;
 	color: @darkGray;
-	/*color:darken(@lightGray, 40%);*/
 }
 
 h2 {
@@ -116,11 +129,6 @@ h4 {
 	font-size:.75em;	
 	color:darken(@lightGray, 30%);
 }
-/*
-p {
-	padding-bottom: 1em;
-}
-*/
 
 a, h1 a, h2 a {
 	text-decoration:none;
@@ -159,20 +167,21 @@ body {
 	top: 0px;
 	z-index: 100;
 	height: @header-height;
-	background: @pix-white;
+	background: @accentBlue;
 	width:100%;
 	text-align: center;
 	border-bottom: 1px solid darken(@lightGray, 20%);
+
+	h1 {
+		color: @pix-white;
+	}
 }
 
 .container {
 	margin-top: @header-height;
-	/*padding-bottom: 10px;*/
-
 }
 
 .main-footer {
-
 }
 
 .pages, .page {
@@ -185,9 +194,7 @@ body {
 	position:absolute;
 	-webkit-overflow-scrolling: touch;
 	display:none;
-	/*padding:5px;*/
 	padding-bottom:@footer-height;
-	/*margin-bottom: @footer-height;*/
 }
 
 .page.current {
@@ -195,39 +202,6 @@ body {
 }
 
 /***** Navigation *******/
-
-/***** Circle Navigation **********/
-.circle-nav {
-	overflow:hidden;
-	width:54px;
-	margin:auto;
-	margin-bottom:4%;
-}
-
-.circle {
-	border-radius: 50%;
-	border: 1px solid @lightGray;
-	width: 9px;
-	height: 9px; 
-	float:left;
-	margin:0 3px;
-}
-
-.circle.selected {
-	background: @lightGray;
-}
-
-/****** Arrow Nav *******/
-.arrow-title {
-	margin-bottom:20px;	
-}
-
-.arrow-title {
-	h2 {
-		display:inline;
-		padding:0 10px;	
-	}
-}
 
 /***** Bottom Nav *******/
 .bottom-nav {
@@ -249,11 +223,6 @@ body {
 	float: left;
 	width:25%;
 	border-top:1px solid darken(@lightGray, 20%);
-	border-left:none;
-}
-
-.bottom-nav ul li:first-child {
-	/*border-left:1px solid darken(@lightGray, 20%);*/
 }
 
 .bottom-nav ul li a {
@@ -269,15 +238,11 @@ body {
 
 .bottom-nav a.highlight {
 	color:@accentBlue;
-
-	img {
-		background:@accentBlue;
-	}
 }
 
 .bottom-nav img {
 	max-width:100%;
-	width:40%;	
+	width:50%;	
 	margin:auto;
 	display:block;
 }
@@ -294,8 +259,6 @@ body {
 	
 	 h1 {
 		float:left;
-		/*color:darken(@lightGray, 30%);*/
-		/*.pix-header;*/
 	}	
 }
 
@@ -333,10 +296,6 @@ body {
 			float:left;
 		}
 	}
-}
-
-.impact:first-of-type, .week:first-of-type {
-	border-top:1px dashed @lightGray;	
 }
 
 .impact, .week {
@@ -395,9 +354,6 @@ body {
 		overflow:hidden;
 		margin-bottom:3%;
 		
-		.day-date {
-			/*float: left;*/
-		}
 		h3 {
 			float:left;
 			width:10%;
@@ -445,10 +401,6 @@ body {
 	padding:10px 0;
 }
 
-.pounds {
-	overflow:hidden;
-		
-}
 
 /***** Home Trends ******/
 .trend {
@@ -469,17 +421,20 @@ body {
 /***** Leaderboard ******/
 .challenge-title {
 	overflow:hidden;
+
+	h3 {
+		color:@darkGray;
+		text-align: center;
+	}
 }
 
 .challenge-title .days-left {
-	font-size:.75em;
-	font-weight:600;
-	padding-top:2.5em;
-	font-color:lighten(@lightGray, 20%);
-}
+	float: left;	
+	padding-left: @onecolumn;
 
-.challenge-title h3 {
-	color:@accentBlue;	
+	.pix-stat-number {
+		margin-bottom: -.3em;
+	}
 }
 
 #challenges {
@@ -488,7 +443,6 @@ body {
 		width: 40%;
 		margin: auto auto;
 		overflow: hidden;
-
 	}
 
 	#challenge-mode ul {
@@ -522,7 +476,6 @@ body {
 }
 
 .leader {
-	/*margin-top:	2px;*/
 	width:100%;
 	overflow:hidden;
 	border-top:none;
@@ -534,11 +487,6 @@ body {
 	border-top:1px dashed @lightGray;	
 }
 
-.leader {
-	/*padding:4px 0px 1px;*/
-	
-}
-
 .leader a {
 	width:100%;
 	display:block;
@@ -546,10 +494,6 @@ body {
 	overflow:hidden;
 	.borders(2px);
 }
-/*
-.leader a:hover {
-	background:lighten(@accentGreen, 45%);
-}*/
 
 /*the team leader for .you*/
 .leader.your-team {
@@ -566,8 +510,6 @@ body {
 	padding:0;
 	margin-right:5%;
 	.pix-header;
-	/*font-size:2em;*/
-	/*color:lighten(@darkGray, 10%);*/
 }
 
 .leader img {
@@ -602,26 +544,18 @@ body {
 }
 
 .leader .miles p {
-/*	margin-bottom:.5em;*/
-	text-align:right;
+	text-align: center;
 	padding:0;
 }
 
-
-.leader .miles_detail, .leader .members_detail {
+/*
+.leader .miles-detail, .leader .members-detail {
 	.pix-small;
-}
+}*/
 
 .leader a {
 	text-decoration:none;
 	color:darken(@darkGray, 20%);
-}
-
-.leader .progress {
-	margin:0;
-	font-size:0.75em;
-	margin-left:5%;
-	padding:0;	
 }
 
 .content, .one-content {
@@ -674,36 +608,19 @@ body {
 	padding-right:2%;
 }
 
-.whole-team {
-	overflow:hidden;
-}
-
-.whole-team img {
-	display:block;
-	float:left;
-	margin-right:10%;
-	width:23%;
-}
-/*
-.whole-team p {
-	padding-bottom:0em;
-	font-size:.8em;
-	color:darken(@lightGray, 40%);
-}*/
-
 .team-stats {
 	padding-right: 5%;
 }
 
-.team-stats .trips_detail {
+.team-stats .trips-detail {
 	.left;
 }
 
-.team-stats .miles_detail {
+.team-stats .miles-detail {
 	.right;
 }
 
-.team-stats .members_detail {
+.team-stats .members-detail {
 	.left;
 	.pix-small;
 }
@@ -733,12 +650,6 @@ body {
 		margin: auto;
 		/*margin-top: 10px;*/
 	}
-/*
-	p {
-		margin: auto;
-		width: (100 - @onecolumn*2);
-	}
-	*/
 }
 
 .settings-section.first {
@@ -763,13 +674,6 @@ body {
 	}
 }
 
-
-/*
-#privacy {
-	padding-bottom:10px;
-	margin-bottom:15px;
-}*/
-
 .settings-day {
 	overflow:hidden;
 	/*margin-bottom:20px;*/
@@ -789,7 +693,6 @@ body {
 	}
 	.day-toggle{
 		float:right;
-		/*margin-right: @onecolumn;*/
 	}
 
 }
@@ -815,39 +718,31 @@ body {
 
 
 /***** Progress Bars ****/
-.progress .title {
-	.pix-small;
-}
-#team-home .progress, #leaderboard .progress {
-	.title {
-		/*display: none;*/
-	}
-	.progress-indicator {
-		display: none;
-	}
-	.goal-indicator {
-		display: none;
-	}
+.progress .title, .progress .goal {
+	font-size: .6em;
+	color: @darkGray;
+	font-weight: 300;
 }
 
+.progress .goal {
+	.right;
+}
 
 
 .progress {
 	.left;
 	margin-top: 10px;
-	color:darken(@accentBlue, 40%);
-	width: 100%;
+	width: @onecolumn * 10;
+	margin-left: @onecolumn;
 }
 
 .progress-bar {
-	background: desaturate(lighten(@accentBlue, 20%), 30%);
-	/*width: 40px;*/
+	background: @accentBlue; 
 	height: 3px;
 	margin-top: 6px;
 	float: left;
 	z-index:1;
 	position:relative;
-	/*margin-bottom: 20px;*/
 }
 .goal-bar {
 	background: desaturate(@lightGray, 40%);
@@ -880,17 +775,6 @@ body {
 	position: relative;
 }
 
-.progress .goal {
-	.right;
-	.pix-small;
-	padding-right: 5%;
-}
-
-.vert-graph {
-	height: 50px;
-	overflow:hidden;
-}
-
 .linebreak {
 	overflow: hidden;
 }
@@ -900,10 +784,6 @@ body {
 }
 
 /******** Graphing Override *****/
-#canvas {
-	/*width: 90% !important;	*/
-}
-
 .d3Chart, .d3BarChart{
 	/*this is supposed to smooth the transition, but it crashes safari i think*/
 	/*-webkit-transform: translateZ(0); */

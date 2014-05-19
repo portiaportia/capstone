@@ -3,25 +3,29 @@
 		<ul>
     		<li>
             	<a href="#summary" class="highlight">
-                	<img src="images/summary-icon.png">
+                	<img class="selected" src="images/dashboard-selected.png">
+                    <img class="unselected" style="display: none;" src="images/dashboard-unselected.png">
                 	Dashboard
                 </a>
              </li>
              <li>
             	<a href="#commute">
-                	<img src="images/commute-icon.png">
+                	<img class="selected" style="display: none;" src="images/commute-selected.png">
+                    <img class="unselected" src="images/commute-unselected.png">
                 	Commute
                 </a>
            	</li>
 			<li>
             	<a href="#challenges">
-                	<img src="images/team-icon.png">
+                	<img class="selected" style="display: none;" src="images/settings-selected.png">
+                    <img class="unselected" src="images/settings-unselected.png">
                 	Challenges
                 </a>
            	</li>
 			<li>
             	<a href="#settings">
-                	<img src="images/settings-icon.png">
+                	<img class="selected" style="display: none;" src="images/settings-selected.png">
+                    <img class="unselected" src="images/settings-unselected.png">
                 	Settings
                 </a>
             </li>

@@ -22,11 +22,6 @@ window.onload = function() {
 	
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
-	//challenges
-	//$("#challenges a").click(changeContentChallenges);
-
-	//change team/indiv toggle
-	//$("#challenge-mode a").click(changeChallengeType);
 
 }
 //get the size of a px property without the px
@@ -90,28 +85,7 @@ function changePage() {
 	}
 	return false;
 }
-/*
-function changeChallengeType(){
-	var pageRef = $(this).attr("href");
-	$("#challenge-mode a").removeClass("highlight");
 
-	$.each($("#challenge-mode a"), function() {
-		var aHref = $(this).attr("href");
-		if (aHref == pageRef) {
-			//$(this).addClass("highlight");
-		}
-	});
-
-}
-/*
-function changeContentChallenges() {
-	$("#challenges .content").removeClass("currentContent");
-
-	$($(this).attr("href")).addClass("currentContent");
-
-	return false;
-}
-*/
 function changeContentHome() {
 	$("#home .content").removeClass("currentContent");
 	$($(this).attr("href")).addClass("currentContent");
@@ -127,13 +101,14 @@ function highlightNav(pageId) {
 	$(".bottom-nav a").removeClass("highlight");
 
 	$.each($(".bottom-nav a"), function() {
-
+		$(this).children("img").hide();
 		var aHref = $(this).attr("href");
 
 		if (aHref == pageId) {
-
 			$(this).addClass("highlight");
-
+			$(this).children(".selected").show();
+		}else{
+			$(this).children(".unselected").show();
 		}
 
 	});

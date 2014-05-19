@@ -9,7 +9,7 @@
 	<!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>-->
 	<meta name="mobile-web-app-capable" content="yes" />
 	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet/less" href="css/styles.less">
 	

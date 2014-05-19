@@ -39,7 +39,7 @@
 <script src="js/buildChart.js"></script>
 
 <section class="impact">
-	<?php createImpactHeader("Earnings", "Earnings", "$31", "Earnings", "$206", "#bonuses-expand"); ?>
+	<?php createImpactHeader("Bonuses", "Bonuses", "$31", "Bonuses", "$206", "#bonuses-expand"); ?>
     
     <div id="bonuses-expand" class="impact-section">
         <a class="impact-hide-show" href="#bonuses-expand">
@@ -53,7 +53,7 @@
 </section>
 
 <section class="impact">
-    <?php createImpactHeader("CO<sub>2</sub>", "Savings", "35 lbs", "Savings", "305 lbs", "#carbon-expand"); ?>
+    <?php createImpactHeader("CO<sub>2</sub> Reductions", "Savings", "35 lbs", "Savings", "305 lbs", "#carbon-expand"); ?>
     
     <div id="carbon-expand" class="impact-section">
         <a class="impact-hide-show" href="#carbon-expand">
