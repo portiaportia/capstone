@@ -1,6 +1,7 @@
 <?php include "header.php"; ?>
 <?php //make sure the functions are available 
 	include "build-leaderboard.php"; 
+	include "summary-include.php";
 ?>	
 
 <div id="summary" class="page current">
@@ -9,6 +10,14 @@
 	</header>	
 	<div class="container">
 		<?php include "summary.php"; ?>
+	</div>
+</div>
+<div id="summary1" class="page">
+	<header class="page-title">
+		<h1>Dashboard</h1>
+	</header>	
+	<div class="container">
+		<?php include "summary1.php"; ?>
 	</div>
 </div>
 

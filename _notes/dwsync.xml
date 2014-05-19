@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="bottom-nav.php" server="portiaplante.com/luum/" local="130444833670511679" remote="130444833600000000" Dst="2" />
+<file name="bottom-nav.php" server="portiaplante.com/luum/" local="130449780992077110" remote="130449783600000000" Dst="2" />
 <file name="footer.php" server="portiaplante.com/luum/" local="130438687296578540" remote="130438687200000000" Dst="2" />
-<file name="header.php" server="portiaplante.com/luum/" local="130444325185265516" remote="130444327800000000" Dst="2" />
-<file name="index.php" server="portiaplante.com/luum/" local="130444743439165101" remote="130444743000000000" Dst="2" />
+<file name="header.php" server="portiaplante.com/luum/" local="130449967004180615" remote="130449966600000000" Dst="2" />
+<file name="index.php" server="portiaplante.com/luum/" local="130449893533898481" remote="130449893400000000" Dst="2" />
 <file name="README.md" server="portiaplante.com/luum/" local="130433493518540488" remote="130433496000000000" Dst="2" />
 <file name="top-nav.php" server="portiaplante.com/luum/" local="130435446623439274" remote="130435446600000000" Dst="2" />
-<file name="build-leaderboard.php" server="portiaplante.com/luum/" local="130442130953140852" remote="130443414600000000" Dst="2" />
+<file name="build-leaderboard.php" server="portiaplante.com/luum/" local="130449780992233369" remote="130449783600000000" Dst="2" />
 <file name="circle-nav.php" server="portiaplante.com/luum/" local="130438716561266154" remote="130438716600000000" Dst="2" />
-<file name="settings.php" server="portiaplante.com/luum/" local="130444337491626790" remote="130444337400000000" Dst="2" />
+<file name="settings.php" server="portiaplante.com/luum/" local="130449780993483436" remote="130449784200000000" Dst="2" />
 <file name=".DS_Store" server="portiaplante.com/luum/" local="130443411820722257" remote="130443411600000000" Dst="2" />
-<file name="challenge-individual.php" server="portiaplante.com/luum/" local="130444337991765858" remote="130444338000000000" Dst="2" />
-<file name="challenge-team.php" server="portiaplante.com/luum/" local="130444338081917167" remote="130444338000000000" Dst="2" />
 <file name="d3_graph_old.php" server="portiaplante.com/luum/" local="130443411820867557" remote="130443414600000000" Dst="2" />
 <file name="require.js" server="portiaplante.com/luum/" local="130438839224783982" remote="130443414600000000" Dst="2" />
-<file name="summary.php" server="portiaplante.com/luum/" local="130444727053450892" remote="130444726800000000" Dst="2" />
-<file name="commute.php" server="portiaplante.com/luum/" local="130444839647841579" remote="130444839600000000" Dst="2" />
-<file name="commute-icon.png" server="portiaplante.com/luum/" local="130444321761176256" remote="130444327800000000" Dst="2" />
-<file name="individual-selected.png" server="portiaplante.com/luum/" local="130444736615282259" remote="130444852200000000" Dst="2" />
-<file name="individual-unselected.png" server="portiaplante.com/luum/" local="130444736837259918" remote="130444852200000000" Dst="2" />
-<file name="team-unselected.png" server="portiaplante.com/luum/" local="130444737145497047" remote="130444852200000000" Dst="2" />
-<file name="team-selected.png" server="portiaplante.com/luum/" local="130444737000548323" remote="130444852200000000" Dst="2" />
+<file name="summary.php" server="portiaplante.com/luum/" local="130449963717107964" remote="130449963600000000" Dst="2" />
+<file name="commute.php" server="portiaplante.com/luum/" local="130449780992702144" remote="130449783600000000" Dst="2" />
+<file name="challenges.php" server="portiaplante.com/luum/" local="130449780992389633" remote="130449783600000000" Dst="2" />
+<file name="summary-include.php" server="portiaplante.com/luum/" local="130449929653513658" remote="130449929400000000" Dst="2" />
+<file name="summary1.php" server="portiaplante.com/luum/" local="130449945468625578" remote="130449945000000000" Dst="2" />
 </dwsync>

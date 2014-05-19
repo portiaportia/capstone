@@ -1,6 +1,6 @@
 var currentPage = 0;
 var firstClickCommute = true;
-var header_height = 30;
+var header_height = 45;
 
 window.onload = function() {
 	//make the page fill the height
@@ -14,11 +14,11 @@ window.onload = function() {
 	}
 
 	//adjust the page with for bug in ff
-	$(".page").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
+	$(".page, .page-title").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
 
 	$(".pages").swipe({swipeLeft:swiped, swipeRight:swiped});
 
-	$(".bottom-nav a").click(changePage); //control bottom navitation
+	$(".bottom-nav a, .left-arrow a, .right-arrow a").click(changePage); //control bottom navitation
 	
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
