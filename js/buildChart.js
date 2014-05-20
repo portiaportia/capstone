@@ -65,7 +65,7 @@ function buildChart(idName, data){
 		.orient("left").ticks(4);
 
 	var valueline = d3.svg.line()
-		.interpolate("basis") //this curves the line. 
+		//.interpolate("basis") //this curves the line. 
 		.x(function(d) { return x(parseDate(d.xval)); })
 		.y(function(d) { return y(d.yval); });
 	 
@@ -111,12 +111,12 @@ function animateChart(idName, data, isExpanded){
 		y.domain([0, d3.max(data, function(d) { return d.yval; })]);
 		
 		var blankLine = d3.svg.line()
-			.interpolate("basis") //this curves the line.
+			//.interpolate("basis") //this curves the line.
 			.x(function(d) { return x(parseDate(d.xval)); })
 			.y(function(d) { return y(0); });
 
 		var valueline = d3.svg.line()
-			.interpolate("basis") //this curves the line.
+			//.interpolate("basis") //this curves the line.
 			.x(function(d) { return x(parseDate(d.xval)); })
 			.y(function(d) { return y(d.yval); });
 
@@ -158,25 +158,25 @@ function buildChartMulti(idName, data){
 
 	//first line
 	var valuelineCar = d3.svg.line()
-		.interpolate("basis") //this curves the line. 
+		//.interpolate("basis") //this curves the line. 
 		.x(function(d) { return x(parseDate(d.xval)); })
 		.y(function(d) { return y(d.car); });
 	
 	//second line
 	var valuelineBike = d3.svg.line()
-		.interpolate("basis") //this curves the line. 
+		//.interpolate("basis") //this curves the line. 
 		.x(function(d) { return x(parseDate(d.xval)); })
 		.y(function(d) { return y(d.bike); });
 
 	//third line
 	var valuelineBus = d3.svg.line()
-		.interpolate("basis") //this curves the line. 
+		//.interpolate("basis") //this curves the line. 
 		.x(function(d) { return x(parseDate(d.xval)); })
 		.y(function(d) { return y(d.bus); });
 
 	//second line
 	var valuelineWalk = d3.svg.line()
-		.interpolate("basis") //this curves the line. 
+		//.interpolate("basis") //this curves the line. 
 		.x(function(d) { return x(parseDate(d.xval)); })
 		.y(function(d) { return y(d.walk); });	
 
