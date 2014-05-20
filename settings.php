@@ -27,23 +27,26 @@
 
 <section class="settings-section first">
 	<div id="privacy">
-	    <a id="privacy-toggle" href="#privacy-desc">
+	    <a id="privacy-toggle" href="#privacy-addition">
 	    	<div class="linebreak">
 		    <img class="icon" src="images/privacy.png"/>
 		    <h3>Privacy</h3>
 		    </div>
 		    <div id="privacy-desc">
-		    	<p>
-		    	Information gathered through this application will not be used 
-		    	for anything other than commuting purposes.  
-		    	The data collected through this application will be summarized 
-		    	in terms of miles, and transportation modes at a week level.  
-		    	Time of arrival and departure will not be tracked.  Actual route 
-		    	details pertaining to your commute will not be kept or viewable by your company.
+		    	<p class="settings-desc">
+                    Information gathered through this application will not be used 
+                    for anything other than commuting purposes.  
+                
+                	<span id="privacy-addition">
+                        The data collected through this application will be summarized 
+                        in terms of miles, and transportation modes at a week level.  
+                        Time of arrival and departure will not be tracked.  Actual route 
+                        details pertaining to your commute will not be kept or viewable by your company.
+					</span>
 		    	</p>
 	    	</div>
-				<img class="section-arrow down-arrow" src="images/section-arrow-down.png">
-		        <img class="section-arrow up-arrow" src="images/section-arrow-up.png">
+				<img class="section-arrow down-arrow-privacy" src="images/section-arrow-down.png">
+		        <img class="section-arrow up-arrow-privacy" src="images/section-arrow-up.png">
 	    </a>
 	</div>
 </section>
@@ -65,37 +68,17 @@
 	</div>
 </section>
 <section class="settings-section">
-	<p>
-		Luum uses automatic tracking to report your commute details. 
-		<span id="tracking-detail">
-			You will need to manually enter your commute if you choose to turn this feature off. 
-			Time spent commuting will only be available when automatic tracking is enabled. 
-		</span>
-		<a id="tracking-toggle" href="#tracking-detail">
-			<span class="more">More</span>
-			<span class="less">Less</span>
-		</a>
-	</p>
+	<a id="tracking-toggle" href="#tracking-detail">
+        <p class="settings-desc">
+            Luum uses automatic tracking to report your commute details. 
+            <span id="tracking-detail">
+                You will need to manually enter your commute if you choose to turn this feature off. 
+                Time spent commuting will only be available when automatic tracking is enabled. 
+            </span>
+        </p>
+        <img class="section-arrow down-arrow-tracking" src="images/section-arrow-down.png">
+        <img class="section-arrow up-arrow-tracking" src="images/section-arrow-up.png">
+     </a>
 </section>
-<div id="commute-week" class="disabled">
-	<section class="settings-section">
-		<img class="icon" src="images/commute.png"/>
-		<h3>Commute Week</h3>
-	</section>
-	<section class="settings-section">
-		<p>Indicate the days you commute to work. 
-		Unselected days do not show up on the "Commute" screen.</p>
-	</section>
-		
-	<?php 
-		makeSettingsDay("Sunday", false); 
-		makeSettingsDay("Monday", true); 
-		makeSettingsDay("Tuesday", true); 
-		makeSettingsDay("Wednesday", true); 
-		makeSettingsDay("Thursday", true); 
-		makeSettingsDay("Friday", true); 
-		makeSettingsDay("Saturday", false); 
-	?>
-</div>
 	
 </section>

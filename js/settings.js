@@ -5,11 +5,11 @@ jQuery(function($) {
   $("#auto-off-desc").hide();
 
   $("#tracking-detail, .less").hide();
-  $("#tracking-toggle").click(toggleTrackingDetail);
 
-  $("#privacy-desc, .up-arrow").hide();
+  $("#privacy-addition, #tracking-detail, .up-arrow-privacy, .up-arrow-tracking").hide();
   $("#privacy-toggle").click(togglePrivacy);
-
+  $("#tracking-toggle").click(toggleTrackingDetail);
+  
   $(".day-toggle").click(toggleDay);
 });
 
@@ -35,7 +35,7 @@ function togglePrivacy()
 	var id = $(this).attr("href");
 	$(id).slideToggle(500);	
   	
-	$(".up-arrow, .down-arrow").toggle();
+	$(".up-arrow-privacy, .down-arrow-privacy").toggle();
 	return false;
 }
 
@@ -44,7 +44,7 @@ function toggleTrackingDetail()
   var id = $(this).attr("href");
   $(id).slideToggle(500); 
   
-  $(".less, .more").toggle();
+  $(".up-arrow-tracking, .down-arrow-tracking").toggle();
   return false;
 }
 
