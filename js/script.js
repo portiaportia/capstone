@@ -74,8 +74,10 @@ function prevView(classSet) {
 function changePage() {
 	$(".page").removeClass("current");//make no page show
 	
-	$($(this).attr("href")).addClass("current");
+	var link = $(this).attr("href");
+	$(link).addClass("current");
 	highlightNav($(this).attr("href"));
+	if(link.indexOf("summary") > -1) highlightNav("#summary");
 	
 	//slide today in when we go to commute tab
 	if($(this).attr("href") == "#commute")

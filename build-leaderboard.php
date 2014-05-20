@@ -92,12 +92,12 @@ function build_team_leaderboard($people_data, $team_data){
 		?>
 		<section class="leader <?php if($team["yourteam"]){ echo " your-team";} ?>">
 			<a class="team-hide-show" href="#<?php echo $team["id"] ?>">
-				<p class="position">
+				<p class="pix-stat-number position">
 				<?php
 				echo $position++ . "</p>";
 				echo "<img src=\"" . $team["image"] . "\">";
-				echo "<div class='left'><h1>" . $team["name"];
-				echo "</h1>";
+				echo "<div class='left'><p class='pix-stat-title-big'>" . $team["name"];
+				echo "</p>";
 				echo "<p class='pix-stat-label-small members-detail'>" . $team["members"] . " members</p>";
 				echo "</div>";
 				?>
@@ -143,14 +143,16 @@ function create_person_section($person, $position, $include_position){
 	<section class="leader person <?php if($person["you"]){ echo " you";} ?>">
 		<div>
 			<?php if($include_position) {
-				echo "<p class='position'>";
+				echo "<p class='pix-stat-number position'>";
 				echo $position . "</p>";
 			}?>
 			<?php
-			echo "<img src=\"" . $person["image"] . "\">";
-			echo "<h1>" . $person["name"];
-			?>
-			</h1>
+				echo "<img src=\"" . $person["image"] . "\">";
+            	echo "<div class='left'><p class='pix-stat-title-big'>" . $person["name"];
+				echo "</p>";
+				echo "<p class='pix-stat-label-small members-detail'>" . $person["team"] . "</p>";
+				echo "</div>";
+			?>   
 				<div class="miles">
 					
 					<p>
