@@ -60,14 +60,28 @@ img {max-width:100%}
 	color: @darkGray;
 }
 
-.pix-stat-number{
+.pix-stat-number-big{
 	font-size: 1.4em;
 	color: @darkGray;
 	text-align: center;
 	font-weight: 300;
 }
 
+.pix-stat-number{
+	font-size: 1.2em;
+	color: @darkGray;
+	text-align: center;
+	font-weight: 300;
+}
+
 .pix-stat-label{
+	font-size: .9em;
+	color: @darkGray;
+	text-align: center;
+	font-weight: 300;
+}
+
+.pix-stat-label-small{
 	font-size: .75em;
 	color: @darkGray;
 	text-align: center;
@@ -496,7 +510,7 @@ body {
 	float: left;	
 	padding-left: @onecolumn;
 
-	.pix-stat-number {
+	.pix-stat-number-big {
 		margin-bottom: -.3em;
 	}
 }
@@ -608,7 +622,7 @@ body {
 }
 
 .leader .miles p {
-	text-align: center;
+	text-align: right;
 	padding:0;
 }
 
@@ -681,7 +695,7 @@ body {
 }
 
 .team-stats .miles-detail {
-	.right;
+	/*.right;*/
 }
 
 .team-stats .members-detail {
@@ -859,9 +873,26 @@ body {
 	
 }
 .d3Chart path {
-    stroke: @accentBlue;
+    
     stroke-width: 2;
     fill: none;
+    stroke: @accentBlue;
+}
+
+.d3Chart path.car{
+	stroke: @accentGreen;    
+}
+
+.d3Chart path.bike{
+	stroke: @accentBlue;    
+}
+
+.d3Chart path.bus{
+	stroke: @darkBlue;    
+}
+
+.d3Chart path.walk{
+	stroke: @darkGray;    
 }
 
 .d3Chart .axis path{

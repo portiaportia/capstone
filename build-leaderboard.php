@@ -98,17 +98,17 @@ function build_team_leaderboard($people_data, $team_data){
 				echo "<img src=\"" . $team["image"] . "\">";
 				echo "<div class='left'><h1>" . $team["name"];
 				echo "</h1>";
-				echo "<p class='members-detail'>" . $team["members"] . " members</p>";
+				echo "<p class='pix-stat-label-small members-detail'>" . $team["members"] . " members</p>";
 				echo "</div>";
 				?>
 				<div class="miles">
 					
 					<p>
-						<span class='pix-stat-number trips-detail'><?php echo $team["avgtrips"]; ?></span>
-						<span class='pix-stat-label miles-detail'>avg trips</span>
+						<span class='pix-stat-number'><?php echo $team["avgtrips"]; ?></span>
+						<span class='pix-stat-label'>avg trips</span>
 					</p>
 					<p>
-						<span class='pix-stat-label miles-detail'><?php echo $team["miles"]; ?> mi</span>
+						<span class='pix-stat-label-small'><?php echo $team["miles"]; ?> mi</span>
 					</p>
 				</div>
 			</a>

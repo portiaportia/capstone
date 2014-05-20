@@ -1,7 +1,7 @@
 <section class="challenge-title">
     <h3>Ride in the Rain</h3>
     <div class="days-left">
-		<p class="pix-stat-number">5</p>
+		<p class="pix-stat-number-big">5</p>
 		<p class="pix-stat-label">days left</p>       
     </div>
 	<?php build_progress_bar(10000, 25000); ?>    
