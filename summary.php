@@ -6,25 +6,25 @@
 <section class="impact">
 	
 	<?php createImpactHeaderTop("Commutes", "#commutes-expand"); ?>
-    	<section class="header-impact-com">
+    	<section class="col1of3">
             <img src="images/bus.png"/>
-            <section class="num-trips">
-                <p class="big-num">10</p>
-                <p>trips</p>
+            <section>
+                <p class="pix-stat-number-big">10</p>
+                <p class="pix-stat-label">trips</p>
             </section>
         </section>
-    	<section class="header-impact-com">
+    	<section class="col1of3">
             <img src="images/walk.png"/>
-            <section class="num-trips">
-                <p class="big-num">5</p>
-                <p>trips</p>
+            <section>
+                <p class="pix-stat-number-big">5</p>
+                <p class="pix-stat-label">trips</p>
             </section>
         </section>
-        <section class="header-impact-com">
+        <section class="col1of3">
             <img src="images/bike.png"/>
-            <section class="num-trips">
-                <p class="big-num">5</p>
-                <p>trips</p>
+            <section>
+                <p class="pix-stat-number-big">5</p>
+                <p class="pix-stat-label">trips</p>
             </section>
         </section>
     <?php createImpactHeaderBottom("#commutes-expand"); ?>
@@ -41,12 +41,12 @@
 
 <section class="impact">
 	<?php createImpactHeaderTop("Bonus Amount", "#bonuses-expand"); ?>
-    	<section class="header-impact-3of4">
-            <p class="big-num">$42</p>
+        <section class="col1of3">
+           <p class="pix-stat-number-big">$42</p>
         </section>
-    	<section class="header-impact-1of4">
-            <p class="med-num">$216</p>
-            <p class="tiny-text">year to date</p>
+    	<section class="col1of3 right">
+           <p class="pix-stat-number">$216</p>
+           <p class="pix-stat-label-small">year to date</p>
         </section>
     <?php createImpactHeaderBottom("#bonuses-expand"); ?>
     <div id="bonuses-expand" class="impact-section">
@@ -62,12 +62,12 @@
 
 <section class="impact">
     <?php createImpactHeaderTop("CO<sub>2</sub> Reductions", "#carbon-expand"); ?>
-    	<section class="header-impact-3of4">
-            <p class="big-num">37 lbs</p>
+    	<section class="col1of3">
+           <p class="pix-stat-number-big">37 lbs</p>
         </section>
-    	<section class="header-impact-1of4">
-            <p class="med-num">197 lbs</p>
-            <p class="tiny-text">year to date</p>
+    	<section class="col1of3 right">
+           <p class="pix-stat-number">197 lbs</p>
+           <p class="pix-stat-label-small">year to date</p>
         </section>
     <?php createImpactHeaderBottom("#carbon-expand"); ?>
     <div id="carbon-expand" class="impact-section">

@@ -4,8 +4,7 @@
 @darkBlue : #59818B;
 @accentGreen : #27C86C;
 @accentBlue : #00AEDB;
-@white : white;
-@standardPadding:3%;
+@pix-white : white;
 
 @font-sans : 'Open Sans', sans-serif;
 
@@ -20,7 +19,7 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block;}
 
 a:active, a:focus {outline:none;}
-a {text-decoration:none; }
+
 img {max-width:100%}
 
 /*
@@ -31,6 +30,25 @@ img {max-width:100%}
 18px = 1.125em
 16px = 1em
 */
+
+.pix-header {
+	font-size: 1.2em;
+	font-weight: 500;
+	color: @darkGray;
+}
+
+.pix-subheader {
+	font-size: 1.1em;	
+	font-weight: 600;
+	color: @darkBlue;
+}
+
+.pix-body {
+	font-size: 1em;
+	font-weight: 400;
+	color: @darkGray;
+}
+
 .pix-link{
 	font-size: 1em;
 	font-weight: 600;
@@ -40,12 +58,6 @@ img {max-width:100%}
 	font-size: .75em;
 	font-weight: 300;
 	color: @darkGray;
-}
-
-.pix-stat-title-big{
-	font-size: 1.4em;
-	color: @darkGray;
-	font-weight: 300;
 }
 
 .pix-stat-number-big{
@@ -82,32 +94,66 @@ img {max-width:100%}
 }
 
 h1{
-	font-size: 1.2em;
-	font-weight: 400;
-	color: @white;
+	.pix-header;
 }
 
 h2 {
-	font-size: 1.1em;	
-	font-weight: 400;
-	color: @darkBlue;
+	.pix-subheader;
 }
 
 h3 {
 	color: @darkGray;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1.05em;
 }
-
 p {
-	font-size: 1em;
-	font-weight: 400;
+	.pix-body;
+}
+
+/***** Typography *******/
+/*
+22 pt = 1.84 em
+18 pt = 1.51 em
+16 pt = 1.34 em
+*/
+h1 {
+	text-align:center;
+	margin-bottom:2%;
+}
+
+.main-header h1 {
+	padding-top:2%;
+	margin-bottom: 0;
+	text-align: left;
+	padding-left:5px;
 	color: @darkGray;
 }
 
-	
-a {
-	color:@darkGray;	
+h2 {
+	margin-bottom:4%;
+	text-align:center;
+}
+
+h2.team-home-header {
+	text-align:left;	
+}
+
+h4 {
+	font-size:.75em;	
+	color:darken(@lightGray, 30%);
+}
+
+a, h1 a, h2 a {
+	text-decoration:none;
+}
+
+strong {
+	font-weight:600;
+}
+
+.pageWidth {
+	width:100%;
+	max-width:500px;
 }
 
 .borders(@radius: 5px)
@@ -118,37 +164,21 @@ a {
 	border-radius:@radius;
 }
 
-/***** Columns *********/
-.column-container {
-	overflow:hidden;	
-}
-
-.col1of3 {
-	width:30%;
-	float:left;	
-
-	img {
-		margin-top:2%;
-		max-width:100%;
-		width:30%;
-		float:left;
-	}
-}
-
 /***** Structure *******/
 body {
 	background:darken(@lightGray, 40%);
 }
 
-.pageWidth {
-	width:100%;
-	max-width:500px;
+.main-header {
+	background:lighten(@lightGray, 5%);
+	padding-bottom:1px;
+	margin-bottom:3%;
 }
 
 .page-title {
 	position: fixed;
 	top: 0px;
-	padding:5px 0 0 0;
+	padding:5px 1px 0% 0;
 	z-index: 100;
 	background: @accentBlue;
 	.pageWidth;
@@ -156,29 +186,37 @@ body {
 	height:@header-height;
 	text-align: center;
 	border-bottom: 1px solid darken(@lightGray, 20%);
+
+	h1 {
+		color: @pix-white;
+		font-size:24px;
+	}
 }
 
 .ppbanner {
 	background:@lightGray;
 	position:relative;
-	
-	.left-arrow, .right-arrow {
-		position:absolute;
-		font-size:1.5em;
-		top:-5px;
-	}
-	
 	.left-arrow {
-		left:@standardPadding;	
+		position:absolute;
+		left:3%;	
 	}
 	
 	.right-arrow {
-		right:@standardPadding;
+		position:absolute;
+		top:0;
+		right:3%;
 	}
 	
 	p {
-		padding:10px 0;
+		padding:5px 0;
+		font-size:1em;
+		font-weight:600;
 		text-align:center;	
+	}
+	
+	a {
+		text-decoration:none;
+		color:@darkGray;	
 	}
 }
 
@@ -186,10 +224,13 @@ body {
 	margin-top: @header-height;
 }
 
+.main-footer {
+}
+
 .pages, .page {
 	margin:auto;
 	.pageWidth;
-	background:@white;
+	background:#fff;
 }
 
 .page{
@@ -203,15 +244,18 @@ body {
 	display:block;
 }
 
+/***** Navigation *******/
+
 /***** Bottom Nav *******/
 .bottom-nav {
 	position:fixed;
-	background:@white;
+	background:#fff;
 	.pageWidth;
 	bottom:0;
 	margin:auto;
 	overflow:hidden;
 	z-index:10;
+	font-size:1.7em;
 }
 
 .bottom-nav ul {
@@ -225,11 +269,14 @@ body {
 }
 
 .bottom-nav ul li a {
+	text-decoration:none;
+	color:@darkGray;
 	display:block;
 	width:100%;
 	text-align:center;
 	padding:10% 10%;
-	font-size:.9em;
+	margin:0;
+	font-size:.4em;
 }
 
 .bottom-nav a.highlight {
@@ -244,107 +291,287 @@ body {
 }
 
 /**** Home:  Commute Impact *****/
-.impact {
-	padding:@standardPadding;	
-	border-bottom:1px solid @lightGray;	
-}
-
-.week {
-	margin-bottom:@standardPadding;
-	padding-bottom:@standardPadding;
-	border-top:1px solid @darkGray;	
+.impact .home-section-title, .week header {
+	overflow:hidden;
+	
+	h1, h2, p {
+		text-align:left;
+	}
+	
+	h2, p {
+		padding:0;
+		margin:0;	
+	}
+	
+	.big-num {
+		font-size:2em;
+		font-weight:300;
+		line-height:90%;
+	}
+	
+	.med-num {
+		font-size:1.5em;	
+	}
+	
+	.tiny-text {
+		font-size:.7em;	
+	}
+		
+	.header-impact-com {
+		float:left;
+		width:33%;
+	
+		img {
+			max-width:100%;
+			padding-top:10%;
+			width:30%;
+			margin-right:5%;
+			float:left;
+		}
+		
+		.num-trips {
+			float:left;
+		}
+				
+		.big-num {
+			text-align:center;	
+		}
+	}
+	
+	.header-impact-3of4 {
+		width:75%;
+		float:left;	
+	}
+	
+	.header-impact-1of4 {
+		width:25%;
+		float:left;	
+	}
 }
 
 .week header {
-	padding:@standardPadding;
+	h1 {
+		font-size:.8em;
+		float:none;
+		text-align:left;
+	}
+	
+	.header-ctype {
+		overflow:hidden;
+		width:33%;
+		float:left;
+		padding-right:3%;
+		margin-bottom:4%;
+		
+		.week-stats {
+			float:left;
+			margin-right:6%;	
+			text-align:right;
+			width:64%;
+			font-size:.8em;
+		}
+		
+		p {
+			margin:0;
+			padding:0;
+		}
+		
+		img {
+			margin-top:2%;
+			max-width:100%;
+			width:30%;
+			float:left;
+		}
+	}
 }
 
-hr {
-	border-bottom:1px solid @lightGray;
-	margin-bottom:@standardPadding;
+.impact, .week {
+	padding:3% 3%;
+	border-bottom:1px dashed @lightGray;	
+	.impact-section {
+		margin-top:2%;	
+	}
+}
+
+.impact header {
+	overflow:hidden;
+	
+	.ppsavings {
+		float:left;
+		width:50%;	
+	}
+	
+	.ysavings {
+		float:right;
+		width:50%;	
+	}
+	
+	h2 {
+		font-size:.9em;
+	}
+	
+	p {
+		text-align:center;
+	}
 }
 
 .impact.expanded, .week.expanded {
 	background:lighten(@lightGray, 10%);	
 }
 
-.week-section {
-	padding:0 @standardPadding;	
+.day-header {
+	width:90%;
+	float:right;
+	overflow:hidden;
+	margin-bottom:2%;
+	margin-top:2%;
+	border-bottom:1px dashed @lightGray;
+	
+	h2 {
+		width:50%;
+		float:left;
+		text-align:center;	
+		margin-bottom:0px;
+		font-size:1em;
+	}
 }
 
-.day { 
-	text-align:center;
-	margin-bottom:@standardPadding;
+.week-section {
+	.day { 
+		overflow:hidden;
+		margin-bottom:3%;
+		
+		h3 {
+			float:left;
+			width:10%;
+			text-align:center;
+		}
+		h4 {
+			float:left;
+			width:10%;
+			margin-top: .3em;
+		}
+		
+		section {
+			float:left;
+			width:35%;
+			margin-left:2%;
+			margin-right:3%;
+			overflow:hidden;
+			
+			p {
+				float:left;
+				width:60%;
+				margin-right:3%;
+				text-align:right;
+				font-size:.8em;
+			}
+			
+			img {
+				float:left;
+				max-width:100%;
+				width:15%;
+				margin-left:3%;	
+			}
+		}
+	}
 }
 
 .section-arrow {
 	display:block;
 	width:10%;
-	margin:@standardPadding auto 0;	
+	margin:15px auto 0;	
 }
 
 .section-arrow.arrow-up {
 	width:10%;
-	padding:@standardPadding 0;
+	padding:10px 0;
+}
+
+
+/***** Home Trends ******/
+.trend {
+	overflow:hidden;
+	margin-bottom:5%;
+	
+	h3 {
+		float:left;
+		width:30%;
+	}
+	
+	img {
+		float:left;
+		width:60%;
+	}
 }
 
 /***** Leaderboard ******/
 .challenge-title {
 	overflow:hidden;
-	padding:@standardPadding;
-	
-	.days-left {
-		float: right;	
 
-		.pix-stat-number-big {
-			margin-bottom: -.3em;
-		}
+	h3 {
+		color:@darkGray;
+		text-align: center;
 	}
 }
 
-#challenge-mode {
-	overflow: hidden;
-	background:@lightGray;
-	padding:1% 17% 0 17%;
-	border-top:1px solid @darkGray;
-	border-bottom:1px solid @darkGray;
+.challenge-title .days-left {
+	float: left;	
+	padding-left: @onecolumn;
+
+	.pix-stat-number-big {
+		margin-bottom: -.3em;
+	}
+}
+
+#challenges {
 	
-	p {
-		float:left;	
-		padding-right:@standardPadding;
-		padding-top:@standardPadding;
+	#challenge-mode {
+		width: 40%;
+		margin: auto auto;
+		overflow: hidden;
 	}
 
-	a {
-		float:left;
+	#challenge-mode ul {
+		list-style-type:none;
+	}
+
+	#challenge-mode ul li {
+		float: left;
+		width:50%;
+		border-left:none;
+	}
+
+	#challenge-mode ul li a {
 		display:block;
-		width:15%;
+		width:100%;
+		text-align:center;
+		padding:5% 5%;
 		margin:0;
-		padding:0;
+		.pix-small;
 	}
 	
-	img {
+	#challenge-mode img {
 		max-width:100%;
-		width:100%;
-		margin:0;
-		padding:0;
+		width:60%;
 	}
-}
-
-.team-leaderboard .person {
-	padding-left:9.5%;	
 }
 
 .leaderboard {
-	margin-top:@standardPadding;
-	padding:0 @standardPadding;
+	margin-top:5%;
 	border-bottom:none;
 }
 
 .leader {
 	width:100%;
 	overflow:hidden;
-	padding-bottom:@standardPadding;	
+	border-top:none;
+	padding:3%;
+	border-bottom:1px dashed @lightGray;	
+}
+
+.leader:first-child {
+	border-top:1px dashed @lightGray;	
 }
 
 .leader a {
@@ -357,18 +584,19 @@ hr {
 
 /*the team leader for .you*/
 .leader.your-team {
-	/*background:lighten(@accentGreen, 45%);*/
+	background:lighten(@accentGreen, 45%);
 }
 
 .leader.you {
-	/*background:lighten(@accentBlue, 45%);*/
+	background:lighten(@accentBlue, 45%);
 }
 
-.position {
+.leader .position {
 	float:left;
-	width:6%;
-	margin-right:@standardPadding;
-	text-align:right !important;	
+	margin:0;
+	padding:0;
+	margin-right:5%;
+	.pix-header;
 }
 
 .leader img {
@@ -383,6 +611,21 @@ hr {
 	margin-top:4%;
 }
 
+.leader h1 {
+	text-align: left;
+	float:left;
+}
+
+.leader header h1 {
+	float:none;
+	margin-top:0;
+}
+
+.leader h2 {
+	.pix-body;
+	text-align: left;
+}
+
 .leader .miles {
 	float:right;
 }
@@ -392,14 +635,19 @@ hr {
 	padding:0;
 }
 
+/*
+.leader .miles-detail, .leader .members-detail {
+	.pix-small;
+}*/
+
+.leader a {
+	text-decoration:none;
+	color:darken(@darkGray, 20%);
+}
+
 .content, .one-content {
 	width:100%;
-	margin-top:@standardPadding;
 	margin-bottom:10%;
-	
-	h2 {
-		padding:0 @standardPadding;	
-	}
 }
 
 .content {
@@ -408,6 +656,30 @@ hr {
 
 .currentContent {
 	display:block;	
+}
+
+/****** Transport Styles ****/
+.transport-types {
+	width:100%;
+	overflow:hidden;
+	border-top:1px dashed lighten(@lightGray, 10%);
+}
+
+.transport-type  {
+	margin:2% 0;
+	border-bottom:1px dashed lighten(@lightGray, 10%);
+}
+
+.transport-type img {
+	display:block;
+	float:left;
+	margin-right:5%;
+	width:10%;
+}
+
+.transport-type p {
+	margin:0;
+	padding:0;
 }
 
 /***** Team details *****/
@@ -431,9 +703,13 @@ hr {
 	.left;
 }
 
-.members-detail {
+.team-stats .miles-detail {
+	/*.right;*/
+}
+
+.team-stats .members-detail {
 	.left;
-	text-align:left;
+	.pix-small;
 }
 
 /******  Settings *******/
@@ -507,7 +783,6 @@ hr {
 	}
 
 }
-
 #commute-week.disabled {
     background-color: white;
     filter:alpha(opacity=30); /* IE */
@@ -527,6 +802,8 @@ hr {
 	float:right;
 }
 
+
+
 /***** Progress Bars ****/
 .progress .title, .progress .goal {
 	font-size: .6em;
@@ -541,8 +818,9 @@ hr {
 
 .progress {
 	.left;
-	margin-right: @standardPadding;
+	margin-top: 10px;
 	width: @onecolumn * 10;
+	margin-left: @onecolumn;
 }
 
 .progress-bar {
@@ -672,7 +950,21 @@ hr {
 /***** Media Queries ****/
 
 /* larger tablets and desktops */
-@media only screen and (min-width:1025px) { }
+@media only screen and (min-width:1025px) { 
+
+	.leader h1 {
+		font-size:1.2em;
+	}
+}
 
 /* phone */
-@media only screen and (max-width:370px) {}
+@media only screen and (max-width:370px) {
+	
+	.leader .position {
+		font-size:1.5em;
+	}
+
+	.leader h1 {
+		font-size:1em;
+	}
+}
