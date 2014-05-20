@@ -78,10 +78,18 @@ function changePage() {
 	highlightNav($(this).attr("href"));
 	
 	//slide today in when we go to commute tab
-	if($(this).attr("href") == "#commute" && firstClickCommute)
+	if($(this).attr("href") == "#commute")
 	{	
-		hideShowWeek("#may5");
-		firstClickCommute =false;
+		var myParent = $(showingWeek).closest(".week");
+		$('html,body').animate({
+        scrollTop: myParent.offset().top - header_height},
+        1000);
+	}
+	else //scroll to top
+	{
+		$('html,body').animate({
+        scrollTop: 0},
+        0);
 	}
 	return false;
 }
