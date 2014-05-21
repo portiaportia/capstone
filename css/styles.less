@@ -623,6 +623,24 @@ hr {
     stroke: @accentBlue;
 }
 
+.d3Chart .legend {
+	.walk {
+	  fill: @darkGray;
+	}
+
+	.car {
+	  fill: @accentGreen;
+	}
+
+	.bus {
+	  fill: @accentBlue;
+	}
+
+	.bike {
+	  fill: @darkBlue ;
+	}
+}
+
 .d3Chart path.car{
 	stroke: @accentGreen;    
 }
@@ -642,6 +660,10 @@ hr {
 .d3Chart .axis path{
 	stroke: @lightGray;
 	stroke-width: 1;
+}
+
+.d3Chart .months path, .d3Chart .months .tick line{
+	display: none;
 }
 
 .d3Chart .axis .tick line{
