@@ -2,14 +2,14 @@
 <?php
 	//set up the data to be used. Later it will be sorted
 	$people_data = array(
-		array("name"=>"Me", "miles"=>32, "goal"=>"10", "trips"=>16, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>true),
-		array("name"=>"John Smith", "miles"=>50, "goal"=>"10", "trips"=>19, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Amy", "miles"=>78, "goal"=>"10", "trips"=>25, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Taylor", "miles"=>60, "goal"=>"10", "trips"=>23, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Me", "miles"=>32, "goal"=>"10", "trips"=>16, "image"=>"images/me.png", "team"=>"Mobile Maniacs", "you"=>true),
+		array("name"=>"John Smith", "miles"=>50, "goal"=>"10", "trips"=>19, "image"=>"images/john.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Amy", "miles"=>78, "goal"=>"10", "trips"=>25, "image"=>"images/amy.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Taylor", "miles"=>60, "goal"=>"10", "trips"=>23, "image"=>"images/taylor.png", "team"=>"Mobile Maniacs", "you"=>false),
 		array("name"=>"Chris", "miles"=>35, "goal"=>"10", "trips"=>6, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Sharon", "miles"=>90, "goal"=>"10", "trips"=>34, "image"=>"images/person.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>26, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Erin", "miles"=>110, "goal"=>"10", "trips"=>34, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Sharon", "miles"=>90, "goal"=>"10", "trips"=>34, "image"=>"images/sharon.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>26, "image"=>"images/fran.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Erin", "miles"=>110, "goal"=>"10", "trips"=>34, "image"=>"images/erin.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>15, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"Meredith", "miles"=>105, "goal"=>"10", "trips"=>7, "image"=>"images/person.png", "team"=>"Biking Barbies", "you"=>false),
 		array("name"=>"James", "miles"=>21, "goal"=>"10", "trips"=>3, "image"=>"images/person.png", "team"=>"Colorful Cyclists", "you"=>false),

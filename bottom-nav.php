@@ -17,8 +17,8 @@
            	</li>
 			<li>
             	<a href="#challenges">
-                	<img class="selected" style="display: none;" src="images/settings-selected.png">
-                    <img class="unselected" src="images/settings-unselected.png">
+                	<img class="selected" style="display: none;" src="images/challenges-selected.png">
+                    <img class="unselected" src="images/challenges-deselected.png">
                 	Challenges
                 </a>
            	</li>

@@ -17,6 +17,7 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="js/less-1.7.0.min.js"></script>
 	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
 	<script src="js/script.js"></script>
 	
