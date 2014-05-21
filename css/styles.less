@@ -46,6 +46,7 @@ img {max-width:100%}
 	font-size: 1.4em;
 	color: @darkGray;
 	font-weight: 300;
+	line-height:0.9em;
 }
 
 .pix-stat-number-big{
@@ -60,6 +61,7 @@ img {max-width:100%}
 	color: @darkGray;
 	text-align: center;
 	font-weight: 300;
+	line-height:0.9em;
 }
 
 .pix-stat-label{
@@ -346,6 +348,8 @@ hr {
 
 .team-leaderboard .person {
 	padding-left:9.5%;	
+	padding-top:@standardPadding;
+	padding-bottom:0;
 }
 
 .leaderboard {
@@ -402,7 +406,7 @@ hr {
 
 .leader .miles p {
 	text-align: right;
-	padding:0;
+	margin-bottom:-5px;
 }
 
 .content, .one-content {
@@ -456,7 +460,7 @@ hr {
 	border-bottom:1px solid @lightGray;
 	/*padding-bottom: 5px;
 	padding-top: 5px;*/
-	padding: 5px @onecolumn;
+	padding:@standardPadding;
 
 	.icon {
 		.left;

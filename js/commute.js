@@ -20,14 +20,29 @@ function hideShowWeekLink()
 
 function hideShowWeek(id)
 {	
-	$(id).slideToggle(400);
 	showingWeek = id;
 	var myParent = $(id).closest(".week");
+	
+	var isVisible = !$(id).is(":visible");
+	if($(id).is(":visible")) //switch to hide
+	{ 
+		$(id).slideUp(1000, "easeOutQuart", function(){
+			myParent.find(".section-arrow.down-arrow").toggle();
+		});
+	}
+	else	//switch to show
+	{
+		$(id).slideDown(400, "swing", function(){
+			myParent.find(".section-arrow.down-arrow").toggle();
+		});
+	}
+	
 	myParent.toggleClass("expanded");
-	myParent.find(".section-arrow.down-arrow").toggle();
 	myParent.find(".header-divider").toggle();
 	
-	$('html,body').animate({
-        scrollTop: myParent.offset().top - header_height},
-        1000);
+	if(isVisible){
+		$('html,body').animate({
+			scrollTop: myParent.offset().top - header_height},
+			1000);
+	}
 }
