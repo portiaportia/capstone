@@ -10,10 +10,10 @@
     <?php createImpactHeaderBottom("#commutes-expand1"); ?>
     <div id="commutes-expand1" class="impact-section">
         <a class="impact-hide-show" href="#commutes-expand1">
-            <div id="d3Chart-commutes" class="d3Chart"></div>
+            <div id="d3Chart-commutes1" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
 			<script>
-                buildChart("#d3Chart-commutes", bonusesData);
+                buildChart("#d3Chart-commutes1", bonusesData);
             </script>
         </a>
     </div>
@@ -24,10 +24,10 @@
     <?php createImpactHeaderBottom("#bonuses-expand1"); ?>
     <div id="bonuses-expand1" class="impact-section">
         <a class="impact-hide-show" href="#bonuses-expand1">
-            <div id="d3Chart-bonuses" class="d3Chart"></div>
+            <div id="d3Chart-bonuses1" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
 			<script>
-                buildChart("#d3Chart-bonuses", bonusesData);
+                buildChart("#d3Chart-bonuses1", bonusesData);
             </script>
         </a>
     </div>
@@ -38,10 +38,10 @@
     <?php createImpactHeaderBottom("#carbon-expand1"); ?>
     <div id="carbon-expand1" class="impact-section">
         <a class="impact-hide-show" href="#carbon-expand1">
-            <div id="d3Chart-carbon" class="d3Chart"></div>
+            <div id="d3Chart-carbon1" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
             <script>
-                buildChart("#d3Chart-carbon", carbonData);
+                buildChart("#d3Chart-carbon1", carbonData);
             </script>
         </a>
     </div>
