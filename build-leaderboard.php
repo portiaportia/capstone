@@ -161,8 +161,8 @@ function create_person_section($person, $position, $include_position){
 						<span class='pix-stat-number trips-detail'><?php echo $person["trips"]; ?></span>
 						<span class='pix-stat-label miles-detail'> trips</span>
 					</p>
-					<p>
-						<span class='pix-stat-label miles-detail'><?php echo $person["miles"]; ?> mi</span>
+					<p class='pix-stat-label-small miles-detail'>
+						<?php echo $person["miles"]; ?> mi
 					</p>
 				</div>
 		</div> <!--end person info (not a class or id)-->
