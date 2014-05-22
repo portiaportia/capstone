@@ -43,7 +43,7 @@ img {max-width:100%}
 }
 
 .pix-stat-title-big{
-	font-size: 1.4em;
+	font-size: 1.1em;
 	color: @darkGray;
 	font-weight: 300;
 	line-height:0.9em;
@@ -66,6 +66,10 @@ img {max-width:100%}
 	text-align: center;
 	font-weight: 300;
 	line-height:0.9em;
+}
+
+.miles .pix-stat-number {
+	font-size:1em;	
 }
 
 .impact .pix-stat-number {
@@ -105,6 +109,7 @@ h2 {
 	font-size: 1.1em;	
 	font-weight: 400;
 	color: @darkGray;
+	padding-bottom:@standardPadding;
 }
 
 h3 {
@@ -282,7 +287,7 @@ body {
 	border-bottom:1px solid @lightGray;	
 }
 
-.impact .col1of3 {
+.impact .col1of3, .week .col1of3 {
 	width:33.33%;
 	overflow:hidden;
 	
@@ -310,8 +315,7 @@ body {
 		margin-top:-6px;		
 	}
 	
-	.pix-stat-label {
-		margin-top:-6px;	
+	.pix-stat-label {	
 	}
 }
 
@@ -331,7 +335,7 @@ body {
 	}
 }
 
-.impact .pix-stat-number-big {
+.impact .pix-stat-number-big, .week .pix-stat-number-big {
 	line-height:0.8em;	
 }
 
@@ -347,7 +351,7 @@ body {
 
 hr {
 	border-bottom:1px solid @lightGray;
-	margin-bottom:@standardPadding;
+	margin: 3% 0;
 }
 
 .impact.expanded, .week.expanded {
@@ -433,6 +437,7 @@ hr {
 	width:100%;
 	overflow:hidden;
 	padding-bottom:@standardPadding;	
+	padding-bottom:4%;
 }
 
 .leader a {
@@ -462,7 +467,7 @@ hr {
 .leader img {
 	display:block;
 	float:left;
-	margin-right:5%;
+	margin-right:@standardPadding;
 	width:10%;
 }
 
