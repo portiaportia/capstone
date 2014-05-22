@@ -73,7 +73,7 @@ function buildChart(idName, data){
 		.orient("bottom")
 		//.ticks(d3.time.weeks, 2)
 		//.tickValues(data, function(d) { return parseDate(d.xval);})
-		.ticks(d3.time.monday, 1)
+		.ticks(d3.time.monday, 2)
 		.tickFormat(d3.time.format("%e"));
 
 /*
