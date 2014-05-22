@@ -69,69 +69,69 @@
 
     <?php createWeekHeader("3/24/14 - 4/4/14", "mar24", 60, 40, 40, 0); ?>
         <?php $date = "2014-03-24"?>
-        <?php buildDay("M", addDay($date,0), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,0), 40, "7:30 - 8:10", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 40, "7:31 - 8:11", "bike.png", 40, "7:30 - 8:10", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:32 - 8:12", "bike.png", 40, "7:30 - 8:10", "bike.png"); ?>
+        <?php buildDay("Th",addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,3), 40, "7:30 - 8:10", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 40, "7:30 - 8:10", "bike.png", 40, "7:30 - 8:10", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:30 - 8:10", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("Th",addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
         
         <a class="week-hide-show" href="#mar24"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("4/7/14 - 4/14/14", "april7", 180, 180, 240, 0); ?>
+    <?php createWeekHeader("4/7/14 - 4/18/14", "april7", 60, 0, 40, 20); ?>
         <?php $date = "2014-04-07"?>
-         <?php buildDay("M", addDay($date,0), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,0), 40, "7:20 - 8:00", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 30, "7:30 - 8:00", "car.png", 20, "7:30 - 7:50", "car.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:18 - 7:58", "bus.png", 40, "7:32 - 8:12", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "6:58 - 7:58", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60,"6:58 - 7:58", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,3), 40, "7:18 - 7:58", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1),20, "7:38 - 7:58", "car.png", 20, "7:30 - 7:50", "car.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:30 - 8:10", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:35 - 8:15", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:36 - 8:16", "bus.png"); ?>
         <a class="week-hide-show" href="#april7"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("4/21/14 - 5/2/14", "april21", 80, 0, 180, 0); ?>
+    <?php createWeekHeader("4/21/14 - 5/2/14", "april21", 60, 0, 40, 20); ?>
         <?php $date = "2014-04-21"?>
-    	 <?php buildDay("M", addDay($date,0), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
+    	<?php buildDay("M", addDay($date,0), 40, "7:20 - 8:00", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 30, "7:30 - 8:00", "car.png", 20, "7:30 - 7:50", "car.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:18 - 7:58", "bus.png", 40, "7:32 - 8:12", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "6:58 - 7:58", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60,"6:58 - 7:58", "walk.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,3), 40, "7:18 - 7:58", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1),20, "7:38 - 7:58", "car.png", 20, "7:30 - 7:50", "car.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:30 - 8:10", "bus.png", 40, "7:30 - 8:10", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:35 - 8:15", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:36 - 8:16", "bus.png"); ?>
         
         <a class="week-hide-show" href="#april21"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
 </section>
 
 <section class="week">
-    <?php createWeekHeader("5/5/14 - 5/16/14", "may5",160, 180, 240, 0); ?>
+    <?php createWeekHeader("5/5/14 - 5/16/14", "may5",60, 39, 42, 0); ?>
         <?php $date = "2014-05-05"?>
-    	 <?php buildDay("M", addDay($date,0), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:30 - 7:58", "car.png", 20, "7:30 - 7:58", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
+    	 <?php buildDay("M", addDay($date,0), 40, "7:30 - 8:10", "bus.png", 40, "7:36 - 8:16", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 38, "7:30 - 8:08", "bike.png", 40, "7:30 - 8:10", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:18 - 7:58", "bike.png", 40, "7:34 - 8:14", "bike.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "6:58 - 7:58", "walk.png", 40, "7:37 - 8:17", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60,"7:30 - 8:30", "walk.png", 40, "7:25 - 8:05", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,3), 40, "7:25 - 8:05", "bus.png", 50, "8:25 - 9:15", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1),37, "7:30 - 8:07", "bike.png", 39, "7:30 - 8:09", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:31 - 8:11", "bus.png", 40, "7:31 - 8:11", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 52, "8:36 - 9:28", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 8:30", "walk.png", 40, "7:33 - 8:13", "bus.png"); ?>
         
         <a class="week-hide-show" href="#may5"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
