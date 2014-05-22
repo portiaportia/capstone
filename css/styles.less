@@ -6,6 +6,7 @@
 @accentBlue : #00AEDB;
 @white : white;
 @standardPadding:3%;
+@orange: #FF6633;
 
 @font-sans : 'Open Sans', sans-serif;
 
@@ -396,9 +397,9 @@ hr {
 	overflow: hidden;
 	background:@lightGray;
 	padding:1% 12% 0 12%;
-	border-top:1px solid @darkGray;
+/*	border-top:1px solid @darkGray;
 	border-bottom:1px solid @darkGray;
-	
+*/	
 	p {
 		float:left;	
 		padding-right:@standardPadding;
@@ -425,7 +426,7 @@ hr {
 .team-leaderboard .person {
 	padding-left:15.5%;	
 	padding-top:@standardPadding;
-	padding-bottom:0;
+	/*padding-bottom:0;*/
 }
 
 .leaderboard {
@@ -437,7 +438,7 @@ hr {
 .leader {
 	width:100%;
 	overflow:hidden;
-	padding-bottom:@standardPadding;	
+	/*padding-bottom:@standardPadding;	*/
 	padding-bottom:4%;
 }
 
@@ -729,7 +730,7 @@ hr {
     
     stroke-width: 2;
     fill: none;
-    stroke: @accentBlue;
+    stroke: @darkBlue;
 }
 
 .d3Chart .legend {
@@ -746,7 +747,7 @@ hr {
 	}
 
 	.bike {
-	  fill: @darkBlue ;
+	  fill: @orange ;
 	}
 }
 
@@ -755,11 +756,11 @@ hr {
 }
 
 .d3Chart path.bike{
-	stroke: @accentBlue;    
+	stroke: @orange;    
 }
 
 .d3Chart path.bus{
-	stroke: @darkBlue;    
+	stroke: @accentBlue;    
 }
 
 .d3Chart path.walk{
@@ -811,7 +812,7 @@ hr {
 	}
 
 	.barChart .bike {
-	  fill: @darkBlue ;
+	  fill: @orange ;
 	}
 }
 
