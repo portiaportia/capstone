@@ -50,10 +50,14 @@ img {max-width:100%}
 }
 
 .pix-stat-number-big{
-	font-size: 1.4em;
+	font-size: 1.8em;
 	color: @darkGray;
 	text-align: center;
 	font-weight: 300;
+}
+
+.impact .pix-stat-number-big{
+	padding-top:4%;
 }
 
 .pix-stat-number{
@@ -62,6 +66,10 @@ img {max-width:100%}
 	text-align: center;
 	font-weight: 300;
 	line-height:0.9em;
+}
+
+.impact .pix-stat-number {
+	text-align:right;	
 }
 
 .pix-stat-label{
@@ -78,6 +86,10 @@ img {max-width:100%}
 	font-weight: 300;
 }
 
+.impact .pix-stat-label-small {
+	text-align:right;	
+}
+
 .pix-graphLabel{
 	.pix-small; 
 	fill: @darkGray;
@@ -92,7 +104,7 @@ h1{
 h2 {
 	font-size: 1.1em;	
 	font-weight: 400;
-	color: @darkBlue;
+	color: @darkGray;
 }
 
 h3 {
@@ -126,6 +138,24 @@ a {
 	overflow:hidden;	
 }
 
+.col1of2 {
+	width:40%;
+	float:left;
+	text-align:left;	
+	
+	.pix-stat-number-big {
+		text-align:left;
+		
+	}
+
+	img {
+		margin-top:2%;
+		max-width:100%;
+		width:30%;
+		float:left;
+	}
+}
+
 .col1of3 {
 	width:30%;
 	float:left;	
@@ -151,7 +181,7 @@ body {
 .page-title {
 	position: fixed;
 	top: 0px;
-	padding:5px 0 0 0;
+	padding:7px 0 0 0;
 	z-index: 100;
 	background: @accentBlue;
 	.pageWidth;
@@ -232,7 +262,7 @@ body {
 	width:100%;
 	text-align:center;
 	padding:10% 10%;
-	font-size:.9em;
+	font-size:.7em;
 }
 
 .bottom-nav a.highlight {
@@ -248,15 +278,56 @@ body {
 
 /**** Home:  Commute Impact *****/
 .impact {
-	padding:@standardPadding;	
+	padding:@standardPadding 6%;	
 	border-bottom:1px solid @lightGray;	
 }
 
 .impact .col1of3 {
-	padding:0 4%;
+	width:33.33%;
+	overflow:hidden;
 	
 	img {
-		width:50%;	
+		float:left;
+		width:40%;	
+		margin-right:@standardPadding;
+	}
+	
+	section {
+		float:left;	
+	}
+}
+
+.col-com-day {
+	width:10%;	
+	float:left;
+	margin-right:15%;
+	
+	.pix-stat-number-big {
+		margin-top:-6px;		
+	}
+	
+	.pix-stat-number-big {
+		margin-top:-6px;		
+	}
+	
+	.pix-stat-label {
+		margin-top:-6px;	
+	}
+}
+
+.col-com-tran {
+	width:30%;
+	float:left;
+	margin-right:5%;
+	
+	img {
+		float:left;
+		width:30%;	
+		margin-right:5px;
+	}
+	
+	p {
+		float:left;	
 	}
 }
 
