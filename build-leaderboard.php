@@ -150,7 +150,9 @@ function create_person_section($person, $position, $include_position){
 				echo "<img src=\"" . $person["image"] . "\">";
             	echo "<div class='left'><p class='pix-stat-title-big'>" . $person["name"];
 				echo "</p>";
-				echo "<p class='pix-stat-label-small members-detail'>" . $person["team"] . "</p>";
+				if($include_position) {
+					echo "<p class='pix-stat-label-small members-detail'>" . $person["team"] . "</p>";
+				}
 				echo "</div>";
 			?>   
 				<div class="miles">
