@@ -107,8 +107,8 @@ function build_team_leaderboard($people_data, $team_data){
 						<span class='pix-stat-number'><?php echo $team["avgtrips"]; ?></span>
 						<span class='pix-stat-label'>avg trips</span>
 					</p>
-					<p>
-						<span class='pix-stat-label-small'><?php echo $team["miles"]; ?> mi</span>
+					<p class='pix-stat-label-small'>
+						<?php echo $team["miles"]; ?> mi
 					</p>
 				</div>
 			</a>
