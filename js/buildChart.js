@@ -73,14 +73,8 @@ function buildChart(idName, data){
 		.orient("bottom")
 		//.ticks(d3.time.weeks, 2)
 		//.tickValues(data, function(d) { return parseDate(d.xval);})
-		.ticks(d3.time.monday, 1)
+		.ticks(d3.time.monday, 2)
 		.tickFormat(d3.time.format("%e"));
-
-/*
-	var xAxis2 = d3.svg.axis().scale(x)
-		.orient("bottom")
-		.tickValues([1,2,3,4,5,6,7, 8]);
-		*/
 
 	var yAxis = d3.svg.axis().scale(y)
 		.orient("left").ticks(4);
@@ -103,19 +97,16 @@ function buildChart(idName, data){
 	svg.append("path") // Add the valueline path.
 		.attr("class", "line")
 		.attr("d", valueline(data));
-
+/*
 	svg.append("g") // Add the X Axis for weeks
 		.attr("class", "x axis weeks")
 		.attr("transform", "translate(0," + height + ")")
 		.call(xAxis2);
-
-	svg.append("g") // Add the X Axis
+*/
+	svg.append("g") // Add the X Axis months
 		.attr("class", "x axis months")
-		.attr("transform", "translate(0," + (height + 20)+ ")")
+		.attr("transform", "translate(0," + (height + 0)+ ")")
 		.call(xAxis);
-
-	
-
 
 	svg.append("g") // Add the Y Axis
 		.attr("class", "y axis")
@@ -160,7 +151,7 @@ function animateChart(idName, data, isExpanded){
 }
 
 function buildChartMulti(idName, data){
-	var margin = {top: 30, right: 20, bottom: 40, left: 25};
+	var margin = {top: 30, right: 20, bottom: 46, left: 25};
 	//hacky way to make sure the line graphs are the same size.
 	if(lineChartWidth == 0){
 		var w = parseInt(d3.select(idName).style('width'), 10);
@@ -168,7 +159,7 @@ function buildChartMulti(idName, data){
 	}else {
 		var w = lineChartWidth;
 	}
-	var h = w*.50;
+	var h = w*.60;
 	var width = w - margin.left - margin.right;
 	var height = h - margin.top - margin.bottom;
 
@@ -268,7 +259,7 @@ function buildChartMulti(idName, data){
 	/* START LEGEND */
   var legend = svg.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(0," + (height+24) + ")");
+    .attr("transform", "translate(0," + (height+30) + ")");
 
   legend.selectAll('rect')
         .data(classNames)
@@ -296,7 +287,7 @@ function buildChartMulti(idName, data){
 //pass the name of the div that contains the graph
 function animateChartMulti(idName, data, isExpanded){
 	if(!isExpanded){
-		var margin = {top: 30, right: 20, bottom: 30, left: 25};
+		var margin = {top: 30, right: 20, bottom: 46, left: 25};
 		var w = lineChartWidth;
 		var h = w*.50;
 		var width = w - margin.left - margin.right;

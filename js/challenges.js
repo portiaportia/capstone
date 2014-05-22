@@ -8,10 +8,14 @@ $(function() {
 
 function switchTeamView()
 {
-	$(".team-toggle img").toggle();
-	$("#challenges .content").removeClass("currentContent");
+	var id = $(this).attr("href");
+	//only swith the team if the link clicked on isn't already visible.
+	if(!$(id).is(":visible") ){
+		$(".team-toggle img").toggle();
+		$("#challenges .content").removeClass("currentContent");
 
-	$($(this).attr("href")).addClass("currentContent");
+		$($(this).attr("href")).addClass("currentContent");
+	}
 	return false;	
 }
 
