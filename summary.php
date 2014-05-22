@@ -20,7 +20,7 @@
                 <p class="pix-stat-label">trips</p>
             </section>
         </section>
-        <section class="col1of3">
+        <section class="col1of3 right">
             <img src="images/bike.png"/>
             <section>
                 <p class="pix-stat-number-big">5</p>
@@ -41,10 +41,10 @@
 
 <section class="impact">
 	<?php createImpactHeaderTop("Bonus Amount", "#bonuses-expand"); ?>
-        <section class="col1of3">
+        <section class="col1of2">
            <p class="pix-stat-number-big">$42</p>
         </section>
-    	<section class="col1of3 right">
+    	<section class="col1of2 right">
            <p class="pix-stat-number">$216</p>
            <p class="pix-stat-label-small">year to date</p>
         </section>
@@ -62,10 +62,10 @@
 
 <section class="impact">
     <?php createImpactHeaderTop("CO<sub>2</sub> Reductions", "#carbon-expand"); ?>
-    	<section class="col1of3">
+    	<section class="col1of2">
            <p class="pix-stat-number-big">37 lbs</p>
         </section>
-    	<section class="col1of3 right">
+    	<section class="col1of2 right">
            <p class="pix-stat-number">197 lbs</p>
            <p class="pix-stat-label-small">year to date</p>
         </section>

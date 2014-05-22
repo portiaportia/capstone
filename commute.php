@@ -31,11 +31,11 @@
 <?php } ?>
 <?php function buildDay($day, $passed_date, $minsToWork, $timeToWork, $imgToWork, $minsFromWork, $timeFromWork, $imgFromWork){ ?>
 		<section class="day column-container">
-            <section class="col1of3">
+            <section class="col-com-day">
        		   <p class="pix-stat-number-big"><?php echo $day; ?></p>
                <p class="pix-stat-label"><?php echo $passed_date; ?></p>
             </section>
-        	<section class="col1of3">
+        	<section class="col-com-tran">
             	<img src="images/<?php echo $imgToWork; ?>">
             	<p>
                 	<span  class="pix-stat-number"><?php echo $minsToWork; ?></span>
@@ -43,7 +43,7 @@
                 </p>
                 <p class="pix-stat-label-small"><?php echo $timeToWork; ?></p>
             </section>
-            <section class="col1of3">
+            <section class="col-com-tran">
             	<img src="images/<?php echo $imgFromWork; ?>">
             	<p>
                 	<span  class="pix-stat-number"><?php echo $minsFromWork; ?></span>
