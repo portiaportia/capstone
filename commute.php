@@ -73,7 +73,7 @@
         <?php buildDay("T", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
         <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
         <?php buildDay("Th",addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30 - 7:58", "walk.png", 40, "7:30 - 7:58", "bus.png"); ?>
         <?php buildDay("M", addDay($date,3), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
         <?php buildDay("T", addDay($date,1), 40, "7:30 - 7:58", "bike.png", 40, "7:30 - 7:58", "bike.png"); ?>
         <?php buildDay("W", addDay($date,1), 40, "7:30 - 7:58", "bus.png", 40, "7:30 - 7:58", "bus.png"); ?>
