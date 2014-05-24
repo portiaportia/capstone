@@ -29,7 +29,7 @@ function hideShowImpact()
 	idToAnimate = type.replace("#", "#d3Chart-");
 	
 	if (idToAnimate == "#d3Chart-commutes1") {
-		animateChartMulti(idToAnimate, commuteData1, isExpanded );
+		animateChartMulti(idToAnimate, commuteData, isExpanded );
 	}else if(idToAnimate == "#d3Chart-commutes") {
 		animateChartMulti(idToAnimate, commuteData, isExpanded );
 	}else if(idToAnimate == "#d3Chart-carbon"){

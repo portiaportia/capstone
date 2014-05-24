@@ -34,7 +34,7 @@
             <div id="d3Chart-commutes1" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
 			<script>
-                buildChartMulti("#d3Chart-commutes1", commuteData1);
+                buildChartMulti("#d3Chart-commutes1", commuteData, "5/19/14");
             </script>
         </a>
     </div>

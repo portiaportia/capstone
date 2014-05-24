@@ -43,22 +43,22 @@ var carbonData1 = [
 ];
 
 var commuteData = [ 
-	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, //42
-	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, //42
-	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, //42
-	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, //42
-	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, //42
-	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }, //42
-	{ xval: "6/2/14", car: 0, bike: 8, bus: 6, walk: 6  } //
+	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, 
+	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, 
+	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, 
+	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, 
+	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, 
+	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }, 
+	{ xval: "6/2/14", car: 0, bike: 8, bus: 6, walk: 6  } 
 ];
 
 var commuteData1 = [ 
-	{ xval: "2/24/14", car: 14, bike: 0, bus: 6, walk: 0 }, //42
-	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, //42
-	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, //42
-	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, //42
-	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, //42
-	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, //42
+	{ xval: "2/24/14", car: 14, bike: 0, bus: 6, walk: 0 }, 
+	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, 
+	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, 
+	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, 
+	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, 
+	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, 
 	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }
 ];
 
@@ -159,12 +159,10 @@ function animateChart(idName, data, isExpanded){
 		y.domain([0, d3.max(data, function(d) { return d.yval; })]);
 		
 		var blankLine = d3.svg.line()
-			//.interpolate("basis") //this curves the line.
 			.x(function(d) { return x(parseDate(d.xval)); })
 			.y(function(d) { return y(0); });
 
 		var valueline = d3.svg.line()
-			//.interpolate("basis") //this curves the line.
 			.x(function(d) { return x(parseDate(d.xval)); })
 			.y(function(d) { return y(d.yval); });
 
@@ -178,7 +176,7 @@ function animateChart(idName, data, isExpanded){
 	}
 }
 
-function buildChartMulti(idName, data){
+function buildChartMulti(idName, data, dateToHighlight){
 	
 	var margin = getMargin();
 
@@ -199,12 +197,60 @@ function buildChartMulti(idName, data){
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+	if(dateToHighlight == "5/19/14"){
+		drawRect(svg, data, x, height, parseDate, dateToHighlight, "5/19 - 5/30");
+	}else if(dateToHighlight == "6/2/14"){
+		drawRect(svg, data, x, height, parseDate, dateToHighlight, "6/2 - 6/13");
+	}
+
+	//need to draw the lines, even though they aren't shown b/c it will append the paths
 	drawLines(data, x, y, parseDate, svg, false, false);
 
 	buildAxes(svg, x, y, height);
 
 	buildLegend(svg, height);
-	
+
+	//drawVertLine(svg, x, y);
+
+}
+
+function drawRect(svg, data, x, height, parseDate, date, label){
+    var num = data.length;
+    var xval = x(parseDate(date))-5;
+    //var xval = 45*num;
+    var width = 10;
+
+    //.x(function(d) { return x(parseDate(d.xval)); })
+    
+
+     svg.append("rect")
+     	.attr("x", xval)
+      	.attr("y", 0)
+      	.attr("width", width)
+      	.attr("height", height);
+    
+    svg.append("text")
+    	.attr("x", xval-25)
+      .attr("y", 9)
+      .attr("height", 10)
+      .attr("class", "pix-graphLabel")
+      .text(label);
+}
+
+function drawVertLine(svg, x, y ){
+	var line = {
+    'x1':50,
+    'y1':50,
+    'x2':50,
+    'y2':0
+    };
+
+	svg.append("line")
+        .attr("x1", line.x1)
+        .attr("y1", line.y1)
+        .attr("x2", line.x2)
+        .attr("y2", line.y2)
+        .attr("class","label-line");
 }
 
 //pass the name of the div that contains the graph
