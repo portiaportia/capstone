@@ -6,7 +6,17 @@ var bonusesData = [
 	{ xval: "4/21/14", yval: 27 },
 	{ xval: "5/5/14", yval: 30 },
 	{ xval: "5/19/14", yval: 25 },
-	{ xval: "6/2/14", yval: 31 }
+	{ xval: "6/2/14", yval: 42 }
+];
+
+var bonusesData1 = [ 
+	{ xval: "2/24/14", yval: 24 },
+	{ xval: "3/10/14", yval: 24 },
+	{ xval: "3/24/14", yval: 24 },
+	{ xval: "4/7/14", yval: 22 },
+	{ xval: "4/21/14", yval: 27 },
+	{ xval: "5/5/14", yval: 30 },
+	{ xval: "5/19/14", yval: 25 }
 ];
 
 var carbonData = [ 
@@ -17,18 +27,39 @@ var carbonData = [
 	{ xval: "4/21/14", yval: 42 },
 	{ xval: "5/5/14", yval: 40 },
 	{ xval: "5/19/14", yval: 30 },
-	{ xval: "6/2/14", yval: 35 }
+	{ xval: "6/2/14", yval: 37 }
 	
 ];
 
+var carbonData1 = [ 
+	{ xval: "2/24/14", yval: 39 },
+	{ xval: "3/10/14", yval: 39 },
+	{ xval: "3/24/14", yval: 39 },
+	{ xval: "4/7/14", yval: 40 },
+	{ xval: "4/21/14", yval: 42 },
+	{ xval: "5/5/14", yval: 40 },
+	{ xval: "5/19/14", yval: 30 }
+	//{ xval: "6/2/14", yval: 37 }
+];
+
 var commuteData = [ 
-	{ xval: "3/10/14", car: 3, bike: 7, bus: 30, walk: 2 }, //42
-	{ xval: "3/24/14", car: 3, bike: 7, bus: 30, walk: 2 }, //42
-	{ xval: "4/7/14", car: 4, bike: 8, bus: 22, walk: 3 }, //42
-	{ xval: "4/21/14", car: 4, bike: 3, bus: 31, walk: 4 }, //42
-	{ xval: "5/5/14", car: 6, bike: 12, bus: 20, walk: 3 }, //42
-	{ xval: "5/19/14", car: 3, bike: 13, bus: 21, walk: 3 }, //42
-	{ xval: "6/2/14", car: 3, bike: 13, bus: 18, walk: 6 } //
+	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, //42
+	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, //42
+	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, //42
+	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, //42
+	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, //42
+	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }, //42
+	{ xval: "6/2/14", car: 0, bike: 8, bus: 6, walk: 6  } //
+];
+
+var commuteData1 = [ 
+	{ xval: "2/24/14", car: 14, bike: 0, bus: 6, walk: 0 }, //42
+	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, //42
+	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, //42
+	{ xval: "4/7/14", car: 12, bike: 0, bus: 6, walk: 2 }, //42
+	{ xval: "4/21/14", car: 8, bike: 2, bus: 6, walk: 4 }, //42
+	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, //42
+	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }
 ];
 
 var classNames = ["car", "bus", "walk", "bike"];

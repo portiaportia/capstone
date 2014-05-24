@@ -5,7 +5,7 @@ $(function(){
 	$(".week-up").hide();
 	$(".header-divider").hide();
 	$(".week-hide-show").click(hideShowWeekLink);
-	hideShowWeek("#may5");
+	hideShowWeek("#jun2");
 	
 });
 

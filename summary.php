@@ -1,6 +1,6 @@
 <section class="ppbanner">
 	<p class="left-arrow"><a href="#summary1">&lt;</a></p>
-    <p>Pay Period 5/16 - 5/30/2014</p>
+    <p>Pay Period 6/2 - 6/13/2014</p>
 </section>
 
 <section class="impact">
@@ -9,7 +9,7 @@
     	<section class="col1of3">
             <img src="images/bus.png"/>
             <section>
-                <p class="pix-stat-number-big">10</p>
+                <p class="pix-stat-number-big">7</p>
                 <p class="pix-stat-label">trips</p>
             </section>
         </section>
@@ -23,7 +23,7 @@
         <section class="col1of3 right">
             <img src="images/bike.png"/>
             <section>
-                <p class="pix-stat-number-big">5</p>
+                <p class="pix-stat-number-big">8</p>
                 <p class="pix-stat-label">trips</p>
             </section>
         </section>
