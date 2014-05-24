@@ -68,7 +68,7 @@ var lineChartWidth = 0;
 
 //pass the name of the div that contains the graph
 function buildChart(idName, data){
-	var margin = {top: 30, right: 20, bottom: 50, left: 25};
+	var margin = {top: 20, right: 20, bottom: 20, left: 25};
 	//hacky way to make sure the line graphs are the same size.
 	if(lineChartWidth == 0){
 		var w = parseInt(d3.select(idName).style('width'), 10);
@@ -76,7 +76,7 @@ function buildChart(idName, data){
 	}else {
 		var w = lineChartWidth;
 	}
-	var h = w*.60;
+	var h = w*.50;
 	var width = w - margin.left - margin.right;
 	var height = h - margin.top - margin.bottom;
 
@@ -144,7 +144,7 @@ function buildChart(idName, data){
 //pass the name of the div that contains the graph
 function animateChart(idName, data, isExpanded){
 	if(!isExpanded){
-		var margin = {top: 30, right: 20, bottom: 30, left: 25};
+		var margin = {top: 20, right: 20, bottom: 20, left: 25};
 		var w = lineChartWidth;
 		var h = w*.50;
 		var width = w - margin.left - margin.right;
@@ -176,9 +176,13 @@ function animateChart(idName, data, isExpanded){
 	}
 }
 
+function getMarginMulti(){
+	return {top: 25, right: 20, bottom: 46, left: 25};
+}
+
 function buildChartMulti(idName, data, dateToHighlight){
 	
-	var margin = getMargin();
+	var margin = getMarginMulti();
 
 	var w = getW(idName);
 	var h = w*.60;
@@ -256,7 +260,7 @@ function drawVertLine(svg, x, y ){
 //pass the name of the div that contains the graph
 function animateChartMulti(idName, data, isExpanded){
 	if(!isExpanded){
-		var margin = getMargin();
+		var margin = getMarginMulti();
 
 		var w = getW(idName);
 		var h = w*.60;
@@ -380,9 +384,7 @@ function getY(data, height){
 	return y;
 }
 
-function getMargin(){
-	return {top: 30, right: 20, bottom: 46, left: 25};
-}
+
 function getW(idName){
 	
 	//hacky way to make sure the line graphs are the same size.
