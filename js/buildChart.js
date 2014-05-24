@@ -200,34 +200,30 @@ function buildChartMulti(idName, data, dateToHighlight){
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+/*
 	if(dateToHighlight == "5/19/14"){
 		drawRect(svg, data, x, height, parseDate, dateToHighlight, "5/19 - 5/30");
 	}else if(dateToHighlight == "6/2/14"){
 		drawRect(svg, data, x, height, parseDate, dateToHighlight, "6/2 - 6/13");
 	}
+	*/
+	drawVertLineWithMarker(svg, x, height, parseDate, dateToHighlight);
+	
+	buildAxes(svg, x, y, height);
 
 	//need to draw the lines, even though they aren't shown b/c it will append the paths
 	drawLines(data, x, y, parseDate, svg, false, false);
 
-	buildAxes(svg, x, y, height);
-
 	buildLegend(svg, height);
-
-	//drawVertLine(svg, x, y);
 
 }
 
 function drawRect(svg, data, x, height, parseDate, date, label){
     var num = data.length;
     var xval = x(parseDate(date))-5;
-    //var xval = 45*num;
     var width = 10;
 
-    //.x(function(d) { return x(parseDate(d.xval)); })
-    
-
-     svg.append("rect")
+    svg.append("rect")
      	.attr("x", xval)
       	.attr("y", 0)
       	.attr("width", width)
@@ -241,20 +237,33 @@ function drawRect(svg, data, x, height, parseDate, date, label){
       .text(label);
 }
 
-function drawVertLine(svg, x, y ){
+function drawVertLineWithMarker(svg, x, height, parseDate, date){
+	var xval = x(parseDate(date));
+
 	var line = {
-    'x1':50,
-    'y1':50,
-    'x2':50,
-    'y2':0
+    'x1':xval,
+    'y1':height,
+    'x2':xval,
+    'y2':-5
     };
+
+    var marker = d3.svg.symbol()
+    	.type("triangle-down")
+    	.size(6);
 
 	svg.append("line")
         .attr("x1", line.x1)
         .attr("y1", line.y1)
         .attr("x2", line.x2)
         .attr("y2", line.y2)
-        .attr("class","label-line");
+        .attr("class","graph-line-marker")
+        .attr("stroke-dasharray", "5,5");
+
+    svg.append("path")
+    	.attr("transform", function(d) { return "translate(" + xval + "," + -5 + ")"; })
+    	.attr("class","graph-line-marker")
+    	.attr("d", marker);
+    
 }
 
 //pass the name of the div that contains the graph
@@ -297,19 +306,15 @@ function drawLines(data, x, y, parseDate, svg, makeZero, animate){
 			.y(function(d) { return y(0); });
 
 		svg.select("path.car") // Add the valueline path.
-			//.attr("class", "car")
 			.attr("d", blankLine(data));
 
 		svg.select("path.bike") // Add the valueline path.
-			//.attr("class", "bike")
 			.attr("d", blankLine(data));
 
 		svg.select("path.walk") // Add the valueline path.
-			//.attr("class", "walk")
 			.attr("d", blankLine(data));
 
 		svg.select("path.bus") // Add the valueline path.
-			//.attr("class", "bus")
 			.attr("d", blankLine(data));
 	}else {
 

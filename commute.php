@@ -4,7 +4,7 @@
                 <img src="images/<?php echo $icon; ?>">
                 <section>
                     <p class="pix-stat-number-big"><?php echo $minCommuteType; ?></p>
-                    <p class="pix-stat-label">mins</p>
+                    <p class="pix-stat-label">min</p>
                 </section>
             </section>
         <?php endif; 
