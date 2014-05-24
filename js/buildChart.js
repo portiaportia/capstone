@@ -82,9 +82,6 @@ function buildChart(idName, data){
 
 	var parseDate = d3.time.format("%x").parse; //m/d/y
 
-	//var x = d3.scale.linear().range([0, width]);
-	//var x = d3.time.scale().range([0, width]);
-	//var x = d3.time.scale.nice(d3.time.monday, 2);
 	var x = d3.time.scale()
 			.domain(d3.extent(data, function(d) { return parseDate(d.xval); } ))
 			.range([0, width]);
@@ -182,7 +179,166 @@ function animateChart(idName, data, isExpanded){
 }
 
 function buildChartMulti(idName, data){
-	var margin = {top: 30, right: 20, bottom: 46, left: 25};
+	
+	var margin = getMargin();
+
+	var w = getW(idName);
+	var h = w*.60;
+	var width = w - margin.left - margin.right;
+	var height = h - margin.top - margin.bottom;
+
+	var parseDate = d3.time.format("%x").parse;
+	
+	var x = getX(data, width, parseDate);
+	var y = getY(data, height);
+	
+	var svg = d3.select(idName)
+		.append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	drawLines(data, x, y, parseDate, svg, false, false);
+
+	buildAxes(svg, x, y, height);
+
+	buildLegend(svg, height);
+	
+}
+
+//pass the name of the div that contains the graph
+function animateChartMulti(idName, data, isExpanded){
+	if(!isExpanded){
+		var margin = getMargin();
+
+		var w = getW(idName);
+		var h = w*.60;
+		var width = w - margin.left - margin.right;
+		var height = h - margin.top - margin.bottom;
+
+		var parseDate = d3.time.format("%x").parse;
+		
+		var x = getX(data, width, parseDate);
+		var y = getY(data, height);
+
+		var svg = d3.select(idName).select("svg").select("g");
+		
+		//first zero out the lines		
+		zeroOutLines(data, x, y, parseDate, svg);
+
+		//now animate them
+		animateLines(data, x, y, parseDate, svg);
+	}
+}
+
+function zeroOutLines(data, x, y, parseDate, svg){
+	drawLines(data, x, y, parseDate, svg, true, false);
+}
+
+function animateLines(data, x, y, parseDate, svg){
+	drawLines(data, x, y, parseDate, svg, false, true);
+}
+
+function drawLines(data, x, y, parseDate, svg, makeZero, animate){
+	if(makeZero){
+		var blankLine = d3.svg.line()
+			.x(function(d) { return x(parseDate(d.xval)); })
+			.y(function(d) { return y(0); });
+
+		svg.select("path.car") // Add the valueline path.
+			//.attr("class", "car")
+			.attr("d", blankLine(data));
+
+		svg.select("path.bike") // Add the valueline path.
+			//.attr("class", "bike")
+			.attr("d", blankLine(data));
+
+		svg.select("path.walk") // Add the valueline path.
+			//.attr("class", "walk")
+			.attr("d", blankLine(data));
+
+		svg.select("path.bus") // Add the valueline path.
+			//.attr("class", "bus")
+			.attr("d", blankLine(data));
+	}else {
+
+		//first line
+		var valuelineCar = d3.svg.line()
+			.x(function(d) { return x(parseDate(d.xval)); })
+			.y(function(d) { return y(d.car); });
+		
+		//second line
+		var valuelineBike = d3.svg.line()
+			.x(function(d) { return x(parseDate(d.xval)); })
+			.y(function(d) { return y(d.bike); });
+
+		//third line
+		var valuelineBus = d3.svg.line()
+			.x(function(d) { return x(parseDate(d.xval)); })
+			.y(function(d) { return y(d.bus); });
+
+		//fourth line
+		var valuelineWalk = d3.svg.line()
+			.x(function(d) { return x(parseDate(d.xval)); })
+			.y(function(d) { return y(d.walk); });	
+
+		if(animate){ 
+			svg.select("path.car") // Add the valueline path.
+				.transition().delay(500).duration(950)
+				.attr("d", valuelineCar(data));
+
+			svg.select("path.bike") // Add the valueline path.
+				.transition().delay(550).duration(950)
+				.attr("d", valuelineBike(data));
+
+			svg.select("path.walk") // Add the valueline path.
+				.transition().delay(650).duration(950)
+				.attr("d", valuelineWalk(data));
+
+			svg.select("path.bus") // Add the valueline path.
+				.transition().delay(700).duration(950)
+				.attr("d", valuelineBus(data));
+		}else {
+			svg.append("path") // Add the valueline path.
+				.attr("class", "car")
+				.attr("d", valuelineCar(data));
+			
+			svg.append("path") // Add the valueline path.
+				.attr("class", "bike")
+				.attr("d", valuelineBike(data));
+
+			svg.append("path") // Add the valueline path.
+				.attr("class", "walk")
+				.attr("d", valuelineWalk(data));
+
+			svg.append("path") // Add the valueline path.
+				.attr("class", "bus")
+				.attr("d", valuelineBus(data));
+		}
+	}
+}
+
+function getX(data, width, parseDate){
+	var x = d3.time.scale().range([0, width]);
+	x.domain(d3.extent(data, function(d) { return parseDate(d.xval); }));
+	
+	return x;
+}
+
+function getY(data, height){
+	var y = d3.scale.linear().range([height, 0]);
+
+	y.domain([0, getYMax(data)]);
+
+	return y;
+}
+
+function getMargin(){
+	return {top: 30, right: 20, bottom: 46, left: 25};
+}
+function getW(idName){
+	
 	//hacky way to make sure the line graphs are the same size.
 	if(lineChartWidth == 0){
 		var w = parseInt(d3.select(idName).style('width'), 10);
@@ -190,16 +346,11 @@ function buildChartMulti(idName, data){
 	}else {
 		var w = lineChartWidth;
 	}
-	var h = w*.60;
-	var width = w - margin.left - margin.right;
-	var height = h - margin.top - margin.bottom;
+	
+	return w;
+}
 
-	var parseDate = d3.time.format("%x").parse;
-
-	//var x = d3.scale.linear().range([0, width]);
-	var x = d3.time.scale().range([0, width]);
-	var y = d3.scale.linear().range([height, 0]);
-
+function buildAxes(svg, x, y, height){
 	var xAxis = d3.svg.axis().scale(x)
 		.orient("bottom")
 		.ticks(d3.time.months, 1)
@@ -208,75 +359,6 @@ function buildChartMulti(idName, data){
 	var yAxis = d3.svg.axis().scale(y)
 		.orient("left")
 		.ticks(4);
-
-	//first line
-	var valuelineCar = d3.svg.line()
-		//.interpolate("basis") //this curves the line. 
-		.x(function(d) { return x(parseDate(d.xval)); })
-		.y(function(d) { return y(d.car); });
-	
-	//second line
-	var valuelineBike = d3.svg.line()
-		//.interpolate("basis") //this curves the line. 
-		.x(function(d) { return x(parseDate(d.xval)); })
-		.y(function(d) { return y(d.bike); });
-
-	//third line
-	var valuelineBus = d3.svg.line()
-		//.interpolate("basis") //this curves the line. 
-		.x(function(d) { return x(parseDate(d.xval)); })
-		.y(function(d) { return y(d.bus); });
-
-	//second line
-	var valuelineWalk = d3.svg.line()
-		//.interpolate("basis") //this curves the line. 
-		.x(function(d) { return x(parseDate(d.xval)); })
-		.y(function(d) { return y(d.walk); });	
-
-	var svg = d3.select(idName)
-		.append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	x.domain(d3.extent(data, function(d) { return parseDate(d.xval); }));
-	//y.domain([0, d3.max(data, function(d) { return d.car; })]);
-	var carmax  = d3.max(data, function(d) { return d.car; });
-	var bikemax = d3.max(data, function(d) { return d.bike; });
-	var busmax  = d3.max(data, function(d) { return d.bus; });
-	var walkmax = d3.max(data, function(d) { return d.walk; });
-
-	var ymax = carmax;
-	if(ymax < bikemax) { ymax = bikemax; }
-	if(ymax < busmax) { ymax = busmax; }
-	if(ymax < walkmax) { ymax = walkmax; }
-
-	y.domain([0, ymax]);
-
-	/*
-	var max = d3.max(d3.entries(data), function(d) {
-    return d3.max(d3.entries(d.value), function(e) {
-        return d3.max(e.value);
-    });
-});
-*/
-
-	svg.append("path") // Add the valueline path.
-		.attr("class", "car")
-		.attr("d", valuelineCar(data));
-	
-	svg.append("path") // Add the valueline path.
-		.attr("class", "bike")
-		.attr("d", valuelineBike(data));
-
-		svg.append("path") // Add the valueline path.
-		.attr("class", "walk")
-		.attr("d", valuelineWalk(data));
-
-		svg.append("path") // Add the valueline path.
-		.attr("class", "bus")
-		.attr("d", valuelineBus(data));
 
 	svg.append("g") // Add the X Axis
 		.attr("class", "x axis")
@@ -287,12 +369,15 @@ function buildChartMulti(idName, data){
 		.attr("class", "y axis")
 		.call(yAxis);
 
-	/* START LEGEND */
-  var legend = svg.append("g")
-    .attr("class", "legend")
-    .attr("transform", "translate(0," + (height+30) + ")");
+}
 
-  legend.selectAll('rect')
+function buildLegend(svg, height){
+
+  	var legend = svg.append("g")
+    	.attr("class", "legend")
+    	.attr("transform", "translate(0," + (height+30) + ")");
+
+  	legend.selectAll('rect')
         .data(classNames)
       .enter()
         .append("rect")
@@ -302,7 +387,7 @@ function buildChartMulti(idName, data){
         .attr("height", 10)
         .attr("class", function(d, i) { return classNames[i]; })
         
-  legend.selectAll('text')
+  	legend.selectAll('text')
     .data(classNames)
     .enter()
       .append('text')
@@ -311,43 +396,22 @@ function buildChartMulti(idName, data){
       .attr("height", 10)
       .attr("class", "pix-graphLabel")
       .text(function(d, i) { return classNames[i]; });
-
-    /* END LEGEND */
 }
 
-//pass the name of the div that contains the graph
-function animateChartMulti(idName, data, isExpanded){
-	if(!isExpanded){
-		var margin = {top: 30, right: 20, bottom: 46, left: 25};
-		var w = lineChartWidth;
-		var h = w*.50;
-		var width = w - margin.left - margin.right;
-		var height = h - margin.top - margin.bottom;
+function getYMax(data){
+	//Figure out how high the y axis should go based on the max value. 
+	var carmax  = d3.max(data, function(d) { return d.car; });
+	var bikemax = d3.max(data, function(d) { return d.bike; });
+	var busmax  = d3.max(data, function(d) { return d.bus; });
+	var walkmax = d3.max(data, function(d) { return d.walk; });
 
-		var parseDate = d3.time.format("%x").parse;
+	var ymax = carmax;
+	if(ymax < bikemax) { ymax = bikemax; }
+	if(ymax < busmax) { ymax = busmax; }
+	if(ymax < walkmax) { ymax = walkmax; }
 
-		var x = d3.time.scale().range([0, width]);
-		var y = d3.scale.linear().range([height, 0]);
-
-		x.domain(d3.extent(data, function(d) { return parseDate(d.xval); }));
-		y.domain([0, d3.max(data, function(d) { return d.yval; })]);
-		
-		var blankLine = d3.svg.line()
-			//.interpolate("basis") //this curves the line.
-			.x(function(d) { return x(parseDate(d.xval)); })
-			.y(function(d) { return y(0); });
-
-		var valueline = d3.svg.line()
-			//.interpolate("basis") //this curves the line.
-			.x(function(d) { return x(parseDate(d.xval)); })
-			.y(function(d) { return y(d.yval); });
-
-		var svg = d3.select(idName).select("svg").select("g");
-		svg.select("path") // Add the valueline path.
-			.attr("d", blankLine(data));
-
-		svg.select("path") // Add the valueline path.
-			.transition().delay(500).duration(950)
-			.attr("d", valueline(data));
-	}
+	return ymax;
 }
+
+
+

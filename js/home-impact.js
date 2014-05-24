@@ -28,17 +28,20 @@ function hideShowImpact()
 	var idToAnimate = type;
 	idToAnimate = type.replace("#", "#d3Chart-");
 	
-	//TODO this could be more elegant, probably by using classes rather than an id
-	if(idToAnimate == "#d3Chart-time"){ 
-		animateBarChart(idToAnimate, isExpanded);
-	}else{
-		if(idToAnimate == "#d3Chart-carbon"){
-			animateChart(idToAnimate, carbonData, isExpanded);
-		}else if(idToAnimate == "#d3Chart-bonuses"){
-			animateChart(idToAnimate, bonusesData, isExpanded);
-		}
+	if (idToAnimate == "#d3Chart-commutes1") {
+		animateChartMulti(idToAnimate, commuteData1, isExpanded );
+	}else if(idToAnimate == "#d3Chart-commutes") {
+		animateChartMulti(idToAnimate, commuteData, isExpanded );
+	}else if(idToAnimate == "#d3Chart-carbon"){
+		animateChart(idToAnimate, carbonData, isExpanded);
+	}else if(idToAnimate == "#d3Chart-bonuses"){
+		animateChart(idToAnimate, bonusesData, isExpanded);
+	}else if(idToAnimate == "#d3Chart-carbon1"){
+		animateChart(idToAnimate, carbonData1, isExpanded);
+	}else if(idToAnimate == "#d3Chart-bonuses1"){
+		animateChart(idToAnimate, bonusesData1, isExpanded);
 	}
-	
+    
 	/* We want the whole impact div that was clicked to be in view
 		so if it's bottom > than the browser we need to scroll so bottom is in view */
 	$('html,body').animate({
