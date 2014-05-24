@@ -6,7 +6,7 @@
 
 <section class="impact">
 	
-	<?php createImpactHeaderTop("Commutes", "#commutes-expand1"); ?>
+	<?php createImpactHeaderTop("Commute", "#commutes-expand1"); ?>
         <section class="col1of3">
             <img src="images/bus.png"/>
             <section>
@@ -41,7 +41,7 @@
 </section>
 
 <section class="impact">
-	<?php createImpactHeaderTop("Bonus Amount", "#bonuses-expand1"); ?>
+	<?php createImpactHeaderTop("Bonus", "#bonuses-expand1"); ?>
         <section class="col1of2">
            <p class="pix-stat-number-big">$25</p>
         </section>
@@ -62,7 +62,7 @@
 </section>
 
 <section class="impact">
-    <?php createImpactHeaderTop("CO<sub>2</sub> Reductions", "#carbon-expand1"); ?>
+    <?php createImpactHeaderTop("CO<sub>2</sub> Reduction", "#carbon-expand1"); ?>
         <section class="col1of2">
            <p class="pix-stat-number-big">30 lbs</p>
         </section>

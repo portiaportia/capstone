@@ -25,6 +25,25 @@
 <link rel="stylesheet" href="css/jquery.onoff.css" media="screen" />
 <link rel="stylesheet" href="css/jquery.onoff.override.css" media="screen" />
 
+<section class="settings-section ">
+	<div id="auto-track-toggle">
+		<h2>Automatic Tracking</h2>
+		<input id="track-check" type="checkbox" checked="checked" />
+	    <script src="js/jquery.onoff.min.js"></script>
+		<script>
+	    jQuery(function($) {
+	      $('#track-check').onoff();
+	    });
+	    </script>
+		<script src="js/settings.js"></script>
+	</div>
+	<p class="settings-desc">
+        Luum uses automatic tracking to report your commute details. 
+        You will need to manually enter your commute if you choose to turn this feature off. 
+        Time spent commuting will only be available when automatic tracking is enabled. 
+    </p>
+</section>
+
 <section class="settings-section first">
 	<div id="privacy">
 	    <a id="privacy-toggle" href="#privacy-addition">
@@ -46,24 +65,5 @@
 </section>
 
 <!--<section class="settings-section blank"></section>-->
-
-<section class="settings-section ">
-	<div id="auto-track-toggle">
-		<h2>Automatic Tracking</h2>
-		<input id="track-check" type="checkbox" checked="checked" />
-	    <script src="js/jquery.onoff.min.js"></script>
-		<script>
-	    jQuery(function($) {
-	      $('#track-check').onoff();
-	    });
-	    </script>
-		<script src="js/settings.js"></script>
-	</div>
-	<p class="settings-desc">
-        Luum uses automatic tracking to report your commute details. 
-        You will need to manually enter your commute if you choose to turn this feature off. 
-        Time spent commuting will only be available when automatic tracking is enabled. 
-    </p>
-</section>
 	
 </section>
