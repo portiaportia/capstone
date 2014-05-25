@@ -44,7 +44,7 @@
     </p>
 </section>
 
-<section class="settings-section first">
+<section class="settings-section">
 	<div id="privacy">
 	    <a id="privacy-toggle" href="#privacy-addition">
 	    	<div class="linebreak">

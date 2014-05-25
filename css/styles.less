@@ -1,5 +1,6 @@
 /***** Variables *******/
 @lightGray : #dedede;
+@subHeaderGray : #f1f1f1;
 @darkGray : #666;
 @darkBlue : #59818B;
 @accentGreen : #27C86C;
@@ -204,7 +205,7 @@ body {
 }
 
 .ppbanner {
-	background:@lightGray;
+	background:@subHeaderGray;
 	position:relative;
 	
 	.left-arrow, .right-arrow {
@@ -412,15 +413,13 @@ hr {
 
 #challenge-mode {
 	overflow: hidden;
-	background:@lightGray;
-	padding:1% 12% 0 12%;
-/*	border-top:1px solid @darkGray;
-	border-bottom:1px solid @darkGray;
-*/	
+	background:@subHeaderGray;
+	padding: 4px 12%;
+
 	p {
 		float:left;	
 		padding-right:@standardPadding;
-		padding-top:1%;
+		padding-top:2%;
 	}
 
 	a {
@@ -437,6 +436,7 @@ hr {
 		width:100%;
 		margin:0;
 		padding:0;
+		padding-top: 2px;
 	}
 }
 
@@ -563,12 +563,6 @@ hr {
 	border-bottom:1px solid @lightGray;
 	padding:@standardPadding;
 
-	.icon {
-		.left;
-		width: 30px;
-		margin-right: 5px;
-	}
-
 	h3 {
 		float:left;	
 		margin-right:10px;
@@ -586,9 +580,6 @@ hr {
 	}
 }
 
-.settings-section.first {
-	border-top:1px solid @lightGray;
-}
 
 #auto-track-toggle {
 	overflow:hidden;
