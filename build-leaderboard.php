@@ -103,7 +103,8 @@ function build_team_leaderboard($people_data, $team_data){
 	$position = 1;
 	foreach($team_data as $team){
 		?>
-		<section class="leader <?php if($team["yourteam"]){ echo " your-team";} ?>">
+		<section class="leader <?php if($team["yourteam"]){ echo "your-team";} ?>">
+			<div class="highlight-area">
 			<a class="team-hide-show" href="#<?php echo $team["id"] ?>">
 				<p class="pix-stat-number position">
 				<?php
@@ -125,6 +126,7 @@ function build_team_leaderboard($people_data, $team_data){
 					</p>
 				</div>
 			</a>
+			</div>
 			<div id="<?php echo $team["id"] ?>" class="team-members-section">
 				<?php create_people_list_for_team($people_data, $team); ?>
 			</div>
@@ -153,7 +155,7 @@ function create_people_list_for_team($people_data, $team_data) {
 
 function create_person_section($person, $position, $include_position){
 	?>
-	<section class="leader person <?php if($person["you"]){ echo " you";} ?>">
+	<section class="leader person <?php if($person["you"]){ echo "you";} ?>">
 		<div>
 			<?php if($include_position) {
 				echo "<p class='pix-stat-number position'>";
@@ -171,10 +173,10 @@ function create_person_section($person, $position, $include_position){
 				<div class="miles">
 					
 					<p>
-						<span class='pix-stat-number trips-detail'><?php echo $person["trips"]; ?></span>
-						<span class='pix-stat-label miles-detail'> trips</span>
+						<span class='pix-stat-number'><?php echo $person["trips"]; ?></span>
+						<span class='pix-stat-label'> trips</span>
 					</p>
-					<p class='pix-stat-label-small miles-detail'>
+					<p class='pix-stat-label-small'>
 						<?php echo $person["miles"]; ?> mi
 					</p>
 				</div>

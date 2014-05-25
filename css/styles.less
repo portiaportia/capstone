@@ -442,7 +442,7 @@ hr {
 
 .team-leaderboard .person {
 	padding-left:15.5%;	
-	padding-top:@standardPadding;
+	margin-top:@standardPadding;
 	/*padding-bottom:0;*/
 }
 
@@ -464,7 +464,7 @@ hr {
 	width:100%;
 	overflow:hidden;
 	/*padding-bottom:@standardPadding;	*/
-	padding-bottom:4%;
+	margin-bottom:4%;
 }
 
 .leader a {
@@ -476,12 +476,13 @@ hr {
 }
 
 /*the team leader for .you*/
-.leader.your-team {
-	/*background:lighten(@accentGreen, 45%);*/
+.leader.your-team .highlight-area {
+	border-left: 2px solid @accentBlue;
 }
 
 .leader.you {
 	/*background:lighten(@accentBlue, 45%);*/
+	border-left: 2px solid @accentBlue;
 }
 
 .position {
@@ -508,17 +509,10 @@ hr {
 	
 	p {
 		margin-top:-2px;	
+		text-align: right;
 	}
-	
-	p.pix-stat-label-small {
-	margin-top:2px;
-}
 }
 
-.leader .miles p {
-	text-align: right;
-	margin-bottom:-5px;
-}
 
 .content, .one-content {
 	width:100%;
@@ -555,9 +549,6 @@ hr {
 	padding-right: 5%;
 }
 
-.team-stats .trips-detail {
-	.left;
-}
 
 .members-detail {
 	margin-top:2px;
@@ -570,8 +561,6 @@ hr {
 .settings-section{
 	overflow:hidden;
 	border-bottom:1px solid @lightGray;
-	/*padding-bottom: 5px;
-	padding-top: 5px;*/
 	padding:@standardPadding;
 
 	.icon {
@@ -588,7 +577,6 @@ hr {
 
 	.section-arrow {
 		margin: auto;
-		/*margin-top: 10px;*/
 	}
 	
 	p {
@@ -634,13 +622,11 @@ hr {
 
 .settings-day {
 	overflow:hidden;
-	/*margin-bottom:20px;*/
 	
 	h4 {
 		float:left;
 		width:30%;	
 		font-size:1em;
-		/*margin-left: 18.75%;*/
 		margin-left: @onecolumn *2;
 	}
 	
