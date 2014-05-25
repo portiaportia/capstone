@@ -73,6 +73,7 @@
     <?php createImpactHeaderBottom("#carbon-expand1"); ?>
     <div id="carbon-expand1" class="impact-section">
         <a class="impact-hide-show" href="#carbon-expand1">
+            <p class="carbon-note">What does that mean? A sappling will absorb 90lbs of CO<sub>2</sub> in its first 10 years.</p>
             <div id="d3Chart-carbon1" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
             <script>
