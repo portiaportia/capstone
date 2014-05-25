@@ -1,10 +1,10 @@
 .onoffswitch {
   position: relative;
-  width: 50px;
+  width: 65px;
 }
 
 .onoffswitch-switch {
-	right: 16px;
+	right: 31px;
 	width: 30px;
 	height: 30px;
 	top: -4px;
@@ -15,12 +15,12 @@
 	border: 2px solid #999999;
 }
 .onoffswitch-inner:before {
-  content: "";
+  content: "on";
   background-color: #4dd865;
 }
 
 .onoffswitch-inner:after {
-  content: "";
+  content: "off";
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -33,6 +33,5 @@
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label {
- 
   border: 2px solid #4dd865;
 }

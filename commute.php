@@ -158,16 +158,16 @@
 <section class="week">
     <?php createWeekHeader("6/2 - 6/13/14", "jun2",60, 39, 42, 0); ?>
         <?php $date = "2014-06-02"?>
-    	 <?php buildDay("M", addDay($date,0), 40, "7:30am - 8:10am", "bus.png", 40, "7:36 - 8:16", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 38, "7:30am - 8:08am", "bike.png", 40, "7:30 - 8:10", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bike.png", 40, "7:34 - 8:14", "bike.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:37 - 8:17", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30am - 8:30am", "walk.png", 40, "7:25 - 8:05", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:25am - 8:05am", "bus.png", 50, "8:25 - 9:15", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),37, "7:30am - 8:07am", "bike.png", 39, "7:30 - 8:09", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:31am - 8:11am", "bus.png", 40, "7:31 - 8:11", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 52, "8:36 - 9:28", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:33 - 8:13", "bus.png"); ?>
+    	 <?php buildDay("M", addDay($date,0), 40, "7:30am - 8:10am", "bus.png", 40, "7:36pm - 8:16pm", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1), 38, "7:30am - 8:08am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bike.png", 40, "7:34pm - 8:14pm", "bike.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:37pm - 8:17pm", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60,"7:30am - 8:30am", "walk.png", 40, "7:25pm - 8:05pm", "bus.png"); ?>
+        <?php buildDay("M", addDay($date,3), 40, "7:25am - 8:05am", "bus.png", 50, "8:25pm - 9:15pm", "bus.png"); ?>
+        <?php buildDay("T", addDay($date,1),37, "7:30am - 8:07am", "bike.png", 39, "7:30pm - 8:09pm", "bike.png"); ?>
+        <?php buildDay("W", addDay($date,1), 40, "7:31am - 8:11am", "bus.png", 40, "7:31pm - 8:11pm", "bus.png"); ?>
+        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 52, "8:36pm - 9:28pm", "bus.png"); ?>
+        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:33pm - 8:13pm", "bus.png"); ?>
         
         <a class="week-hide-show" href="#jun2"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
     </div>
