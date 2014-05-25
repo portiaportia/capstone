@@ -22,9 +22,19 @@ window.onload = function() {
 	
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
 
-
+	$(".page-title").click(resetTop);
 }
 //get the size of a px property without the px
+
+function resetTop()
+{
+	alert("here");
+	$('html,body').animate({
+        scrollTop: 0},
+        0);
+		
+	return false;
+}
 
 
 $.fn.pixels = function(property) {
