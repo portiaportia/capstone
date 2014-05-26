@@ -6,15 +6,15 @@
 
 <div id="summary" class="page current">
 	<header class="page-title">
-		<h1>Dashboard</h1>
-	</header>	
+		<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
+	</header>
 	<div class="container">
 		<?php include "summary.php"; ?>
 	</div>
 </div>
 <div id="summary1" class="page">
 	<header class="page-title">
-		<h1>Dashboard</h1>
+		<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
 	</header>	
 	<div class="container">
 		<?php include "summary1.php"; ?>
@@ -23,7 +23,7 @@
 
 <div id="commute" class="page home-view">
 	<header class="page-title">
-		<h1>Commute</h1>
+		<a href="#" class="page-title-a"><h1>Commute</h1></a>
 	</header>
 	<div class="container">
 		<?php include "commute.php"; ?>
@@ -33,7 +33,7 @@
 <script src="js/challenges.js"></script>
 <div id="challenges" class="page">
 	<header class="page-title">
-		<h1>Challenges</h1>
+		<a href="#" class="page-title-a"><h1>Challenges</h1></a>
 	</header>
 
 	<div class="container">
@@ -44,7 +44,7 @@
 
 <div id="settings" class="page">
 	<header class="page-title">
-		<h1>Settings</h1>
+		<a href="#" class="page-title-a"><h1>Settings</h1></a>
 	</header>
 	<div class="container">
 		<?php include "settings.php"; ?>

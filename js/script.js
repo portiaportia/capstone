@@ -21,8 +21,8 @@ window.onload = function() {
 	$(".bottom-nav a, .left-arrow a, .right-arrow a").click(changePage); //control bottom navitation
 	
 	$(".top-nav a, .arrow-title a").click(changeContentHome); //control top navigation
-
-	$(".page-title").click(resetTop);
+	
+	$(".page-title-a").click(resetTop);
 }
 //get the size of a px property without the px
 
