@@ -1,7 +1,4 @@
-<section class="ppbanner">
-	<p class="left-arrow"><a href="#summary1">&lt;</a></p>
-    <p>Pay Period 6/2 - 6/13/2014</p>
-</section>
+
 
 <section class="impact">
 	

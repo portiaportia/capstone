@@ -5,18 +5,32 @@
 ?>	
 
 <div id="summary" class="page current">
-	<header class="page-title">
-		<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
+	<header>
+		<section class="page-title dashboard">
+			<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
+		</section>
+		<section class="ppbanner dashboard">
+			<p class="left-arrow"><a href="#summary1">&lt;</a></p>
+	    	<p>Pay Period 6/2 - 6/13/2014</p>
+		</section>
 	</header>
-	<div class="container">
+
+	<div class="container dashboard">
 		<?php include "summary.php"; ?>
 	</div>
 </div>
 <div id="summary1" class="page">
-	<header class="page-title">
-		<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
-	</header>	
-	<div class="container">
+	<header>
+		<section class="page-title dashboard">
+			<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
+		</section>
+		<section class="ppbanner dashboard">
+			<p>Pay Period 5/19 - 5/30/2014</p>
+		    <p class="right-arrow"><a href="#summary">&gt;</a></p>
+		</section>
+	</header>
+
+	<div class="container dashboard">
 		<?php include "summary1.php"; ?>
 	</div>
 </div>

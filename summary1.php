@@ -1,9 +1,3 @@
-<section class="ppbanner">
-	<!--<p class="left-arrow"><a href="#">&lt;</a></p>-->
-    <p>Pay Period 5/19 - 5/30/2014</p>
-    <p class="right-arrow"><a href="#summary">&gt;</a></p>
-</section>
-
 <section class="impact">
 	
 	<?php createImpactHeaderTop("Commute", "#commutes-expand1"); ?>
