@@ -1,83 +1,113 @@
 <script src="js/commute.js"></script>
 <?php 
         //this is the starting data, but we will add more fields based on the members below
+    function busRand($type){
+        if($type == "am"){
+            return rand(21,26);
+        }else if($type == "pm"){
+            return rand(34,38);
+        }else if($type == "good"){
+            return rand(20,23);
+        }else if($type == "bad"){
+            return rand(38,45);
+        }
+    }
+    function bikeRand(){
+        return rand(27,33);
+    }
+    function carRand($type){
+        if($type == "am"){
+            return rand(19,25);
+        }else if($type == "pm"){
+            return rand(25,35);
+        }else if($type == "good"){
+            return rand(17,23);
+        }else if($type == "bad"){
+            return rand(35,45);
+        }
+    }
+
+    function walkRand(){
+        return rand(75,83);
+    }
+
     $commuteScreenData = array(
         array("date"=>"3/24/14", "link"=>"mar24", "commutes"=> array(
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png")
             )
         ),
         array("date"=>"4/7/14", "link"=>"apr17", "commutes"=> array(
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png")
             )
         ),
         array("date"=>"4/21/14", "link"=>"apr21", "commutes"=> array(
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png")
             )
         ),
         array("date"=>"5/5/14", "link"=>"may5", "commutes"=> array(
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>carRand("am"), "startTo"=>"7:".rand(10,59), "modeTo"=>"car.png", "durationFrom"=>carRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"car.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png")
             )
         ),
         array("date"=>"5/19/14", "link"=>"may19", "commutes"=> array(
-                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>bikeRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>busRand("am"), "startTo"=>"7:".rand(29,33), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png")
             )
         ),
         array("date"=>"6/2/14", "link"=>"jun2", "commutes"=> array(
-                array("durationTo"=>25, "startTo"=>"7:31", "modeTo"=>"bus.png", "durationFrom"=>40, "startFrom"=>"5:05", "modeFrom"=>"bus.png"),
-                array("durationTo"=>30, "startTo"=>"7:28", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>30, "startTo"=>"7:27", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>81, "startTo"=>"7:27", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:10", "modeFrom"=>"bus.png"),
-                array("durationTo"=>80, "startTo"=>"7:33", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>40, "startTo"=>"8:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>30, "startTo"=>"8:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
-                array("durationTo"=>35, "startTo"=>"8:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
-                array("durationTo"=>79, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:45", "modeFrom"=>"bus.png"),
-                array("durationTo"=>81, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:15", "modeFrom"=>"bus.png")
+                array("durationTo"=>busRand("am"), "startTo"=>"7:31", "modeTo"=>"bus.png", "durationFrom"=>busRand("bad"), "startFrom"=>"5:05", "modeFrom"=>"bus.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"7:28", "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"7:27", "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>carRand("pm"), "startFrom"=>"6:10", "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>carRand("pm"), "startFrom"=>"6:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>busRand("bad"),"startTo"=>"8:".rand(25,45), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>bikeRand(), "startTo"=>"8:".rand(25,45), "modeTo"=>"bike.png", "durationFrom"=>bikeRand(), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bike.png"),
+                array("durationTo"=>busRand("bad"), "startTo"=>"8:".rand(25,45), "modeTo"=>"bus.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:".rand(10,59), "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("pm"), "startFrom"=>"5:45", "modeFrom"=>"bus.png"),
+                array("durationTo"=>walkRand(), "startTo"=>"7:".rand(10,59), "modeTo"=>"walk.png", "durationFrom"=>busRand("good"), "startFrom"=>"6:15", "modeFrom"=>"bus.png")
             )
         )
     );
