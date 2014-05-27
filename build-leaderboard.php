@@ -2,25 +2,25 @@
 <?php
 	//set up the data to be used. Later it will be sorted
 	$people_data = array(
-		array("name"=>"Me", "miles"=>98, "goal"=>"10", "trips"=>36, "image"=>"images/me.png", "team"=>"Mobile Maniacs", "you"=>true),
-		array("name"=>"John", "miles"=>50, "goal"=>"10", "trips"=>37, "image"=>"images/john.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Amy", "miles"=>78, "goal"=>"10", "trips"=>25, "image"=>"images/amy.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Taylor", "miles"=>60, "goal"=>"10", "trips"=>23, "image"=>"images/taylor.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Chris", "miles"=>35, "goal"=>"10", "trips"=>12, "image"=>"images/chris.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Sharon", "miles"=>90, "goal"=>"10", "trips"=>32, "image"=>"images/sharon.png", "team"=>"Mobile Maniacs", "you"=>false),
-		array("name"=>"Fran", "miles"=>56, "goal"=>"10", "trips"=>26, "image"=>"images/fran.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Erin", "miles"=>110, "goal"=>"10", "trips"=>28, "image"=>"images/erin.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Mirah", "miles"=>21, "goal"=>"10", "trips"=>15, "image"=>"images/mirah.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"Meredith", "miles"=>125, "goal"=>"10", "trips"=>34, "image"=>"images/meredith.png", "team"=>"Biking Barbies", "you"=>false),
-		array("name"=>"James", "miles"=>60, "goal"=>"10", "trips"=>30, "image"=>"images/james.png", "team"=>"Colorful Cyclists", "you"=>false),
-		array("name"=>"Andy", "miles"=>82, "goal"=>"10", "trips"=>31, "image"=>"images/andy.png", "team"=>"Colorful Cyclists", "you"=>false),
-		array("name"=>"Marc", "miles"=>65, "goal"=>"10", "trips"=>31, "image"=>"images/marc.png", "team"=>"Tricksters", "you"=>false),
-		array("name"=>"Clarissa", "miles"=>17, "goal"=>"10", "trips"=>13, "image"=>"images/clarissa.png", "team"=>"Tricksters", "you"=>false),
-		array("name"=>"Omar", "miles"=>28, "goal"=>"10", "trips"=>19, "image"=>"images/omar.png", "team"=>"Ninja Riders", "you"=>false),
-		array("name"=>"Pedro", "miles"=>50, "goal"=>"10", "trips"=>26, "image"=>"images/pedro.png", "team"=>"Ninja Riders", "you"=>false),
-		array("name"=>"Mike", "miles"=>120, "goal"=>"10", "trips"=>24, "image"=>"images/mike.png", "team"=>"Tricksters", "you"=>false),
-		array("name"=>"Dave", "miles"=>78, "goal"=>"10", "trips"=>25, "image"=>"images/dave.png", "team"=>"Tricksters", "you"=>false),
-		array("name"=>"Bob", "miles"=>80, "goal"=>"10", "trips"=>21, "image"=>"images/bob.png", "team"=>"Ninja Riders", "you"=>false)
+		array("name"=>"Me", "miles"=>98, "trips"=>36, "image"=>"images/me.png", "team"=>"Mobile Maniacs", "you"=>true),
+		array("name"=>"John", "miles"=>50, "trips"=>37, "image"=>"images/john.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Amy", "miles"=>78, "trips"=>25, "image"=>"images/amy.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Taylor", "miles"=>60, "trips"=>23, "image"=>"images/taylor.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Chris", "miles"=>35, "trips"=>12, "image"=>"images/chris.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Sharon", "miles"=>90, "trips"=>32, "image"=>"images/sharon.png", "team"=>"Mobile Maniacs", "you"=>false),
+		array("name"=>"Fran", "miles"=>56, "trips"=>26, "image"=>"images/fran.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Erin", "miles"=>110, "trips"=>28, "image"=>"images/erin.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Mirah", "miles"=>21, "trips"=>15, "image"=>"images/mirah.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"Meredith", "miles"=>125, "trips"=>34, "image"=>"images/meredith.png", "team"=>"Biking Barbies", "you"=>false),
+		array("name"=>"James", "miles"=>60, "trips"=>30, "image"=>"images/james.png", "team"=>"Colorful Cyclists", "you"=>false),
+		array("name"=>"Andy", "miles"=>82, "trips"=>31, "image"=>"images/andy.png", "team"=>"Colorful Cyclists", "you"=>false),
+		array("name"=>"Marc", "miles"=>65, "trips"=>31, "image"=>"images/marc.png", "team"=>"Tricksters", "you"=>false),
+		array("name"=>"Clarissa", "miles"=>17, "trips"=>13, "image"=>"images/clarissa.png", "team"=>"Tricksters", "you"=>false),
+		array("name"=>"Omar", "miles"=>28, "trips"=>19, "image"=>"images/omar.png", "team"=>"Ninja Riders", "you"=>false),
+		array("name"=>"Pedro", "miles"=>50, "trips"=>26, "image"=>"images/pedro.png", "team"=>"Ninja Riders", "you"=>false),
+		array("name"=>"Mike", "miles"=>120, "trips"=>24, "image"=>"images/mike.png", "team"=>"Tricksters", "you"=>false),
+		array("name"=>"Dave", "miles"=>78, "trips"=>25, "image"=>"images/dave.png", "team"=>"Tricksters", "you"=>false),
+		array("name"=>"Bob", "miles"=>80, "trips"=>21, "image"=>"images/bob.png", "team"=>"Ninja Riders", "you"=>false)
 	);
 
 	//this is the starting data, but we will add more fields based on the members below
