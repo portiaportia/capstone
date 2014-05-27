@@ -1,3 +1,198 @@
+<script src="js/commute.js"></script>
+<?php 
+        //this is the starting data, but we will add more fields based on the members below
+    $commuteScreenData = array(
+        array("date"=>"3/24/14", "link"=>"mar24", "commutes"=> array(
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+            )
+        ),
+        array("date"=>"4/7/14", "link"=>"apr17", "commutes"=> array(
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+            )
+        ),
+        array("date"=>"4/21/14", "link"=>"apr21", "commutes"=> array(
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+            )
+        ),
+        array("date"=>"5/5/14", "link"=>"may5", "commutes"=> array(
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>20, "startTo"=>"7:30", "modeTo"=>"car.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"car.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+            )
+        ),
+        array("date"=>"5/19/14", "link"=>"may19", "commutes"=> array(
+                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>30, "startTo"=>"7:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>25, "startTo"=>"7:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png")
+            )
+        ),
+        array("date"=>"6/2/14", "link"=>"jun2", "commutes"=> array(
+                array("durationTo"=>25, "startTo"=>"7:31", "modeTo"=>"bus.png", "durationFrom"=>40, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>30, "startTo"=>"7:28", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>30, "startTo"=>"7:27", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>81, "startTo"=>"7:27", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:10", "modeFrom"=>"bus.png"),
+                array("durationTo"=>80, "startTo"=>"7:33", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>40, "startTo"=>"8:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>30, "startTo"=>"8:30", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
+                array("durationTo"=>35, "startTo"=>"8:30", "modeTo"=>"bus.png", "durationFrom"=>35, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>79, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>35, "startFrom"=>"5:45", "modeFrom"=>"bus.png"),
+                array("durationTo"=>81, "startTo"=>"7:30", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:15", "modeFrom"=>"bus.png")
+            )
+        )
+    );
+
+    foreach($commuteScreenData as $week){
+        ?><section class="week">
+            <?php 
+                $busTotalMin = 0;
+                $busTotalCnt = 0;
+                $carTotalMin = 0;
+                $carTotalCnt = 0;
+                $bikeTotalMin = 0;
+                $bikeTotalCnt = 0;
+                $walkTotalMin = 0;
+                $walkTotalCnt = 0;
+                foreach($week["commutes"] as $commuteDay){
+                    switch($commuteDay["modeTo"]) {
+                        case "bus.png":
+                            $busTotalMin += $commuteDay["durationTo"];
+                            $busTotalCnt ++;
+                            break;
+                        case "car.png":
+                            $carTotalMin += $commuteDay["durationTo"];
+                            $carTotalCnt ++;
+                            break;
+                        case "bike.png":
+                            $bikeTotalMin += $commuteDay["durationTo"];
+                            $bikeTotalCnt ++;
+                            break;
+                        case "walk.png":
+                            $walkTotalMin += $commuteDay["durationTo"];
+                            $walkTotalCnt ++;
+                            break;
+                    }
+                    switch($commuteDay["modeFrom"]) {
+                        case "bus.png":
+                            $busTotalMin += $commuteDay["durationFrom"];
+                            $busTotalCnt ++;
+                            break;
+                        case "car.png":
+                            $carTotalMin += $commuteDay["durationFrom"];
+                            $carTotalCnt ++;
+                            break;
+                        case "bike.png":
+                            $bikeTotalMin += $commuteDay["durationFrom"];
+                            $bikeTotalCnt ++;
+                            break;
+                        case "walk.png":
+                            $walkTotalMin += $commuteDay["durationFrom"];
+                            $walkTotalCnt ++;
+                            break;
+                    }
+                }
+                $walkAvg = 0;
+                $carAvg = 0;
+                $bikeAvg = 0;
+                $busAvg = 0;
+                if($walkTotalCnt > 0 ){$walkAvg = round($walkTotalMin/$walkTotalCnt, 0); }else{$walkAvg = 0;}
+                if($carTotalCnt > 0 ){ $carAvg = round($carTotalMin/$carTotalCnt, 0); }else{ $carAvg = 0; }
+                if($bikeTotalCnt > 0 ){ $bikeAvg = round($bikeTotalMin/$bikeTotalCnt, 0); }else{ $bikeAvg = 0; }
+                if($busTotalCnt > 0 ){ $busAvg = round($busTotalMin/$busTotalCnt, 0); }else{ $busAvg = 0;}
+
+                $date = $week["date"];
+                createWeekHeader($week["date"] . " - " . addDay($week["date"], 13, 'n/j/y'), $week["link"], $walkAvg, $bikeAvg, $busAvg, $carAvg); 
+                
+                buildWeek($week, $date);
+
+                ?>
+                <a class="week-hide-show" href="#"<?php echo $week["link"]; ?>><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
+            </div>
+        </section>
+        <?php
+    }
+
+    function buildWeek($weekData, &$passedDate){
+
+        $tempData = $weekData["commutes"][0];
+        buildDay("M", addDay($passedDate, 0, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        
+        $tempData = $weekData["commutes"][1];
+        buildDay("T", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        
+        $tempData = $weekData["commutes"][2];
+        buildDay("W", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        $tempData = $weekData["commutes"][3];
+        buildDay("Th", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        $tempData = $weekData["commutes"][4];
+        buildDay("F", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        
+        $tempData = $weekData["commutes"][5];
+        buildDay("M", addDay($passedDate, 3, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        
+        $tempData = $weekData["commutes"][6];
+        buildDay("T", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        
+        $tempData = $weekData["commutes"][7];
+        buildDay("W", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        $tempData = $weekData["commutes"][8];
+        buildDay("Th", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+        $tempData = $weekData["commutes"][9];
+        buildDay("F", addDay($passedDate, 1, 'n/j'), 
+            $tempData["durationTo"], $tempData["startTo"], $tempData["modeTo"], $tempData["durationFrom"], $tempData["startFrom"], $tempData["modeFrom"]);
+                
+    }
+?>
+
 <?php function buildCommuteTypeHeader($minCommuteType, $icon){ 
 	if($minCommuteType > 0): ?>
             <section class="col1of3">  
@@ -16,7 +211,7 @@
                  <p>Pay Period <?php echo $title; ?></p>
             </section>
             <header class="column-container">      
-            	<h2>Commute Average Time</h2>          
+            	<h2>Average Commute Time</h2>          
                 <?php buildCommutetypeHeader($minWalk, "walk.png"); ?>
                 <?php buildCommutetypeHeader($minBike, "bike.png"); ?>
                 <?php buildCommutetypeHeader($minBus, "bus.png"); ?>
@@ -29,27 +224,37 @@
         <div id="<?php echo $link; ?>" class="week-section">
         	<h2>Calendar</h2>
 <?php } ?>
-<?php function buildDay($day, $passed_date, $minsToWork, $timeToWork, $imgToWork, $minsFromWork, $timeFromWork, $imgFromWork){ ?>
-		<section class="day column-container">
+
+<?php function buildDay($day, $passed_date, $minsToWork, $startTimeTo, $imgToWork, $minsFromWork, $startTimeFrom, $imgFromWork){ 
+    $time = strtotime($startTimeTo);
+    $to_work = date('g:i', strtotime(' +'.$minsToWork.' minutes', $time));
+    $to_work = $startTimeTo . " am - " . $to_work . " am";
+
+    $time = strtotime($startTimeFrom);
+    $from_work = date('g:i', strtotime(' +'.$minsFromWork.' minutes', $time));
+    $from_work = $startTimeFrom . " pm - " . $from_work . " pm";
+
+    ?>
+        <section class="day column-container">
             <section class="col-com-day">
-       		   <p class="pix-stat-number-big"><?php echo $day; ?></p>
+               <p class="pix-stat-number-big"><?php echo $day; ?></p>
                <p class="pix-stat-label"><?php echo $passed_date; ?></p>
             </section>
-        	<section class="col-com-tran">
-            	<section class="img-row">
-                	<img src="images/<?php echo $imgToWork; ?>">
-            		<p><span  class="pix-stat-number"><?php echo $minsToWork; ?></span></p>
-                	<span class="pix-stat-label">mins</span>
+            <section class="col-com-tran">
+                <section class="img-row">
+                    <img src="images/<?php echo $imgToWork; ?>">
+                    <p><span  class="pix-stat-number"><?php echo $minsToWork; ?></span></p>
+                    <span class="pix-stat-label">mins</span>
                 </section>
-                <p class="pix-stat-label-small"><?php echo $timeToWork; ?></p>
+                <p class="pix-stat-label-small"><?php echo $to_work; ?></p>
             </section>
             <section class="col-com-tran">
-            	<section class="img-row">
-                	<img src="images/<?php echo $imgFromWork; ?>">
-            		<p><span  class="pix-stat-number"><?php echo $minsFromWork; ?></span></p>
-                	<span class="pix-stat-label">mins</span>
+                <section class="img-row">
+                    <img src="images/<?php echo $imgFromWork; ?>">
+                    <p><span  class="pix-stat-number"><?php echo $minsFromWork; ?></span></p>
+                    <span class="pix-stat-label">mins</span>
                 </section>
-                <p class="pix-stat-label-small"><?php echo $timeFromWork; ?></p>
+                <p class="pix-stat-label-small"><?php echo $from_work; ?></p>
             </section>
         </section>
 <?php } ?>
@@ -57,118 +262,12 @@
 <?php 
     //takes a date and adds $days_to_add days to it. This is pass by reference and will modify
     //the original. It also returns the original so it can be used inline.
-    function addDay(&$passed_date, $days_to_add){
-        $passed_date = date('n/j', strtotime($passed_date . ' + '.$days_to_add .' days'));
+    //takes the format, like 'n/j' for month/day
+    function addDay(&$passed_date, $days_to_add, $format){
+        $passed_date = date($format, strtotime($passed_date . ' + '.$days_to_add .' days'));
         return $passed_date;
     }
 ?>
 
-<script src="js/commute.js"></script>
 
-<section class="week">
 
-    <?php createWeekHeader("3/24/14 - 4/4/14", "mar24", 60, 40, 40, 0); ?>
-        <?php $date = "2014-03-24"?>
-        <?php buildDay("M", addDay($date,0), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:31am - 8:11am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:32am - 8:12am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:30am - 8:10am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        
-        <a class="week-hide-show" href="#mar24"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>
-
-<section class="week">
-    <?php createWeekHeader("4/7/14 - 4/18/14", "april7", 60, 0, 40, 20); ?>
-        <?php $date = "2014-04-07"?>
-        <?php buildDay("M", addDay($date,0), 40, "7:20am - 8:00am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30am - 8:00am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bus.png", 40, "7:32pm - 8:12pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:18am - 7:58am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:38am - 7:58am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:35pm - 8:15pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:36pm - 8:16pm", "bus.png"); ?>
-        <a class="week-hide-show" href="#april7"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>
-
-<section class="week">
-    <?php createWeekHeader("4/21/14 - 5/2/14", "april21", 60, 0, 40, 20); ?>
-        <?php $date = "2014-04-21"?>
-    	<?php buildDay("M", addDay($date,0), 40, "7:20am - 8:00am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30am - 8:00am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bus.png", 40, "7:32pm - 8:12pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:18am - 7:58am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:38am - 7:58am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:35pm - 8:15pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:36pm - 8:16pm", "bus.png"); ?>
-        
-        <a class="week-hide-show" href="#april21"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>
-
-<section class="week">
-    <?php createWeekHeader("5/5 - 5/16/14", "may5", 60, 0, 40, 20); ?>
-        <?php $date = "2014-05-05"?>
-        <?php buildDay("M", addDay($date,0), 40, "7:20am - 8:00am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 30, "7:30am - 8:00am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bus.png", 40, "7:32pm - 8:12pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"6:58am - 7:58am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:18am - 7:58am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),20, "7:38am - 7:58am", "car.png", 20, "7:30pm - 7:50pm", "car.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:35pm - 8:15pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:36pm - 8:16pm", "bus.png"); ?>
-        <a class="week-hide-show" href="#may5"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>
-
-<section class="week">
-
-    <?php createWeekHeader("5/19 - 5/30/14", "may19", 60, 40, 40, 0); ?>
-        <?php $date = "2014-05-19"?>
-        <?php buildDay("M", addDay($date,0), 40, "7:30am - 8:10am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:31am - 8:11am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:32am - 8:12am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 40, "7:30am - 8:10am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:30am - 8:10am", "bus.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("Th",addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:30pm - 8:10pm", "bus.png"); ?>
-        
-        <a class="week-hide-show" href="#may19"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>
-
-<section class="week">
-    <?php createWeekHeader("6/2 - 6/13/14", "jun2",60, 39, 42, 0); ?>
-        <?php $date = "2014-06-02"?>
-    	 <?php buildDay("M", addDay($date,0), 40, "7:30am - 8:10am", "bus.png", 40, "7:36pm - 8:16pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1), 38, "7:30am - 8:08am", "bike.png", 40, "7:30pm - 8:10pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:18am - 7:58am", "bike.png", 40, "7:34pm - 8:14pm", "bike.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "6:58am - 7:58am", "walk.png", 40, "7:37pm - 8:17pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60,"7:30am - 8:30am", "walk.png", 40, "7:25pm - 8:05pm", "bus.png"); ?>
-        <?php buildDay("M", addDay($date,3), 40, "7:25am - 8:05am", "bus.png", 50, "8:25pm - 9:15pm", "bus.png"); ?>
-        <?php buildDay("T", addDay($date,1),37, "7:30am - 8:07am", "bike.png", 39, "7:30pm - 8:09pm", "bike.png"); ?>
-        <?php buildDay("W", addDay($date,1), 40, "7:31am - 8:11am", "bus.png", 40, "7:31pm - 8:11pm", "bus.png"); ?>
-        <?php buildDay("Th", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 52, "8:36pm - 9:28pm", "bus.png"); ?>
-        <?php buildDay("F", addDay($date,1), 60, "7:30am - 8:30am", "walk.png", 40, "7:33pm - 8:13pm", "bus.png"); ?>
-        
-        <a class="week-hide-show" href="#jun2"><img class="section-arrow arrow-up" src="images/section-arrow-up.png"></a>
-    </div>
-</section>

@@ -15,6 +15,7 @@ window.onload = function() {
 
 	//adjust the page with for bug in ff
 	$(".page, .page-title").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
+	$(".page, .ppbanner").width($(".pages").width() - $(".page").pixels("paddingRight")*2);
 
 	$(".pages").swipe({swipeLeft:swiped, swipeRight:swiped});
 
