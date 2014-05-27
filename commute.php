@@ -68,7 +68,7 @@
             )
         ),
         array("date"=>"6/2/14", "link"=>"jun2", "commutes"=> array(
-                array("durationTo"=>25, "startTo"=>"7:31", "modeTo"=>"bus.png", "durationFrom"=>40, "startFrom"=>"5:15", "modeFrom"=>"bus.png"),
+                array("durationTo"=>25, "startTo"=>"7:31", "modeTo"=>"bus.png", "durationFrom"=>40, "startFrom"=>"5:05", "modeFrom"=>"bus.png"),
                 array("durationTo"=>30, "startTo"=>"7:28", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
                 array("durationTo"=>30, "startTo"=>"7:27", "modeTo"=>"bike.png", "durationFrom"=>30, "startFrom"=>"5:15", "modeFrom"=>"bike.png"),
                 array("durationTo"=>81, "startTo"=>"7:27", "modeTo"=>"walk.png", "durationFrom"=>30, "startFrom"=>"6:10", "modeFrom"=>"bus.png"),
