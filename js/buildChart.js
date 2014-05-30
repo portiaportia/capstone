@@ -41,7 +41,7 @@ var carbonData1 = [
 	{ xval: "5/19/14", yval: 30 }
 	//{ xval: "6/2/14", yval: 37 }
 ];
-
+/*
 var commuteData = [ 
 	{ xval: "3/10/14", car: 12, bike: 0, bus: 8, walk: 0 }, 
 	{ xval: "3/24/14", car: 10, bike: 0, bus: 8, walk: 2 }, 
@@ -61,6 +61,7 @@ var commuteData1 = [
 	{ xval: "5/5/14", car: 4, bike: 4, bus: 7, walk: 5 }, 
 	{ xval: "5/19/14", car: 0, bike: 8, bus: 7, walk: 5 }
 ];
+*/
 
 var classNames = ["car", "bus", "walk", "bike"];
 
