@@ -1,5 +1,5 @@
 <?php function createImpactHeaderTop($title, $link){ ?>
-		<a class="impact-hide-show" href="<?php echo $link ?>">
+		<a class="impact-hide-show <?php echo $link ?>" href="<?php echo "#".$link ?>">
         	<header>
                 <h2><?php echo $title; ?></h2>
                 <section class="column-container">

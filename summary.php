@@ -1,19 +1,18 @@
 
-
 <section class="impact">
 	
-	<?php createImpactHeaderTop("Commute", "#commutes-expand"); ?>
+	<?php createImpactHeaderTop("Commute", "commutes-expand"); ?>
     	<section class="col1of3">
             <img src="images/bus.png"/>
             <section>
-                <p class="pix-stat-number-big">7</p>
+                <p class="pix-stat-number-big">6</p>
                 <p class="pix-stat-label">trips</p>
             </section>
         </section>
     	<section class="col1of3">
             <img src="images/walk.png"/>
             <section>
-                <p class="pix-stat-number-big">5</p>
+                <p class="pix-stat-number-big">6</p>
                 <p class="pix-stat-label">trips</p>
             </section>
         </section>
@@ -37,7 +36,7 @@
 </section>
 
 <section class="impact">
-	<?php createImpactHeaderTop("Bonus", "#bonuses-expand"); ?>
+	<?php createImpactHeaderTop("Bonus", "bonuses-expand"); ?>
         <section class="col1of2">
            <p class="pix-stat-number-big">$42</p>
         </section>
@@ -51,14 +50,14 @@
             <div id="d3Chart-bonuses" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
 			<script>
-                buildChart("#d3Chart-bonuses", bonusesData);
+                buildChart("#d3Chart-bonuses", bonusesData, "6/2/14");
             </script>
         </a>
     </div>
 </section>
 
 <section class="impact">
-    <?php createImpactHeaderTop("CO<sub>2</sub> Reduction", "#carbon-expand"); ?>
+    <?php createImpactHeaderTop("CO<sub>2</sub> Reduction", "carbon-expand"); ?>
     	<section class="col1of2">
            <p class="pix-stat-number-big">37 lbs</p>
         </section>
@@ -74,7 +73,7 @@
             <div id="d3Chart-carbon" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
             <script>
-                buildChart("#d3Chart-carbon", carbonData);
+                buildChart("#d3Chart-carbon", carbonData, "6/2/14");
             </script>
         </a>
     </div>

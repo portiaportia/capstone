@@ -67,7 +67,7 @@ var classNames = ["car", "bus", "walk", "bike"];
 var lineChartWidth = 0;
 
 //pass the name of the div that contains the graph
-function buildChart(idName, data){
+function buildChart(idName, data, dateToHighlight){
 	var margin = {top: 20, right: 20, bottom: 20, left: 25};
 	//hacky way to make sure the line graphs are the same size.
 	if(lineChartWidth == 0){
@@ -131,6 +131,9 @@ function buildChart(idName, data){
 		.attr("transform", "translate(0," + height + ")")
 		.call(xAxis2);
 */
+	
+	drawVertLineWithMarker(svg, x, height, parseDate, dateToHighlight);
+
 	svg.append("g") // Add the X Axis months
 		.attr("class", "x axis months")
 		.attr("transform", "translate(0," + (height + 0)+ ")")

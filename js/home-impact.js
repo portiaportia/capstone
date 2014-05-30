@@ -10,18 +10,24 @@ function hideShowImpact()
 	
 	var id = $(this).attr("href");
 	
+	var id = id.replace("1", "");
+
 	//if id display is none, we are off.
 	var isExpanded = false;
 	if($(id).is(":visible") ){
 		isExpanded = true;
 		$(id).slideToggle(500);
+		$(id + "1").slideToggle(500);
 	}else{
 		$(id).slideToggle(850);	
+		$(id + "1").slideToggle(850);
 	}
-	
+
 	var myParent = $(this).closest(".impact");
 	myParent.addClass("expanded");
-	myParent.find(".section-arrow.down-arrow").toggle();
+	var tempID = id.replace("#", "");
+	$("." + tempID + " .section-arrow.down-arrow").toggle();
+	$("." + tempID + "1 .section-arrow.down-arrow").toggle();
 
 	//take the id and remove the -expand, and add the d3Chart to the beginning.
 	var type = id.replace("-expand", "");
