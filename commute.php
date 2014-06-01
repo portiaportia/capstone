@@ -108,7 +108,7 @@
                 <section class="img-row">
                     <img src="images/<?php echo $imgToWork; ?>">
                     <p><span  class="pix-stat-number"><?php echo $minsToWork; ?></span></p>
-                    <span class="pix-stat-label">mins</span>
+                    <span class="pix-stat-label">min</span>
                 </section>
                 <p class="pix-stat-label-small"><?php echo $to_work; ?></p>
             </section>
@@ -116,7 +116,7 @@
                 <section class="img-row">
                     <img src="images/<?php echo $imgFromWork; ?>">
                     <p><span  class="pix-stat-number"><?php echo $minsFromWork; ?></span></p>
-                    <span class="pix-stat-label">mins</span>
+                    <span class="pix-stat-label">min</span>
                 </section>
                 <p class="pix-stat-label-small"><?php echo $from_work; ?></p>
             </section>

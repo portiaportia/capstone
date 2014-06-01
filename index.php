@@ -11,7 +11,7 @@
 		</section>
 		<section class="ppbanner dashboard">
 			<p class="left-arrow"><a href="#summary1">&lt;</a></p>
-	    	<p>Pay Period 6/2 - 6/13/2014</p>
+	    	<p>Pay Period 6/2/14 - 6/15/14</p>
 		</section>
 	</header>
 
@@ -25,7 +25,7 @@
 			<a href="#" class="page-title-a"><h1>Dashboard</h1></a>
 		</section>
 		<section class="ppbanner dashboard">
-			<p>Pay Period 5/19 - 5/30/2014</p>
+			<p>Pay Period 5/19/14 - 6/1/14</p>
 		    <p class="right-arrow"><a href="#summary">&gt;</a></p>
 		</section>
 	</header>
