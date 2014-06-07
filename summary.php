@@ -68,7 +68,7 @@
     <?php createImpactHeaderBottom("#carbon-expand"); ?>
     <div id="carbon-expand" class="impact-section">
         <a class="impact-hide-show" href="#carbon-expand">
-            <p class="carbon-note">What does that mean? A sappling will absorb 90lbs of CO<sub>2</sub> in its first 10 years.</p>
+            <p class="carbon-note">What does that mean? A sapling will absorb 90lbs of CO<sub>2</sub> in its first 10 years.</p>
             <!-- based on: http://www.epa.gov/cleanenergy/energy-resources/calculator.html#results -->
             <div id="d3Chart-carbon" class="d3Chart"></div>
             <img class="section-arrow arrow-up" src="images/section-arrow-up.png">
